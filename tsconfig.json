@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"target": "es2015",
+		"module": "commonjs",
+		"moduleResolution": "node",
+		"sourceMap": true,
+		"strict": true,
+		"lib": ["es2017"]
+	},
+	"include": ["src/**/*.ts", "scripts/*.ts"],
+	"exclude": ["node_modules"]
+}
