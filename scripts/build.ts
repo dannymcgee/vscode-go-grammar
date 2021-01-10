@@ -5,7 +5,7 @@ import gram from '../src';
 main();
 
 function main(): number {
-	build(gram, 'foo');
+	build(gram, 'go');
 
 	return 0;
 }

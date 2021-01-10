@@ -1,7 +1,7 @@
 {
-	"name": "foo-grammar",
-	"description": "VSCode TextMate grammar for Foo",
-	"displayName": "vscode-foo-grammar",
+	"name": "go-grammar",
+	"description": "VSCode TextMate grammar for Go",
+	"displayName": "vscode-go-grammar",
 	"version": "1.0.0",
 	"main": "index.js",
 	"author": "Danny McGee <dannymcgee@gmail.com>",
@@ -17,18 +17,21 @@
 	"contributes": {
 		"languages": [
 			{
-				"id": "foo",
+				"id": "go",
 				"extensions": [
-					".foo"
+					".go"
+				],
+				"aliases": [
+					"Go"
 				],
 				"configuration": "./language-configuration.json"
 			}
 		],
 		"grammars": [
 			{
-				"language": "foo",
-				"scopeName": "source.foo",
-				"path": "./dist/foo.tmLanguage.json"
+				"language": "go",
+				"scopeName": "source.go",
+				"path": "./dist/go.tmLanguage.json"
 			}
 		]
 	},
@@ -37,7 +40,7 @@
 		"package": "yarn build && vsce package"
 	},
 	"activationEvents": [
-		"onLanguage:foo"
+		"onLanguage:go"
 	],
 	"devDependencies": {
 		"@types/fs-extra": "^9.0.4",
