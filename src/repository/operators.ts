@@ -3,25 +3,37 @@ import { TMGrammarScope } from '../types';
 export const operators: TMGrammarScope = {
 	patterns: [
 		{
-			match: /(\+\+|--|[-+*\/%]=?)/,
+			match: /\s+([-+*\/%]=?)\s+/,
 			captures: {
 				1: { name: 'keyword.operator.arithmetic.$1.go' },
 			},
 		},
 		{
-			match: /((?:<<|>>|&\^|[&|^])=?)/,
+			match: /(--|\+\+)\s+/,
+			captures: {
+				1: { name: 'keyword.operator.arithmetic.$1.go' },
+			},
+		},
+		{
+			match: /\s+(--|\+\+)/,
+			captures: {
+				1: { name: 'keyword.operator.arithmetic.$1.go' },
+			},
+		},
+		{
+			match: /\s+((?:<<|>>|&\^|[&|^])=?)\s+/,
 			captures: {
 				1: { name: 'keyword.operator.bitwise.$1.go' },
 			},
 		},
 		{
-			match: /(&&|\|\||==|!=?|[<>]=?)/,
+			match: /\s+(&&|\|\||==|!=?|[<>]=?)\s+/,
 			captures: {
 				1: { name: 'keyword.operator.comparison.$1.go' },
 			},
 		},
 		{
-			match: /(:=|=)/,
+			match: /\s+(:=|=)\s+/,
 			name: 'keyword.operator.assignment.go',
 		},
 		{

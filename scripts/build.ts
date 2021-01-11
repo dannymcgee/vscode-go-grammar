@@ -13,15 +13,17 @@ function main(): number {
 function toJson(grammar: TMGrammar): JsonObject {
 	let processed: JsonObject = {};
 	for (let [key, value] of Object.entries(grammar)) {
-		// prettier-ignore
-		processed[key] =
-			typeof value === 'string'
-				? value :
-			value instanceof RegExp
-				? value.toString().replace(/^\/|\/$/g, '') :
-			value instanceof Array
-				? value.map(toJson)
-				: toJson(value)
+		if (typeof value === 'string') {
+			processed[key] = value;
+		} else if (value instanceof RegExp) {
+			let source = value.source;
+			let flags = value.flags;
+			processed[key] = (flags ? `(?${flags})` : '') + source;
+		} else if (value instanceof Array) {
+			processed[key] = value.map(toJson);
+		} else {
+			processed[key] = toJson(value);
+		}
 	}
 	return processed;
 }
