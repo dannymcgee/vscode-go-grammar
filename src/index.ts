@@ -14,6 +14,7 @@ import {
 	parameters,
 	primType,
 	stdLib,
+	typeDefinition,
 	types,
 } from './repository';
 
@@ -23,6 +24,7 @@ const grammar: TMGrammar = {
 	patterns: [
 		{ include: '#comments' },
 		{ include: '#funcDeclaration' },
+		{ include: '#typeDefinition' },
 		{ include: '#keywords' },
 		{ include: '#primType' },
 		{ include: '#constants' },
@@ -46,6 +48,7 @@ const grammar: TMGrammar = {
 		parameters,
 		primType,
 		stdLib,
+		typeDefinition,
 		types,
 	},
 };
