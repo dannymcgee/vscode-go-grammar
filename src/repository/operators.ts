@@ -36,6 +36,11 @@ export const operators: TMGrammarScope = {
 			match: /(:=|=)/,
 			name: 'keyword.operator.assignment.go',
 		},
+	],
+};
+
+export const punctuation: TMGrammarScope = {
+	patterns: [
 		{
 			match: /[()\[\]{}]/,
 			name: 'meta.brace.go',

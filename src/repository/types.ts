@@ -85,6 +85,11 @@ export const typeDefinition: TMGrammarScope = {
 				{ include: '#comments' },
 				{ include: '#funcName' },
 				{ include: '#types' },
+				{
+					match: /\.\.\./,
+					name: 'keyword.operator.variadic.go',
+				},
+				{ include: '#punctuation' },
 			],
 		},
 	],
