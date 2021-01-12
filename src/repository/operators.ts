@@ -15,12 +15,6 @@ export const operators: TMGrammarScope = {
 			},
 		},
 		{
-			match: /(--|\+\+)/,
-			captures: {
-				1: { name: 'keyword.operator.arithmetic.$1.go' },
-			},
-		},
-		{
 			match: /((?:<<|>>|&\^|[&|^])=?)/,
 			captures: {
 				1: { name: 'keyword.operator.bitwise.$1.go' },
