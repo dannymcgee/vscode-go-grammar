@@ -6,10 +6,11 @@ func lorem(foo string, bar int, baz ...*lorem.ipsum) {}
 func lorem(foo string, bar int, baz ...*lorem.ipsum) (x bool, err error) {}
 
 type LoremIpsum struct {
-	foo    string
-	bar    int // foo bar baz
-	baz    lorem.Ipsum
-	foobar bool
+	foo        string
+	bar        int // foo bar baz
+	baz        lorem.Ipsum
+	foobar     bool
+	dolor, sit []Amet
 }
 
 struct {

@@ -58,13 +58,17 @@ export const typeDefinition: TMGrammarScope = {
 			patterns: [
 				{ include: '#comments' },
 				{
-					begin: /([_a-zA-Z][_a-zA-Z0-9]*)\s+/,
+					begin: /([_a-zA-Z][_a-zA-Z0-9]*)\s*/,
 					beginCaptures: {
 						1: { name: 'variable.field.go' },
 					},
-					end: /[\r\n,;]|(?=\/\/)/,
+					end: /(?=\/\/|[\r\n,;])/,
 					name: 'meta.field.declaration.go',
 					patterns: [{ include: '#types' }],
+				},
+				{
+					match: /,/,
+					name: 'punctuation.separator.comma.go',
 				},
 			],
 		},
