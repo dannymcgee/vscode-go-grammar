@@ -47,6 +47,7 @@ export const parameters: TMGrammarScope = {
 
 export const parameter: TMGrammarScope = {
 	patterns: [
+		{ include: '#primType' },
 		{
 			match: /[_a-zA-Z][_a-zA-Z0-9]*(?=[,\)\r\n])/,
 			name: 'variable.parameter.go',
