@@ -1,17 +1,29 @@
 import { TMGrammarScope } from '../types';
 
 export const funcDeclaration: TMGrammarScope = {
-	begin: /(?<=\b)(func)\s*([_a-zA-Z][_a-zA-Z0-9]*)?/,
-	beginCaptures: {
-		1: { name: 'storage.type.func.go' },
-		2: { name: 'entity.name.function.go' },
-	},
-	end: /{/,
-	endCaptures: {
-		0: { name: 'punctuation.definition.block.begin.go' },
-	},
-	name: 'meta.function.signature.go',
-	patterns: [{ include: '#parameters' }],
+	patterns: [
+		{
+			begin: /\b(func)\s*/,
+			beginCaptures: {
+				1: { name: 'storage.type.func.go' },
+			},
+			end: /\{/,
+			endCaptures: {
+				0: { name: 'punctuation.definition.block.begin.go' },
+			},
+			name: 'meta.function.signature.go',
+			patterns: [
+				{ include: '#funcName' },
+				{ include: '#parameters' },
+				{ include: '#types' },
+			],
+		},
+	],
+};
+
+export const funcName: TMGrammarScope = {
+	match: /([_a-zA-Z][_a-zA-Z0-9]*)(?=\s*\()/,
+	name: 'entity.name.function.go',
 };
 
 export const parameters: TMGrammarScope = {
@@ -19,13 +31,13 @@ export const parameters: TMGrammarScope = {
 	beginCaptures: {
 		0: { name: 'punctuation.definition.parameters.begin.go' },
 	},
-	end: /(\))/,
+	end: /\)/,
 	endCaptures: {
-		1: { name: 'punctuation.definition.parameters.end.go' },
+		0: { name: 'punctuation.definition.parameters.end.go' },
 	},
 	name: 'meta.function.parameters.go',
 	patterns: [
-		{ include: '#typedef' },
+		{ include: '#parameter' },
 		{
 			match: /,/,
 			name: 'punctuation.separator.comma.go',
@@ -33,16 +45,20 @@ export const parameters: TMGrammarScope = {
 	],
 };
 
-export const typedef: TMGrammarScope = {
-	match: /([_a-zA-Z][_a-zA-Z0-9]*)\s+(\[\])?(\.\.\.)?(&|\*)?(?:([_a-zA-Z][_a-zA-Z0-9]*)(\.)([A-Z][_a-zA-Z0-9]*)|((?:(?:u?int|float|complex)(?:\d{1,3}|ptr))|byte|int|string|bool))/,
-	captures: {
-		1: { name: 'variable.other.go' },
-		2: { name: 'punctuation.brace.square.go' },
-		3: { name: 'keyword.operator.spread.go' },
-		4: { name: 'keyword.operator.pointer.go' },
-		5: { name: 'entity.name.type.module.go' },
-		6: { name: 'punctuation.accessor.go' },
-		7: { name: 'entity.name.type.struct.go' },
-		8: { name: 'support.type.primitive.go' },
-	},
+export const parameter: TMGrammarScope = {
+	patterns: [
+		{
+			match: /[_a-zA-Z][_a-zA-Z0-9]*(?=[,\)\r\n])/,
+			name: 'variable.parameter.go',
+		},
+		{
+			begin: /([_a-zA-Z][_a-zA-Z0-9]*)[ \t]+(\.\.\.)?/,
+			beginCaptures: {
+				1: { name: 'variable.paramtere.go' },
+				2: { name: 'keyword.operator.variadic.go' },
+			},
+			end: /(?=[,\)\r\n])/,
+			patterns: [{ include: '#types' }],
+		},
+	],
 };

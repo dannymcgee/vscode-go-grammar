@@ -8,7 +8,7 @@ export const literals: TMGrammarScope = {
 			beginCaptures: {
 				0: { name: 'punctuation.definition.string.begin.go' },
 			},
-			end: /"/,
+			end: /(?<!\\)"/,
 			endCaptures: {
 				0: { name: 'punctuation.definition.string.end.go' },
 			},
