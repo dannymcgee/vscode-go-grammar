@@ -2,18 +2,7 @@ import { TMGrammarScope } from '../types';
 
 export const literals: TMGrammarScope = {
 	patterns: [
-		{
-			// Strings
-			begin: /"/,
-			beginCaptures: {
-				0: { name: 'punctuation.definition.string.begin.go' },
-			},
-			end: /(?<!\\)"/,
-			endCaptures: {
-				0: { name: 'punctuation.definition.string.end.go' },
-			},
-			name: 'string.go',
-		},
+		{ include: '#stringLiteral' },
 		{
 			// Integer
 			match: /(?<=\b)(?:0[bBoOxX])?(?:_?(?:[0-9a-fA-F]+))+(?=\b)/,
@@ -47,4 +36,17 @@ export const literals: TMGrammarScope = {
 			name: 'constant.numeric.hex.go',
 		},
 	],
+};
+
+export const stringLiteral: TMGrammarScope = {
+	// Strings
+	begin: /"/,
+	beginCaptures: {
+		0: { name: 'punctuation.definition.string.begin.go' },
+	},
+	end: /(?<!\\)"/,
+	endCaptures: {
+		0: { name: 'punctuation.definition.string.end.go' },
+	},
+	name: 'string.go',
 };
