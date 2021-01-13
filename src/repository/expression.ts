@@ -1,33 +1,6 @@
 import { TMGrammarScope } from '../types';
 import { regex } from '../utility';
 
-export const expression: TMGrammarScope = {
-	patterns: [{ include: '#assignmentExpr' }],
-};
-
-export const assignmentExpr: TMGrammarScope = {
-	begin: /:?=/,
-	beginCaptures: {
-		0: { name: 'keyword.operator.assignment.go' },
-	},
-	end: /(?=[;\n\r])/,
-	name: 'meta.assignment.go',
-	patterns: [{ include: '#valueExpr' }],
-};
-
-export const valueExpr: TMGrammarScope = {
-	patterns: [
-		{ include: '#comments' },
-		{ include: '#structExpr' },
-		{ include: '#operators' },
-		{ include: '#punctuation' },
-		{ include: '#funcName' },
-		{ include: '#stdLib' },
-		{ include: '#identifier' },
-		{ include: '#literals' },
-	],
-};
-
 export const structExpr: TMGrammarScope = {
 	patterns: [
 		{
@@ -108,7 +81,7 @@ export const identifier: TMGrammarScope = {
 				5: { name: 'keyword.operator.$5.go' },
 				6: { name: 'entity.name.type.module.go' },
 				7: { name: 'punctuation.accessor.go' },
-				8: { name: 'entity.name.type.struct.go' },
+				8: { name: 'entity.name.type.go' },
 			},
 		},
 		{

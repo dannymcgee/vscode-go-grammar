@@ -4,6 +4,6 @@ export * from './func';
 export * from './keywords';
 export * from './literals';
 export * from './operators';
-export * from './statement';
+export * from './package';
 export * from './std-lib';
 export * from './types';

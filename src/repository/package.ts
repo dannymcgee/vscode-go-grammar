@@ -1,4 +1,4 @@
-import { TMGrammarScope } from '../../types';
+import { TMGrammarScope } from '../types';
 
 export const packageDeclaration: TMGrammarScope = {
 	match: /(package)\s+([_a-zA-Z][_a-zA-Z0-9]*)/,

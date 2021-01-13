@@ -13,7 +13,7 @@ func lorem() {}
 func lorem(x int) int {}
 func lorem(a, b int, z float32) bool {}
 func lorem(a, b string) (string, error) {}
-func lorem(foo string, bar int, baz ...*lorem.ipsum) {}
+func lorem(foo string, bar int, baz ...*lorem.ipsum) Dolor {}
 func lorem(foo string, bar int, baz ...*lorem.ipsum) (x bool, err error) {}
 
 type LoremIpsum struct {
@@ -23,6 +23,8 @@ type LoremIpsum struct {
 	foobar     bool
 	dolor, sit []Amet
 }
+
+func (li &LoremIpsum) Dolor(a, b int, c string) bool {}
 
 struct {
 	foo    string
@@ -65,4 +67,11 @@ func main() {
 		b: foo,
 		c: bar,
 	}
+}
+
+type X string
+func (x X) String() string {
+	fmt.Sprintf("%[2]d %[1]d\n", 11, 22)
+
+	return Sprintf("<%s>", x)
 }

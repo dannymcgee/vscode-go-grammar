@@ -1,5 +1,22 @@
 import { TMGrammarScope } from '../types';
 
+export const constants: TMGrammarScope = {
+	patterns: [
+		{
+			match: /\b(true|false)\b/,
+			captures: {
+				1: { name: 'constant.language.boolean.go' },
+			},
+		},
+		{
+			match: /\b(nil)\b/,
+			captures: {
+				1: { name: 'constant.language.null.go' },
+			},
+		},
+	],
+};
+
 export const literals: TMGrammarScope = {
 	patterns: [
 		{ include: '#stringLiteral' },
@@ -39,14 +56,81 @@ export const literals: TMGrammarScope = {
 };
 
 export const stringLiteral: TMGrammarScope = {
-	// Strings
-	begin: /"/,
-	beginCaptures: {
-		0: { name: 'punctuation.definition.string.begin.go' },
-	},
-	end: /(?<!\\)"/,
-	endCaptures: {
-		0: { name: 'punctuation.definition.string.end.go' },
-	},
-	name: 'string.go',
+	patterns: [
+		{
+			begin: /"/,
+			beginCaptures: {
+				0: { name: 'punctuation.definition.string.begin.go' },
+			},
+			end: /(?<!\\)"/,
+			endCaptures: {
+				0: { name: 'punctuation.definition.string.end.go' },
+			},
+			name: 'string.interpreted.go',
+			// prettier-ignore
+			patterns: [
+				{ include: '#escapes' },
+				{ include: '#interpolation' },
+			],
+		},
+		{
+			begin: /`/,
+			beginCaptures: {
+				0: { name: 'punctuation.definition.string.begin.go' },
+			},
+			end: /`/,
+			endCaptures: {
+				0: { name: 'punctuation.definition.string.end.go' },
+			},
+			name: 'string.raw.go',
+		},
+		{
+			begin: /'/,
+			beginCaptures: {
+				0: { name: 'punctuation.definition.string.begin.go' },
+			},
+			end: /(?<!\\)'/,
+			endCaptures: {
+				0: { name: 'punctuation.definition.string.end.go' },
+			},
+			name: 'string.rune.go',
+			patterns: [{ include: '#escapes' }],
+		},
+	],
+};
+
+export const escapes: TMGrammarScope = {
+	patterns: [
+		{
+			match: /\\[abfnrtv\\'"]/,
+			name: 'constant.character.escape.go',
+		},
+	],
+};
+
+export const interpolation: TMGrammarScope = {
+	patterns: [
+		{
+			match: /%([.+0-9]*)([vTtbcdoOqxXUbeEfFgGsqp])/,
+			captures: {
+				1: { name: 'constant.numeric.template-quantifier.go' },
+				2: { name: 'variable.other.go' },
+			},
+			name: 'meta.interpolation.go',
+		},
+		{
+			match: /%(\[)([0-9]+)(\])([vTtbcdoOqxXUbeEfFgGsqp])/,
+			captures: {
+				1: { name: 'punctuation.bracket.go' },
+				2: { name: 'constant.numeric.template-quantifier.go' },
+				3: { name: 'punctuation.bracket.go' },
+				4: { name: 'variable.other.go' },
+			},
+			name: 'meta.interpolation.go',
+		},
+		{
+			match: /%%/,
+			name: 'constant.character.escape.go',
+		},
+	],
 };

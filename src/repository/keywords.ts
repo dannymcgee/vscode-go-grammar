@@ -22,20 +22,3 @@ export const keywords: TMGrammarScope = {
 		},
 	],
 };
-
-export const constants: TMGrammarScope = {
-	patterns: [
-		{
-			match: /\b(true|false)\b/,
-			captures: {
-				1: { name: 'constant.language.boolean.go' },
-			},
-		},
-		{
-			match: /\b(nil)\b/,
-			captures: {
-				1: { name: 'constant.language.null.go' },
-			},
-		},
-	],
-};
