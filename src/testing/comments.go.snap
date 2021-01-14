@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`comments should work 1`] = `
+
+> // This is a line comment
+# ^^ source.go comment.line.go punctuation.definition.comment.line.go
+#   ^^^^^^^^^^^^^^^^^^^^^^^ source.go comment.line.go
+> /*
+# ^^ source.go comment.block.go punctuation.definition.comment.block.begin.go
+> This is a block comment
+# ^^^^^^^^^^^^^^^^^^^^^^^^ source.go comment.block.go
+> */
+# ^^ source.go comment.block.go punctuation.definition.comment.block.end.go
+> 
+`;

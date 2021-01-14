@@ -5,8 +5,13 @@
 		"moduleResolution": "node",
 		"sourceMap": true,
 		"strict": true,
-		"lib": ["es2017"]
+		"lib": ["es2017"],
+		"typeRoots": ["node_modules/@types"]
 	},
-	"include": ["src/**/*.ts", "scripts/*.ts"],
-	"exclude": ["node_modules"]
+	"files": [],
+	"include": [],
+	"references": [
+		{ "path": "./tsconfig.main.json" },
+		{ "path": "./tsconfig.spec.json" }
+	]
 }
