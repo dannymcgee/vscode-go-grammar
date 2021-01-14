@@ -1,0 +1,245 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`func should work 1`] = `
+
+> func min(x int, y int) int {
+# ^^^^ source.go meta.function.signature.go storage.type.func.go
+#     ^ source.go meta.function.signature.go
+#      ^^^ source.go meta.function.signature.go entity.name.function.go
+#         ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
+#          ^ source.go meta.function.signature.go meta.function.parameters.go variable.paramtere.go
+#           ^ source.go meta.function.signature.go meta.function.parameters.go
+#            ^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
+#               ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
+#                ^ source.go meta.function.signature.go meta.function.parameters.go
+#                 ^ source.go meta.function.signature.go meta.function.parameters.go variable.paramtere.go
+#                  ^ source.go meta.function.signature.go meta.function.parameters.go
+#                   ^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
+#                      ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
+#                       ^ source.go meta.function.signature.go
+#                        ^^^ source.go meta.function.signature.go support.type.primitive.go
+#                           ^ source.go meta.function.signature.go
+#                            ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
+> 	if x < y {
+# ^ source.go
+#  ^^ source.go keyword.control.if.go
+#    ^ source.go
+#     ^ source.go variable.other.go
+#      ^ source.go
+#       ^ source.go keyword.operator.comparison.<.go
+#        ^ source.go
+#         ^ source.go variable.other.go
+#          ^ source.go
+#           ^ source.go meta.brace.go
+> 		return x
+# ^^ source.go
+#   ^^^^^^ source.go keyword.control.return.go
+#         ^ source.go
+#          ^ source.go variable.other.go
+> 	}
+# ^ source.go
+#  ^ source.go meta.brace.go
+> 	return y
+# ^ source.go
+#  ^^^^^^ source.go keyword.control.return.go
+#        ^ source.go
+#         ^ source.go variable.other.go
+> }
+# ^ source.go meta.brace.go
+> 
+> func (p *Point) Length() float64 {
+# ^^^^ source.go meta.function.signature.go storage.type.func.go
+#     ^ source.go meta.function.signature.go
+#      ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
+#       ^ source.go meta.function.signature.go meta.function.parameters.go variable.paramtere.go
+#        ^ source.go meta.function.signature.go meta.function.parameters.go
+#         ^ source.go meta.function.signature.go meta.function.parameters.go keyword.operator.pointer.go
+#          ^^^^^ source.go meta.function.signature.go meta.function.parameters.go entity.name.type.go
+#               ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
+#                ^ source.go meta.function.signature.go
+#                 ^^^^^^ source.go meta.function.signature.go entity.name.function.go
+#                       ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
+#                        ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
+#                         ^ source.go meta.function.signature.go
+#                          ^^^^^^^ source.go meta.function.signature.go support.type.primitive.go
+#                                 ^ source.go meta.function.signature.go
+#                                  ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
+> 	return math.Sqrt(p.x * p.x + p.y * p.y)
+# ^ source.go
+#  ^^^^^^ source.go keyword.control.return.go
+#        ^ source.go
+#         ^^^^ source.go variable.other.go
+#             ^ source.go punctuation.accessor.go
+#              ^^^^ source.go entity.name.function.go
+#                  ^ source.go meta.brace.go
+#                   ^ source.go variable.other.go
+#                    ^ source.go punctuation.accessor.go
+#                     ^ source.go variable.field.go
+#                      ^ source.go
+#                       ^ source.go keyword.operator.arithmetic.*.go
+#                        ^ source.go
+#                         ^ source.go variable.other.go
+#                          ^ source.go punctuation.accessor.go
+#                           ^ source.go variable.field.go
+#                            ^ source.go
+#                             ^ source.go keyword.operator.arithmetic.+.go
+#                              ^ source.go
+#                               ^ source.go variable.other.go
+#                                ^ source.go punctuation.accessor.go
+#                                 ^ source.go variable.field.go
+#                                  ^ source.go
+#                                   ^ source.go keyword.operator.arithmetic.*.go
+#                                    ^ source.go
+#                                     ^ source.go variable.other.go
+#                                      ^ source.go punctuation.accessor.go
+#                                       ^ source.go variable.field.go
+#                                        ^ source.go meta.brace.go
+> }
+# ^ source.go meta.brace.go
+> 
+> func (p *Point) Scale(factor float64) {
+# ^^^^ source.go meta.function.signature.go storage.type.func.go
+#     ^ source.go meta.function.signature.go
+#      ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
+#       ^ source.go meta.function.signature.go meta.function.parameters.go variable.paramtere.go
+#        ^ source.go meta.function.signature.go meta.function.parameters.go
+#         ^ source.go meta.function.signature.go meta.function.parameters.go keyword.operator.pointer.go
+#          ^^^^^ source.go meta.function.signature.go meta.function.parameters.go entity.name.type.go
+#               ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
+#                ^ source.go meta.function.signature.go
+#                 ^^^^^ source.go meta.function.signature.go entity.name.function.go
+#                      ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
+#                       ^^^^^^ source.go meta.function.signature.go meta.function.parameters.go variable.paramtere.go
+#                             ^ source.go meta.function.signature.go meta.function.parameters.go
+#                              ^^^^^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
+#                                     ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
+#                                      ^ source.go meta.function.signature.go
+#                                       ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
+> 	p.x *= factor
+# ^ source.go
+#  ^ source.go variable.other.go
+#   ^ source.go punctuation.accessor.go
+#    ^ source.go variable.field.go
+#     ^ source.go
+#      ^^ source.go keyword.operator.arithmetic.*=.go
+#        ^ source.go
+#         ^^^^^^ source.go variable.other.go
+> 	p.y *= factor
+# ^ source.go
+#  ^ source.go variable.other.go
+#   ^ source.go punctuation.accessor.go
+#    ^ source.go variable.field.go
+#     ^ source.go
+#      ^^ source.go keyword.operator.arithmetic.*=.go
+#        ^ source.go
+#         ^^^^^^ source.go variable.other.go
+> }
+# ^ source.go meta.brace.go
+> 
+> func(a, b int, z float64) bool { return a*b < int(z) }
+# ^^^^ source.go meta.function.signature.go storage.type.func.go
+#     ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
+#      ^ source.go meta.function.signature.go meta.function.parameters.go variable.parameter.go
+#       ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
+#        ^ source.go meta.function.signature.go meta.function.parameters.go
+#         ^ source.go meta.function.signature.go meta.function.parameters.go variable.paramtere.go
+#          ^ source.go meta.function.signature.go meta.function.parameters.go
+#           ^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
+#              ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
+#               ^ source.go meta.function.signature.go meta.function.parameters.go
+#                ^ source.go meta.function.signature.go meta.function.parameters.go variable.paramtere.go
+#                 ^ source.go meta.function.signature.go meta.function.parameters.go
+#                  ^^^^^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
+#                         ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
+#                          ^ source.go meta.function.signature.go
+#                           ^^^^ source.go meta.function.signature.go support.type.primitive.go
+#                               ^ source.go meta.function.signature.go
+#                                ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
+#                                 ^ source.go
+#                                  ^^^^^^ source.go keyword.control.return.go
+#                                        ^ source.go
+#                                         ^ source.go variable.other.go
+#                                          ^ source.go keyword.operator.arithmetic.*.go
+#                                           ^ source.go variable.other.go
+#                                            ^ source.go
+#                                             ^ source.go keyword.operator.comparison.<.go
+#                                              ^ source.go
+#                                               ^^^ source.go support.type.primitive.go
+#                                                  ^ source.go meta.brace.go
+#                                                   ^ source.go variable.other.go
+#                                                    ^ source.go meta.brace.go
+#                                                     ^ source.go
+#                                                      ^ source.go meta.brace.go
+> 
+> f := func(x, y int) int { return x + y }
+# ^ source.go variable.other.go
+#  ^ source.go
+#   ^ source.go punctuation.separator.key-value.go
+#    ^ source.go keyword.operator.assignment.go
+#     ^ source.go
+#      ^^^^ source.go meta.function.signature.go storage.type.func.go
+#          ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
+#           ^ source.go meta.function.signature.go meta.function.parameters.go variable.parameter.go
+#            ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
+#             ^ source.go meta.function.signature.go meta.function.parameters.go
+#              ^ source.go meta.function.signature.go meta.function.parameters.go variable.paramtere.go
+#               ^ source.go meta.function.signature.go meta.function.parameters.go
+#                ^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
+#                   ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
+#                    ^ source.go meta.function.signature.go
+#                     ^^^ source.go meta.function.signature.go support.type.primitive.go
+#                        ^ source.go meta.function.signature.go
+#                         ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
+#                          ^ source.go
+#                           ^^^^^^ source.go keyword.control.return.go
+#                                 ^ source.go
+#                                  ^ source.go variable.other.go
+#                                   ^ source.go
+#                                    ^ source.go keyword.operator.arithmetic.+.go
+#                                     ^ source.go
+#                                      ^ source.go variable.other.go
+#                                       ^ source.go
+#                                        ^ source.go meta.brace.go
+> 
+> func(ch chan int) { ch <- ACK }(replyChan)
+# ^^^^ source.go meta.function.signature.go storage.type.func.go
+#     ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
+#      ^^ source.go meta.function.signature.go meta.function.parameters.go variable.paramtere.go
+#        ^ source.go meta.function.signature.go meta.function.parameters.go
+#         ^^^^ source.go meta.function.signature.go meta.function.parameters.go entity.name.type.go
+#             ^ source.go meta.function.signature.go meta.function.parameters.go
+#              ^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
+#                 ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
+#                  ^ source.go meta.function.signature.go
+#                   ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
+#                    ^ source.go
+#                     ^^ source.go variable.other.go
+#                       ^ source.go
+#                        ^ source.go keyword.operator.comparison.<.go
+#                         ^ source.go keyword.operator.arithmetic.-.go
+#                          ^ source.go
+#                           ^^^ source.go variable.other.go
+#                              ^ source.go
+#                               ^ source.go meta.brace.go
+#                                ^ source.go meta.brace.go
+#                                 ^^^^^^^^^ source.go variable.other.go
+#                                          ^ source.go meta.brace.go
+> 
+> func flushICache(begin, end uintptr) // implemented externally
+# ^^^^ source.go meta.function.signature.go storage.type.func.go
+#     ^ source.go meta.function.signature.go
+#      ^^^^^^^^^^^ source.go meta.function.signature.go entity.name.function.go
+#                 ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
+#                  ^^^^^ source.go meta.function.signature.go meta.function.parameters.go variable.parameter.go
+#                       ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
+#                        ^ source.go meta.function.signature.go meta.function.parameters.go
+#                         ^^^ source.go meta.function.signature.go meta.function.parameters.go variable.paramtere.go
+#                            ^ source.go meta.function.signature.go meta.function.parameters.go
+#                             ^^^^^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
+#                                    ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
+#                                     ^^^^ source.go meta.function.signature.go
+#                                         ^^^^^^^^^^^ source.go meta.function.signature.go entity.name.type.go
+#                                                    ^ source.go meta.function.signature.go
+#                                                     ^^^^^^^^^^ source.go meta.function.signature.go entity.name.type.go
+> 
+`;
