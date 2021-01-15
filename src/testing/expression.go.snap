@@ -2,148 +2,103 @@
 
 exports[`expression should work 1`] = `
 
-> var i int
-# ^^^ source.go storage.type.var.go
-#    ^ source.go
-#     ^ source.go variable.other.go
-#      ^ source.go
-#       ^^^ source.go support.type.primitive.go
-> var U, V, W float64
-# ^^^ source.go storage.type.var.go
-#    ^ source.go
-#     ^ source.go variable.other.go
-#      ^ source.go punctuation.separator.comma.go
-#       ^ source.go
-#        ^ source.go variable.other.go
-#         ^ source.go punctuation.separator.comma.go
-#          ^ source.go
-#           ^ source.go variable.other.go
-#            ^ source.go
-#             ^^^^^^^ source.go support.type.primitive.go
-> var k = 0
-# ^^^ source.go storage.type.var.go
-#    ^ source.go
-#     ^ source.go variable.other.go
-#      ^ source.go
-#       ^ source.go keyword.operator.assignment.go
-#        ^ source.go
-#         ^ source.go constant.numeric.integer.go
-> var x, y float32 = -1, -2
-# ^^^ source.go storage.type.var.go
-#    ^ source.go
-#     ^ source.go variable.other.go
-#      ^ source.go punctuation.separator.comma.go
-#       ^ source.go
-#        ^ source.go variable.other.go
-#         ^ source.go
-#          ^^^^^^^ source.go support.type.primitive.go
-#                 ^ source.go
-#                  ^ source.go keyword.operator.assignment.go
-#                   ^ source.go
-#                    ^ source.go keyword.operator.arithmetic.-.go
-#                     ^ source.go constant.numeric.integer.go
-#                      ^ source.go punctuation.separator.comma.go
-#                       ^ source.go
-#                        ^ source.go keyword.operator.arithmetic.-.go
-#                         ^ source.go constant.numeric.integer.go
-> 
-> var re, im = complexSqrt(-1)
-# ^^^ source.go storage.type.var.go
-#    ^ source.go
-#     ^^ source.go variable.other.go
-#       ^ source.go punctuation.separator.comma.go
-#        ^ source.go
-#         ^^ source.go variable.other.go
-#           ^ source.go
-#            ^ source.go keyword.operator.assignment.go
-#             ^ source.go
-#              ^^^^^^^^^^^ source.go entity.name.function.go
-#                         ^ source.go meta.brace.go
-#                          ^ source.go keyword.operator.arithmetic.-.go
-#                           ^ source.go constant.numeric.integer.go
-#                            ^ source.go meta.brace.go
-> var _, found = entries[name]  // map lookup; only interested in "found"
-# ^^^ source.go storage.type.var.go
-#    ^ source.go
-#     ^ source.go variable.other.go
-#      ^ source.go punctuation.separator.comma.go
-#       ^ source.go
-#        ^^^^^ source.go variable.other.go
-#             ^ source.go
-#              ^ source.go keyword.operator.assignment.go
-#               ^ source.go
-#                ^^^^^^^ source.go variable.other.go
-#                       ^ source.go meta.brace.go
-#                        ^^^^ source.go variable.other.go
-#                            ^ source.go meta.brace.go
-#                             ^^ source.go
-#                               ^^ source.go comment.line.go punctuation.definition.comment.line.go
-#                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ source.go comment.line.go
-> 
-> var baz = lorem.Ipsum{a: buf, b: foo, c: bar}
-# ^^^ source.go storage.type.var.go
-#    ^ source.go
-#     ^^^ source.go variable.other.go
-#        ^ source.go
-#         ^ source.go keyword.operator.assignment.go
-#          ^ source.go
-#           ^^^^^ source.go entity.name.type.module.go
-#                ^ source.go punctuation.accessor.go
-#                 ^^^^^ source.go entity.name.type.struct.go
-#                      ^ source.go punctuation.definition.struct.begin.go
-#                       ^ source.go meta.struct.body.go meta.struct.field-init.go variable.field.go
-#                        ^ source.go meta.struct.body.go meta.struct.field-init.go punctuation.separator.key-value.go
-#                         ^ source.go meta.struct.body.go meta.struct.field-init.go
-#                          ^^^ source.go meta.struct.body.go meta.struct.field-init.go variable.other.go
-#                             ^ source.go meta.struct.body.go punctuation.separator.comma.go
-#                              ^ source.go meta.struct.body.go
-#                               ^ source.go meta.struct.body.go meta.struct.field-init.go variable.field.go
-#                                ^ source.go meta.struct.body.go meta.struct.field-init.go punctuation.separator.key-value.go
-#                                 ^ source.go meta.struct.body.go meta.struct.field-init.go
-#                                  ^^^ source.go meta.struct.body.go meta.struct.field-init.go variable.other.go
-#                                     ^ source.go meta.struct.body.go punctuation.separator.comma.go
-#                                      ^ source.go meta.struct.body.go
-#                                       ^ source.go meta.struct.body.go meta.struct.field-init.go variable.field.go
-#                                        ^ source.go meta.struct.body.go meta.struct.field-init.go punctuation.separator.key-value.go
-#                                         ^ source.go meta.struct.body.go meta.struct.field-init.go
-#                                          ^^^ source.go meta.struct.body.go meta.struct.field-init.go variable.other.go
-#                                             ^ source.go punctuation.definition.struct.end.go
-> 
-> foo, bar := lorem.Ipsum{
-# ^^^ source.go variable.other.go
-#    ^ source.go punctuation.separator.comma.go
-#     ^ source.go
-#      ^^^ source.go variable.other.go
-#         ^ source.go
-#          ^ source.go punctuation.separator.key-value.go
-#           ^ source.go keyword.operator.assignment.go
-#            ^ source.go
-#             ^^^^^ source.go entity.name.type.module.go
-#                  ^ source.go punctuation.accessor.go
-#                   ^^^^^ source.go entity.name.type.struct.go
-#                        ^ source.go punctuation.definition.struct.begin.go
-> 	a: buf,
-# ^ source.go meta.struct.body.go
-#  ^ source.go meta.struct.body.go meta.struct.field-init.go variable.field.go
-#   ^ source.go meta.struct.body.go meta.struct.field-init.go punctuation.separator.key-value.go
-#    ^ source.go meta.struct.body.go meta.struct.field-init.go
-#     ^^^ source.go meta.struct.body.go meta.struct.field-init.go variable.other.go
-#        ^ source.go meta.struct.body.go punctuation.separator.comma.go
-> 	b: foo,
-# ^ source.go meta.struct.body.go
-#  ^ source.go meta.struct.body.go meta.struct.field-init.go variable.field.go
-#   ^ source.go meta.struct.body.go meta.struct.field-init.go punctuation.separator.key-value.go
-#    ^ source.go meta.struct.body.go meta.struct.field-init.go
-#     ^^^ source.go meta.struct.body.go meta.struct.field-init.go variable.other.go
-#        ^ source.go meta.struct.body.go punctuation.separator.comma.go
-> 	c: bar,
-# ^ source.go meta.struct.body.go
-#  ^ source.go meta.struct.body.go meta.struct.field-init.go variable.field.go
-#   ^ source.go meta.struct.body.go meta.struct.field-init.go punctuation.separator.key-value.go
-#    ^ source.go meta.struct.body.go meta.struct.field-init.go
-#     ^^^ source.go meta.struct.body.go meta.struct.field-init.go variable.other.go
-#        ^ source.go meta.struct.body.go punctuation.separator.comma.go
-> }
-# ^ source.go punctuation.definition.struct.end.go
-> 
+-> var i int
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^ support.type.primitive.go
+-> var U, V, W float64
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |      ^ punctuation.separator.comma.go
+ |        ^ variable.other.go
+ |         ^ punctuation.separator.comma.go
+ |           ^ variable.other.go
+ |             ^^^^^^^ support.type.primitive.go
+-> var k = 0
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^ keyword.operator.assignment.go
+ |         ^ constant.numeric.integer.go
+-> var x, y float32 = -1, -2
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |      ^ punctuation.separator.comma.go
+ |        ^ variable.other.go
+ |          ^^^^^^^ support.type.primitive.go
+ |                  ^ keyword.operator.assignment.go
+ |                    ^ keyword.operator.arithmetic.-.go
+ |                     ^ constant.numeric.integer.go
+ |                      ^ punctuation.separator.comma.go
+ |                        ^ keyword.operator.arithmetic.-.go
+ |                         ^ constant.numeric.integer.go
+-> 
+-> var re, im = complexSqrt(-1)
+ | ^^^ storage.type.var.go
+ |     ^^ variable.other.go
+ |       ^ punctuation.separator.comma.go
+ |         ^^ variable.other.go
+ |            ^ keyword.operator.assignment.go
+ |              ^^^^^^^^^^^ entity.name.function.go
+ |                          ^ keyword.operator.arithmetic.-.go
+ |                           ^ constant.numeric.integer.go
+-> var _, found = entries[name]  // map lookup; only interested in "found"
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |      ^ punctuation.separator.comma.go
+ |        ^^^^^ variable.other.go
+ |              ^ keyword.operator.assignment.go
+ |                ^^^^^^^ variable.other.go
+ |                        ^^^^ variable.other.go
+ |                               ^^ punctuation.definition.comment.line.go  comment.line.go
+ |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+-> 
+-> var baz = lorem.Ipsum{a: buf, b: foo, c: bar}
+ | ^^^ storage.type.var.go
+ |     ^^^ variable.other.go
+ |         ^ keyword.operator.assignment.go
+ |           ^^^^^ entity.name.type.module.go
+ |                ^ punctuation.accessor.go
+ |                 ^^^^^ entity.name.type.struct.go
+ |                      ^ punctuation.definition.struct.begin.go
+ |                       ^ variable.field.go
+ |                        ^ punctuation.separator.key-value.go
+ |                          ^^^ variable.other.go
+ |                             ^ punctuation.separator.comma.go
+ |                               ^ variable.field.go
+ |                                ^ punctuation.separator.key-value.go
+ |                                  ^^^ variable.other.go
+ |                                     ^ punctuation.separator.comma.go
+ |                                       ^ variable.field.go
+ |                                        ^ punctuation.separator.key-value.go
+ |                                          ^^^ variable.other.go
+ |                                             ^ punctuation.definition.struct.end.go
+-> 
+-> foo, bar := lorem.Ipsum{
+ | ^^^ variable.other.go
+ |    ^ punctuation.separator.comma.go
+ |      ^^^ variable.other.go
+ |          ^ punctuation.separator.key-value.go
+ |           ^ keyword.operator.assignment.go
+ |             ^^^^^ entity.name.type.module.go
+ |                  ^ punctuation.accessor.go
+ |                   ^^^^^ entity.name.type.struct.go
+ |                        ^ punctuation.definition.struct.begin.go
+-> 	a: buf,
+ |  ^ variable.field.go
+ |   ^ punctuation.separator.key-value.go
+ |     ^^^ variable.other.go
+ |        ^ punctuation.separator.comma.go
+-> 	b: foo,
+ |  ^ variable.field.go
+ |   ^ punctuation.separator.key-value.go
+ |     ^^^ variable.other.go
+ |        ^ punctuation.separator.comma.go
+-> 	c: bar,
+ |  ^ variable.field.go
+ |   ^ punctuation.separator.key-value.go
+ |     ^^^ variable.other.go
+ |        ^ punctuation.separator.comma.go
+-> }
+ | ^ punctuation.definition.struct.end.go
+-> 
 `;

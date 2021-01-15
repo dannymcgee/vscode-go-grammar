@@ -47,15 +47,24 @@ expect.addSnapshotSerializer({
 	serialize(val: GoCode): string {
 		let tokens = getVSCodeTokens(val);
 		let result: string[] = tokens.reduce((accum, line) => {
-			accum.push('> ' + line.src);
+			accum.push('-> ' + line.src);
 			if (line.src.trim().length) {
-				line.tokens.forEach((token) => {
+				let tokens = line.tokens
+					.map(({ scopes, startIndex, endIndex }) => ({
+						startIndex,
+						endIndex,
+						// prettier-ignore
+						scopes: scopes.filter((scope) => !/^meta|^source\.go$/.test(scope)),
+					}))
+					.filter((token) => token.scopes.length > 0);
+
+				tokens.forEach((token) => {
 					accum.push(
-						'# ' +
+						' | ' +
 							' '.repeat(token.startIndex) +
 							'^'.repeat(token.endIndex - token.startIndex) +
 							' ' +
-							token.scopes.join(' '),
+							token.scopes.reverse().join('  '),
 					);
 				});
 			}

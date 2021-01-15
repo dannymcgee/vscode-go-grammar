@@ -2,282 +2,191 @@
 
 exports[`func should work 1`] = `
 
-> func lorem() {}
-# ^^^^ source.go meta.function.signature.go storage.type.func.go
-#     ^ source.go meta.function.signature.go
-#      ^^^^^ source.go meta.function.signature.go entity.name.function.go
-#           ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#            ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#             ^ source.go meta.function.signature.go
-#              ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
-#               ^ source.go meta.brace.go
-> 
-> func lorem(x int) int {}
-# ^^^^ source.go meta.function.signature.go storage.type.func.go
-#     ^ source.go meta.function.signature.go
-#      ^^^^^ source.go meta.function.signature.go entity.name.function.go
-#           ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#            ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#             ^ source.go meta.function.signature.go meta.function.parameters.go
-#              ^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                 ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                  ^ source.go meta.function.signature.go
-#                   ^^^ source.go meta.function.signature.go support.type.primitive.go
-#                      ^ source.go meta.function.signature.go
-#                       ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
-#                        ^ source.go meta.brace.go
-> 
-> func lorem(a, b int, z float32) bool {}
-# ^^^^ source.go meta.function.signature.go storage.type.func.go
-#     ^ source.go meta.function.signature.go
-#      ^^^^^ source.go meta.function.signature.go entity.name.function.go
-#           ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#            ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#             ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
-#              ^ source.go meta.function.signature.go meta.function.parameters.go
-#               ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#                ^ source.go meta.function.signature.go meta.function.parameters.go
-#                 ^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                    ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
-#                     ^ source.go meta.function.signature.go meta.function.parameters.go
-#                      ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#                       ^ source.go meta.function.signature.go meta.function.parameters.go
-#                        ^^^^^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                               ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                                ^ source.go meta.function.signature.go
-#                                 ^^^^ source.go meta.function.signature.go support.type.primitive.go
-#                                     ^ source.go meta.function.signature.go
-#                                      ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
-#                                       ^ source.go meta.brace.go
-> 
-> func lorem(a, b string) (string, error) {}
-# ^^^^ source.go meta.function.signature.go storage.type.func.go
-#     ^ source.go meta.function.signature.go
-#      ^^^^^ source.go meta.function.signature.go entity.name.function.go
-#           ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#            ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#             ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
-#              ^ source.go meta.function.signature.go meta.function.parameters.go
-#               ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#                ^ source.go meta.function.signature.go meta.function.parameters.go
-#                 ^^^^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                       ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                        ^ source.go meta.function.signature.go
-#                         ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#                          ^^^^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                                ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
-#                                 ^ source.go meta.function.signature.go meta.function.parameters.go
-#                                  ^^^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                                       ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                                        ^ source.go meta.function.signature.go
-#                                         ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
-#                                          ^ source.go meta.brace.go
-> 
-> func lorem(foo string, bar int, baz ...*lorem.ipsum) Dolor {}
-# ^^^^ source.go meta.function.signature.go storage.type.func.go
-#     ^ source.go meta.function.signature.go
-#      ^^^^^ source.go meta.function.signature.go entity.name.function.go
-#           ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#            ^^^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#               ^ source.go meta.function.signature.go meta.function.parameters.go
-#                ^^^^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                      ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
-#                       ^ source.go meta.function.signature.go meta.function.parameters.go
-#                        ^^^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#                           ^ source.go meta.function.signature.go meta.function.parameters.go
-#                            ^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                               ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
-#                                ^ source.go meta.function.signature.go meta.function.parameters.go
-#                                 ^^^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#                                    ^ source.go meta.function.signature.go meta.function.parameters.go
-#                                     ^^^ source.go meta.function.signature.go meta.function.parameters.go keyword.operator.variadic.go
-#                                        ^ source.go meta.function.signature.go meta.function.parameters.go keyword.operator..go
-#                                         ^^^^^ source.go meta.function.signature.go meta.function.parameters.go entity.name.type.module.go
-#                                              ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.accessor.go
-#                                               ^^^^^ source.go meta.function.signature.go meta.function.parameters.go entity.name.type.go
-#                                                    ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                                                     ^ source.go meta.function.signature.go
-#                                                      ^^^^^ source.go meta.function.signature.go entity.name.type.go
-#                                                           ^ source.go meta.function.signature.go
-#                                                            ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
-#                                                             ^ source.go meta.brace.go
-> 
-> func lorem(foo string, bar int, baz ...*lorem.ipsum) (x bool, err error) {}
-# ^^^^ source.go meta.function.signature.go storage.type.func.go
-#     ^ source.go meta.function.signature.go
-#      ^^^^^ source.go meta.function.signature.go entity.name.function.go
-#           ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#            ^^^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#               ^ source.go meta.function.signature.go meta.function.parameters.go
-#                ^^^^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                      ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
-#                       ^ source.go meta.function.signature.go meta.function.parameters.go
-#                        ^^^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#                           ^ source.go meta.function.signature.go meta.function.parameters.go
-#                            ^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                               ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
-#                                ^ source.go meta.function.signature.go meta.function.parameters.go
-#                                 ^^^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#                                    ^ source.go meta.function.signature.go meta.function.parameters.go
-#                                     ^^^ source.go meta.function.signature.go meta.function.parameters.go keyword.operator.variadic.go
-#                                        ^ source.go meta.function.signature.go meta.function.parameters.go keyword.operator..go
-#                                         ^^^^^ source.go meta.function.signature.go meta.function.parameters.go entity.name.type.module.go
-#                                              ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.accessor.go
-#                                               ^^^^^ source.go meta.function.signature.go meta.function.parameters.go entity.name.type.go
-#                                                    ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                                                     ^ source.go meta.function.signature.go
-#                                                      ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#                                                       ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#                                                        ^ source.go meta.function.signature.go meta.function.parameters.go
-#                                                         ^^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                                                             ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
-#                                                              ^ source.go meta.function.signature.go meta.function.parameters.go
-#                                                               ^^^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#                                                                  ^ source.go meta.function.signature.go meta.function.parameters.go
-#                                                                   ^^^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                                                                        ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                                                                         ^ source.go meta.function.signature.go
-#                                                                          ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
-#                                                                           ^ source.go meta.brace.go
-> 
-> func min(x int, y int) int {}
-# ^^^^ source.go meta.function.signature.go storage.type.func.go
-#     ^ source.go meta.function.signature.go
-#      ^^^ source.go meta.function.signature.go entity.name.function.go
-#         ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#          ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#           ^ source.go meta.function.signature.go meta.function.parameters.go
-#            ^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#               ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
-#                ^ source.go meta.function.signature.go meta.function.parameters.go
-#                 ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#                  ^ source.go meta.function.signature.go meta.function.parameters.go
-#                   ^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                      ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                       ^ source.go meta.function.signature.go
-#                        ^^^ source.go meta.function.signature.go support.type.primitive.go
-#                           ^ source.go meta.function.signature.go
-#                            ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
-#                             ^ source.go meta.brace.go
-> 
-> func (p *Point) Length() float64 {}
-# ^^^^ source.go meta.function.signature.go storage.type.func.go
-#     ^ source.go meta.function.signature.go
-#      ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#       ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#        ^ source.go meta.function.signature.go meta.function.parameters.go
-#         ^ source.go meta.function.signature.go meta.function.parameters.go keyword.operator..go
-#          ^^^^^ source.go meta.function.signature.go meta.function.parameters.go entity.name.type.go
-#               ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                ^ source.go meta.function.signature.go
-#                 ^^^^^^ source.go meta.function.signature.go entity.name.function.go
-#                       ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#                        ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                         ^ source.go meta.function.signature.go
-#                          ^^^^^^^ source.go meta.function.signature.go support.type.primitive.go
-#                                 ^ source.go meta.function.signature.go
-#                                  ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
-#                                   ^ source.go meta.brace.go
-> 
-> func (p *Point) Scale(factor float64) {}
-# ^^^^ source.go meta.function.signature.go storage.type.func.go
-#     ^ source.go meta.function.signature.go
-#      ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#       ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#        ^ source.go meta.function.signature.go meta.function.parameters.go
-#         ^ source.go meta.function.signature.go meta.function.parameters.go keyword.operator..go
-#          ^^^^^ source.go meta.function.signature.go meta.function.parameters.go entity.name.type.go
-#               ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                ^ source.go meta.function.signature.go
-#                 ^^^^^ source.go meta.function.signature.go entity.name.function.go
-#                      ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#                       ^^^^^^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#                             ^ source.go meta.function.signature.go meta.function.parameters.go
-#                              ^^^^^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                                     ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                                      ^ source.go meta.function.signature.go
-#                                       ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
-#                                        ^ source.go meta.brace.go
-> 
-> func(a, b int, z float64) bool {}
-# ^^^^ source.go meta.function.signature.go storage.type.func.go
-#     ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#      ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#       ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
-#        ^ source.go meta.function.signature.go meta.function.parameters.go
-#         ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#          ^ source.go meta.function.signature.go meta.function.parameters.go
-#           ^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#              ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
-#               ^ source.go meta.function.signature.go meta.function.parameters.go
-#                ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#                 ^ source.go meta.function.signature.go meta.function.parameters.go
-#                  ^^^^^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                         ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                          ^ source.go meta.function.signature.go
-#                           ^^^^ source.go meta.function.signature.go support.type.primitive.go
-#                               ^ source.go meta.function.signature.go
-#                                ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
-#                                 ^ source.go meta.brace.go
-> 
-> f := func(x, y int) int {}
-# ^ source.go entity.name.function.go
-#  ^ source.go
-#   ^^ source.go keyword.operator.assignment.go
-#     ^ source.go
-#      ^^^^ source.go meta.function.signature.go storage.type.func.go
-#          ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#           ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#            ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
-#             ^ source.go meta.function.signature.go meta.function.parameters.go
-#              ^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#               ^ source.go meta.function.signature.go meta.function.parameters.go
-#                ^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                   ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                    ^ source.go meta.function.signature.go
-#                     ^^^ source.go meta.function.signature.go support.type.primitive.go
-#                        ^ source.go meta.function.signature.go
-#                         ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
-#                          ^ source.go meta.brace.go
-> 
-> func(ch chan int) { ch <- ACK }(replyChan)
-# ^^^^ source.go meta.function.signature.go storage.type.func.go
-#     ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#      ^^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#        ^ source.go meta.function.signature.go meta.function.parameters.go
-#         ^^^^ source.go meta.function.signature.go meta.function.parameters.go storage.type.chan.go
-#             ^ source.go meta.function.signature.go meta.function.parameters.go
-#              ^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                 ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                  ^ source.go meta.function.signature.go
-#                   ^ source.go meta.function.signature.go punctuation.definition.block.begin.go
-#                    ^ source.go
-#                     ^^ source.go variable.other.go
-#                       ^ source.go
-#                        ^ source.go keyword.operator.comparison.<.go
-#                         ^ source.go keyword.operator.arithmetic.-.go
-#                          ^ source.go
-#                           ^^^ source.go variable.other.go
-#                              ^ source.go
-#                               ^ source.go meta.brace.go
-#                                ^ source.go meta.brace.go
-#                                 ^^^^^^^^^ source.go variable.other.go
-#                                          ^ source.go meta.brace.go
-> 
-> func flushICache(begin, end uintptr) // implemented externally
-# ^^^^ source.go meta.function.signature.go storage.type.func.go
-#     ^ source.go meta.function.signature.go
-#      ^^^^^^^^^^^ source.go meta.function.signature.go entity.name.function.go
-#                 ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.begin.go
-#                  ^^^^^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#                       ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.separator.comma.go
-#                        ^ source.go meta.function.signature.go meta.function.parameters.go
-#                         ^^^ source.go meta.function.signature.go meta.function.parameters.go variable.other.go
-#                            ^ source.go meta.function.signature.go meta.function.parameters.go
-#                             ^^^^^^^ source.go meta.function.signature.go meta.function.parameters.go support.type.primitive.go
-#                                    ^ source.go meta.function.signature.go meta.function.parameters.go punctuation.definition.parameters.end.go
-#                                     ^ source.go meta.function.signature.go
-#                                      ^^ source.go comment.line.go punctuation.definition.comment.line.go
-#                                        ^^^^^^^^^^^^^^^^^^^^^^^ source.go comment.line.go
-> 
+-> func lorem() {}
+ | ^^^^ storage.type.func.go
+ |      ^^^^^ entity.name.function.go
+ |           ^ punctuation.definition.parameters.begin.go
+ |            ^ punctuation.definition.parameters.end.go
+ |              ^ punctuation.definition.block.begin.go
+-> 
+-> func lorem(x int) int {}
+ | ^^^^ storage.type.func.go
+ |      ^^^^^ entity.name.function.go
+ |           ^ punctuation.definition.parameters.begin.go
+ |            ^ variable.other.go
+ |              ^^^ support.type.primitive.go
+ |                 ^ punctuation.definition.parameters.end.go
+ |                   ^^^ support.type.primitive.go
+ |                       ^ punctuation.definition.block.begin.go
+-> 
+-> func lorem(a, b int, z float32) bool {}
+ | ^^^^ storage.type.func.go
+ |      ^^^^^ entity.name.function.go
+ |           ^ punctuation.definition.parameters.begin.go
+ |            ^ variable.other.go
+ |             ^ punctuation.separator.comma.go
+ |               ^ variable.other.go
+ |                 ^^^ support.type.primitive.go
+ |                    ^ punctuation.separator.comma.go
+ |                      ^ variable.other.go
+ |                        ^^^^^^^ support.type.primitive.go
+ |                               ^ punctuation.definition.parameters.end.go
+ |                                 ^^^^ support.type.primitive.go
+ |                                      ^ punctuation.definition.block.begin.go
+-> 
+-> func lorem(a, b string) (string, error) {}
+ | ^^^^ storage.type.func.go
+ |      ^^^^^ entity.name.function.go
+ |           ^ punctuation.definition.parameters.begin.go
+ |            ^ variable.other.go
+ |             ^ punctuation.separator.comma.go
+ |               ^ variable.other.go
+ |                 ^^^^^^ support.type.primitive.go
+ |                       ^ punctuation.definition.parameters.end.go
+ |                         ^ punctuation.definition.parameters.begin.go
+ |                          ^^^^^^ support.type.primitive.go
+ |                                ^ punctuation.separator.comma.go
+ |                                  ^^^^^ support.type.primitive.go
+ |                                       ^ punctuation.definition.parameters.end.go
+ |                                         ^ punctuation.definition.block.begin.go
+-> 
+-> func lorem(foo string, bar int, baz ...*lorem.ipsum) Dolor {}
+ | ^^^^ storage.type.func.go
+ |      ^^^^^ entity.name.function.go
+ |           ^ punctuation.definition.parameters.begin.go
+ |            ^^^ variable.other.go
+ |                ^^^^^^ support.type.primitive.go
+ |                      ^ punctuation.separator.comma.go
+ |                        ^^^ variable.other.go
+ |                            ^^^ support.type.primitive.go
+ |                               ^ punctuation.separator.comma.go
+ |                                 ^^^ variable.other.go
+ |                                     ^^^ keyword.operator.variadic.go
+ |                                        ^ keyword.operator..go
+ |                                         ^^^^^ entity.name.type.module.go
+ |                                              ^ punctuation.accessor.go
+ |                                               ^^^^^ entity.name.type.go
+ |                                                    ^ punctuation.definition.parameters.end.go
+ |                                                      ^^^^^ entity.name.type.go
+ |                                                            ^ punctuation.definition.block.begin.go
+-> 
+-> func lorem(foo string, bar int, baz ...*lorem.ipsum) (x bool, err error) {}
+ | ^^^^ storage.type.func.go
+ |      ^^^^^ entity.name.function.go
+ |           ^ punctuation.definition.parameters.begin.go
+ |            ^^^ variable.other.go
+ |                ^^^^^^ support.type.primitive.go
+ |                      ^ punctuation.separator.comma.go
+ |                        ^^^ variable.other.go
+ |                            ^^^ support.type.primitive.go
+ |                               ^ punctuation.separator.comma.go
+ |                                 ^^^ variable.other.go
+ |                                     ^^^ keyword.operator.variadic.go
+ |                                        ^ keyword.operator..go
+ |                                         ^^^^^ entity.name.type.module.go
+ |                                              ^ punctuation.accessor.go
+ |                                               ^^^^^ entity.name.type.go
+ |                                                    ^ punctuation.definition.parameters.end.go
+ |                                                      ^ punctuation.definition.parameters.begin.go
+ |                                                       ^ variable.other.go
+ |                                                         ^^^^ support.type.primitive.go
+ |                                                             ^ punctuation.separator.comma.go
+ |                                                               ^^^ variable.other.go
+ |                                                                   ^^^^^ support.type.primitive.go
+ |                                                                        ^ punctuation.definition.parameters.end.go
+ |                                                                          ^ punctuation.definition.block.begin.go
+-> 
+-> func min(x int, y int) int {}
+ | ^^^^ storage.type.func.go
+ |      ^^^ entity.name.function.go
+ |         ^ punctuation.definition.parameters.begin.go
+ |          ^ variable.other.go
+ |            ^^^ support.type.primitive.go
+ |               ^ punctuation.separator.comma.go
+ |                 ^ variable.other.go
+ |                   ^^^ support.type.primitive.go
+ |                      ^ punctuation.definition.parameters.end.go
+ |                        ^^^ support.type.primitive.go
+ |                            ^ punctuation.definition.block.begin.go
+-> 
+-> func (p *Point) Length() float64 {}
+ | ^^^^ storage.type.func.go
+ |      ^ punctuation.definition.parameters.begin.go
+ |       ^ variable.other.go
+ |         ^ keyword.operator..go
+ |          ^^^^^ entity.name.type.go
+ |               ^ punctuation.definition.parameters.end.go
+ |                 ^^^^^^ entity.name.function.go
+ |                       ^ punctuation.definition.parameters.begin.go
+ |                        ^ punctuation.definition.parameters.end.go
+ |                          ^^^^^^^ support.type.primitive.go
+ |                                  ^ punctuation.definition.block.begin.go
+-> 
+-> func (p *Point) Scale(factor float64) {}
+ | ^^^^ storage.type.func.go
+ |      ^ punctuation.definition.parameters.begin.go
+ |       ^ variable.other.go
+ |         ^ keyword.operator..go
+ |          ^^^^^ entity.name.type.go
+ |               ^ punctuation.definition.parameters.end.go
+ |                 ^^^^^ entity.name.function.go
+ |                      ^ punctuation.definition.parameters.begin.go
+ |                       ^^^^^^ variable.other.go
+ |                              ^^^^^^^ support.type.primitive.go
+ |                                     ^ punctuation.definition.parameters.end.go
+ |                                       ^ punctuation.definition.block.begin.go
+-> 
+-> func(a, b int, z float64) bool {}
+ | ^^^^ storage.type.func.go
+ |     ^ punctuation.definition.parameters.begin.go
+ |      ^ variable.other.go
+ |       ^ punctuation.separator.comma.go
+ |         ^ variable.other.go
+ |           ^^^ support.type.primitive.go
+ |              ^ punctuation.separator.comma.go
+ |                ^ variable.other.go
+ |                  ^^^^^^^ support.type.primitive.go
+ |                         ^ punctuation.definition.parameters.end.go
+ |                           ^^^^ support.type.primitive.go
+ |                                ^ punctuation.definition.block.begin.go
+-> 
+-> f := func(x, y int) int {}
+ | ^ entity.name.function.go
+ |   ^^ keyword.operator.assignment.go
+ |      ^^^^ storage.type.func.go
+ |          ^ punctuation.definition.parameters.begin.go
+ |           ^ variable.other.go
+ |            ^ punctuation.separator.comma.go
+ |              ^ variable.other.go
+ |                ^^^ support.type.primitive.go
+ |                   ^ punctuation.definition.parameters.end.go
+ |                     ^^^ support.type.primitive.go
+ |                         ^ punctuation.definition.block.begin.go
+-> 
+-> func(ch chan int) { ch <- ACK }(replyChan)
+ | ^^^^ storage.type.func.go
+ |     ^ punctuation.definition.parameters.begin.go
+ |      ^^ variable.other.go
+ |         ^^^^ storage.type.chan.go
+ |              ^^^ support.type.primitive.go
+ |                 ^ punctuation.definition.parameters.end.go
+ |                   ^ punctuation.definition.block.begin.go
+ |                     ^^ variable.other.go
+ |                        ^ keyword.operator.comparison.<.go
+ |                         ^ keyword.operator.arithmetic.-.go
+ |                           ^^^ variable.other.go
+ |                                 ^^^^^^^^^ variable.other.go
+-> 
+-> func flushICache(begin, end uintptr) // implemented externally
+ | ^^^^ storage.type.func.go
+ |      ^^^^^^^^^^^ entity.name.function.go
+ |                 ^ punctuation.definition.parameters.begin.go
+ |                  ^^^^^ variable.other.go
+ |                       ^ punctuation.separator.comma.go
+ |                         ^^^ variable.other.go
+ |                             ^^^^^^^ support.type.primitive.go
+ |                                    ^ punctuation.definition.parameters.end.go
+ |                                      ^^ punctuation.definition.comment.line.go  comment.line.go
+ |                                        ^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+-> 
 `;

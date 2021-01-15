@@ -2,14 +2,14 @@
 
 exports[`comments should work 1`] = `
 
-> // This is a line comment
-# ^^ source.go comment.line.go punctuation.definition.comment.line.go
-#   ^^^^^^^^^^^^^^^^^^^^^^^ source.go comment.line.go
-> /*
-# ^^ source.go comment.block.go punctuation.definition.comment.block.begin.go
-> This is a block comment
-# ^^^^^^^^^^^^^^^^^^^^^^^^ source.go comment.block.go
-> */
-# ^^ source.go comment.block.go punctuation.definition.comment.block.end.go
-> 
+-> // This is a line comment
+ | ^^ punctuation.definition.comment.line.go  comment.line.go
+ |   ^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+-> /*
+ | ^^ punctuation.definition.comment.block.begin.go  comment.block.go
+-> This is a block comment
+ | ^^^^^^^^^^^^^^^^^^^^^^^^ comment.block.go
+-> */
+ | ^^ punctuation.definition.comment.block.end.go  comment.block.go
+-> 
 `;
