@@ -172,8 +172,7 @@ exports[`func should work 1`] = `
  |                 ^ punctuation.definition.parameters.end.go
  |                   ^ punctuation.definition.block.begin.go
  |                     ^^ variable.other.go
- |                        ^ keyword.operator.comparison.<.go
- |                         ^ keyword.operator.arithmetic.-.go
+ |                        ^^ keyword.operator.arrow.go
  |                           ^^^ variable.other.go
  |                                 ^^^^^^^^^ variable.other.go
 -> 

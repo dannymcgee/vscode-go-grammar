@@ -3,13 +3,17 @@ import { TMGrammarScope } from '../types';
 export const operators: TMGrammarScope = {
 	patterns: [
 		{
-			match: /([-+*\/%]=?)/,
+			match: /<-/,
+			name: 'keyword.operator.arrow.go',
+		},
+		{
+			match: /(--|\+\+)/,
 			captures: {
 				1: { name: 'keyword.operator.arithmetic.$1.go' },
 			},
 		},
 		{
-			match: /(--|\+\+)/,
+			match: /([-+*\/%]=?)/,
 			captures: {
 				1: { name: 'keyword.operator.arithmetic.$1.go' },
 			},
