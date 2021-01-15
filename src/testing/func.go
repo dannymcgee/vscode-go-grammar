@@ -1,26 +1,25 @@
-func min(x int, y int) int {
-	if x < y {
-		return x
-	}
-	return y
-}
+func lorem() {}
 
-func (p *Point) Length() float64 {
-	return math.Sqrt(p.x * p.x + p.y * p.y)
-}
+func lorem(x int) int {}
 
-func (p *Point) Scale(factor float64) {
-	p.x *= factor
-	p.y *= factor
-}
+func lorem(a, b int, z float32) bool {}
 
-func(a, b int, z float64) bool { return a*b < int(z) }
+func lorem(a, b string) (string, error) {}
 
-// FIXME: f should be entity.name.function
-f := func(x, y int) int { return x + y }
+func lorem(foo string, bar int, baz ...*lorem.ipsum) Dolor {}
 
-// FIXME: chan should be keyword (I think?)
+func lorem(foo string, bar int, baz ...*lorem.ipsum) (x bool, err error) {}
+
+func min(x int, y int) int {}
+
+func (p *Point) Length() float64 {}
+
+func (p *Point) Scale(factor float64) {}
+
+func(a, b int, z float64) bool {}
+
+f := func(x, y int) int {}
+
 func(ch chan int) { ch <- ACK }(replyChan)
 
-// FIXME: rule is expecting a block, so not terminating correctly
 func flushICache(begin, end uintptr) // implemented externally

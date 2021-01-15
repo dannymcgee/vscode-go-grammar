@@ -53,35 +53,39 @@ export const structInitBody: TMGrammarScope = {
 };
 
 const ident = /[_a-zA-Z][_a-zA-Z0-9]*/;
-const ptr = /[&*]/;
 const slice = /(\[)([0-9]*)(\])/;
 const primType = /\b((?:(?:u?int|float|complex)(?:\d{1,3}|ptr))|byte|int|string|bool|error)\b/;
 const namedType = regex`/(?:(${ident})(\\.))?(${ident})/`;
+const optionals = regex`/(?:(chan)\\s+)?(\\.\\.\\.)?(?:${slice})?([&*]*)/`;
 
 export const identifier: TMGrammarScope = {
 	patterns: [
 		{
-			match: regex`/(${ident})\\s+(?:${slice})?(${ptr}*)${primType}/`,
+			match: regex`/(${ident})\\s+${optionals}${primType}/`,
 			captures: {
 				1: { name: 'variable.other.go' },
-				2: { name: 'punctuation.brace.square.go' },
-				3: { name: 'constant.numeric.integer.go' },
+				2: { name: 'storage.type.chan.go' },
+				3: { name: 'keyword.operator.variadic.go' },
 				4: { name: 'punctuation.brace.square.go' },
-				5: { name: 'keyword.operator.$5.go' },
-				6: { name: 'support.type.primitive.go' },
+				5: { name: 'constant.numeric.integer.go' },
+				6: { name: 'punctuation.brace.square.go' },
+				7: { name: 'keyword.operator.$5.go' },
+				8: { name: 'support.type.primitive.go' },
 			},
 		},
 		{
-			match: regex`/(${ident})\\s+(?:${slice})?(${ptr}*)${namedType}/`,
+			match: regex`/(${ident})\\s+${optionals}${namedType}/`,
 			captures: {
 				1: { name: 'variable.other.go' },
-				2: { name: 'punctuation.brace.square.go' },
-				3: { name: 'constant.numeric.integer.go' },
+				2: { name: 'storage.type.chan.go' },
+				3: { name: 'keyword.operator.variadic.go' },
 				4: { name: 'punctuation.brace.square.go' },
-				5: { name: 'keyword.operator.$5.go' },
-				6: { name: 'entity.name.type.module.go' },
-				7: { name: 'punctuation.accessor.go' },
-				8: { name: 'entity.name.type.go' },
+				5: { name: 'constant.numeric.integer.go' },
+				6: { name: 'punctuation.brace.square.go' },
+				7: { name: 'keyword.operator.$5.go' },
+				8: { name: 'entity.name.type.module.go' },
+				9: { name: 'punctuation.accessor.go' },
+				10: { name: 'entity.name.type.go' },
 			},
 		},
 		{
