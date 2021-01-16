@@ -59,7 +59,6 @@ exports[`expression should work 1`] = `
  |           ^^^^^ entity.name.type.module.go
  |                ^ punctuation.accessor.go
  |                 ^^^^^ entity.name.type.struct.go
- |                      ^ punctuation.definition.struct.begin.go
  |                       ^ variable.field.go
  |                        ^ punctuation.separator.key-value.go
  |                          ^^^ variable.other.go
@@ -71,7 +70,6 @@ exports[`expression should work 1`] = `
  |                                       ^ variable.field.go
  |                                        ^ punctuation.separator.key-value.go
  |                                          ^^^ variable.other.go
- |                                             ^ punctuation.definition.struct.end.go
 -> 
 -> foo, bar := lorem.Ipsum{
  | ^^^ variable.other.go
@@ -82,7 +80,6 @@ exports[`expression should work 1`] = `
  |             ^^^^^ entity.name.type.module.go
  |                  ^ punctuation.accessor.go
  |                   ^^^^^ entity.name.type.struct.go
- |                        ^ punctuation.definition.struct.begin.go
 ->     a: buf,
  |     ^ variable.field.go
  |      ^ punctuation.separator.key-value.go
@@ -114,13 +111,32 @@ exports[`expression should work 1`] = `
  |         ^^ punctuation.definition.comment.line.go  comment.line.go
  |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
 ->     },
- |     ^ punctuation.definition.struct.end.go
  |      ^ punctuation.separator.comma.go
-->     e: 12345,
- |     ^ variable.other.go
- |      ^ punctuation.separator.key-value.go
- |        ^^^^^ constant.numeric.integer.go
- |             ^ punctuation.separator.comma.go
+->     more: 12345,
+ |     ^^^^ variable.field.go
+ |         ^ punctuation.separator.key-value.go
+ |           ^^^^^ constant.numeric.integer.go
+ |                ^ punctuation.separator.comma.go
+->     fields: "foo",
+ |     ^^^^^^ variable.field.go
+ |           ^ punctuation.separator.key-value.go
+ |             ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |              ^^^ string.interpreted.go
+ |                 ^ punctuation.definition.string.end.go  string.interpreted.go
+ |                  ^ punctuation.separator.comma.go
+->     after: func() bool,
+ |     ^^^^^ variable.field.go
+ |          ^ punctuation.separator.key-value.go
+ |            ^^^^ storage.type.func.go
+ |                ^ punctuation.definition.parameters.begin.go
+ |                 ^ punctuation.definition.parameters.end.go
+ |                   ^^^^ support.type.primitive.go
+->     fn: "baz"
+ |     ^^ variable.field.go
+ |       ^ punctuation.separator.key-value.go
+ |         ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |          ^^^ string.interpreted.go
+ |             ^ punctuation.definition.string.end.go  string.interpreted.go
 -> }
 -> 
 `;

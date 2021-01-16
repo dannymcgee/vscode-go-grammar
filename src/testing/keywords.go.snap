@@ -108,14 +108,14 @@ exports[`keywords should work 1`] = `
  | ^^^^ keyword.control.case.go
  |      ^ variable.other.go
  |        ^ keyword.operator.comparison.<.go
- |          ^ variable.other.go
+ |          ^ variable.field.go
  |           ^ punctuation.separator.key-value.go
  |             ^^ entity.name.function.go
 -> case x < z: f2()
  | ^^^^ keyword.control.case.go
  |      ^ variable.other.go
  |        ^ keyword.operator.comparison.<.go
- |          ^ variable.other.go
+ |          ^ variable.field.go
  |           ^ punctuation.separator.key-value.go
  |             ^^ entity.name.function.go
 -> case x == 4: f3()

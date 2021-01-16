@@ -15,5 +15,8 @@ foo, bar := lorem.Ipsum{
 	d: func(foo, bar string) bool {
 		// Lorem ipsum dolor sit amet
 	},
-	e: 12345,
+	more: 12345,
+	fields: "foo",
+	after: func() bool,
+	fn: "baz"
 }
