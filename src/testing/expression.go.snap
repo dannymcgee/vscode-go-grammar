@@ -83,22 +83,44 @@ exports[`expression should work 1`] = `
  |                  ^ punctuation.accessor.go
  |                   ^^^^^ entity.name.type.struct.go
  |                        ^ punctuation.definition.struct.begin.go
--> 	a: buf,
- |  ^ variable.field.go
- |   ^ punctuation.separator.key-value.go
- |     ^^^ variable.other.go
- |        ^ punctuation.separator.comma.go
--> 	b: foo,
- |  ^ variable.field.go
- |   ^ punctuation.separator.key-value.go
- |     ^^^ variable.other.go
- |        ^ punctuation.separator.comma.go
--> 	c: bar,
- |  ^ variable.field.go
- |   ^ punctuation.separator.key-value.go
- |     ^^^ variable.other.go
- |        ^ punctuation.separator.comma.go
+->     a: buf,
+ |     ^ variable.field.go
+ |      ^ punctuation.separator.key-value.go
+ |        ^^^ variable.other.go
+ |           ^ punctuation.separator.comma.go
+->     b: foo,
+ |     ^ variable.field.go
+ |      ^ punctuation.separator.key-value.go
+ |        ^^^ variable.other.go
+ |           ^ punctuation.separator.comma.go
+->     c: bar,
+ |     ^ variable.field.go
+ |      ^ punctuation.separator.key-value.go
+ |        ^^^ variable.other.go
+ |           ^ punctuation.separator.comma.go
+->     d: func(foo, bar string) bool {
+ |     ^ variable.field.go
+ |      ^ punctuation.separator.key-value.go
+ |        ^^^^ storage.type.func.go
+ |            ^ punctuation.definition.parameters.begin.go
+ |             ^^^ variable.other.go
+ |                ^ punctuation.separator.comma.go
+ |                  ^^^ variable.other.go
+ |                      ^^^^^^ support.type.primitive.go
+ |                            ^ punctuation.definition.parameters.end.go
+ |                              ^^^^ support.type.primitive.go
+ |                                   ^ punctuation.definition.block.begin.go
+->         // Lorem ipsum dolor sit amet
+ |         ^^ punctuation.definition.comment.line.go  comment.line.go
+ |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+->     },
+ |     ^ punctuation.definition.struct.end.go
+ |      ^ punctuation.separator.comma.go
+->     e: 12345,
+ |     ^ variable.other.go
+ |      ^ punctuation.separator.key-value.go
+ |        ^^^^^ constant.numeric.integer.go
+ |             ^ punctuation.separator.comma.go
 -> }
- | ^ punctuation.definition.struct.end.go
 -> 
 `;

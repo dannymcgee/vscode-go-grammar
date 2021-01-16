@@ -1,5 +1,5 @@
 export function regex(strings: TemplateStringsArray, ...values: RegExp[]) {
-	let src: string = strings.reduce((accum, curr) => {
+	let src: string = strings.raw.reduce((accum, curr) => {
 		accum += curr;
 		accum += values.shift()?.source ?? '';
 

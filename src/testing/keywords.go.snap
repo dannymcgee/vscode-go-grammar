@@ -13,10 +13,10 @@ exports[`keywords should work 1`] = `
  |    ^ variable.other.go
  |      ^ keyword.operator.comparison.>.go
  |        ^^^ variable.other.go
--> 	x = max
- |  ^ variable.other.go
- |    ^ keyword.operator.assignment.go
- |      ^^^ variable.other.go
+->     x = max
+ |     ^ variable.other.go
+ |       ^ keyword.operator.assignment.go
+ |         ^^^ variable.other.go
 -> }
 -> 
 -> if x := f(); x < y {
@@ -29,23 +29,23 @@ exports[`keywords should work 1`] = `
  |              ^ variable.other.go
  |                ^ keyword.operator.comparison.<.go
  |                  ^ variable.other.go
--> 	return x
- |  ^^^^^^ keyword.control.return.go
- |         ^ variable.other.go
+->     return x
+ |     ^^^^^^ keyword.control.return.go
+ |            ^ variable.other.go
 -> } else if x > z {
  |   ^^^^ keyword.control.else.go
  |        ^^ keyword.control.if.go
  |           ^ variable.other.go
  |             ^ keyword.operator.comparison.>.go
  |               ^ variable.other.go
--> 	return z
- |  ^^^^^^ keyword.control.return.go
- |         ^ variable.other.go
+->     return z
+ |     ^^^^^^ keyword.control.return.go
+ |            ^ variable.other.go
 -> } else {
  |   ^^^^ keyword.control.else.go
--> 	return y
- |  ^^^^^^ keyword.control.return.go
- |         ^ variable.other.go
+->     return y
+ |     ^^^^^^ keyword.control.return.go
+ |            ^ variable.other.go
 -> }
 -> 
 -> switch tag {
@@ -132,10 +132,10 @@ exports[`keywords should work 1`] = `
  |     ^ variable.other.go
  |       ^ keyword.operator.comparison.<.go
  |         ^ variable.other.go
--> 	a *= 2
- |  ^ variable.other.go
- |    ^^ keyword.operator.arithmetic.*=.go
- |       ^ constant.numeric.integer.go
+->     a *= 2
+ |     ^ variable.other.go
+ |       ^^ keyword.operator.arithmetic.*=.go
+ |          ^ constant.numeric.integer.go
 -> }
 -> 
 -> for i := 0; i < 10; i++ {}
@@ -210,11 +210,11 @@ exports[`keywords should work 1`] = `
  |              ^ keyword.operator.assignment.go
  |                ^^^^^ keyword.operator.expression.range.go
  |                      ^ variable.other.go
--> 	h(key, val)
- |  ^ entity.name.function.go
- |    ^^^ variable.other.go
- |       ^ punctuation.separator.comma.go
- |         ^^^ variable.other.go
+->     h(key, val)
+ |     ^ entity.name.function.go
+ |       ^^^ variable.other.go
+ |          ^ punctuation.separator.comma.go
+ |            ^^^ variable.other.go
 -> }
 -> 
 -> var ch chan Work = producer()
@@ -231,9 +231,9 @@ exports[`keywords should work 1`] = `
  |        ^ keyword.operator.assignment.go
  |          ^^^^^ keyword.operator.expression.range.go
  |                ^^ variable.other.go
--> 	doWork(w)
- |  ^^^^^^ entity.name.function.go
- |         ^ variable.other.go
+->     doWork(w)
+ |     ^^^^^^ entity.name.function.go
+ |            ^ variable.other.go
 -> }
 -> 
 -> // empty a channel

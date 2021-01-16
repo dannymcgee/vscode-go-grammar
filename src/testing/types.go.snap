@@ -1,0 +1,589 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`types should work 1`] = `
+
+-> var x uint8
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^^ support.type.primitive.go
+-> var x uint16
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^^^ support.type.primitive.go
+-> var x uint32
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^^^ support.type.primitive.go
+-> var x uint64
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^^^ support.type.primitive.go
+-> 
+-> var x int8
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^ support.type.primitive.go
+-> var x int16
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^^ support.type.primitive.go
+-> var x int32
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^^ support.type.primitive.go
+-> var x int64
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^^ support.type.primitive.go
+-> 
+-> var x float32
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^^^^ support.type.primitive.go
+-> var x float64
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^^^^ support.type.primitive.go
+-> 
+-> var x complex64
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^^^^^^ support.type.primitive.go
+-> var x complex128
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^^^^^^^ support.type.primitive.go
+-> 
+-> var x byte
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^ support.type.primitive.go
+-> var x rune
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^ support.type.primitive.go
+-> 
+-> var x uint
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^ support.type.primitive.go
+-> var x int
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^ support.type.primitive.go
+-> var x uintptr
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^^^^ support.type.primitive.go
+-> 
+-> var arr [32]byte
+ | ^^^ storage.type.var.go
+ |     ^^^ variable.other.go
+ |         ^ punctuation.brace.square.go
+ |          ^^ constant.numeric.integer.go
+ |            ^ punctuation.brace.square.go
+ |             ^^^^ support.type.primitive.go
+-> var arr [1000]*float64
+ | ^^^ storage.type.var.go
+ |     ^^^ variable.other.go
+ |         ^ punctuation.brace.square.go
+ |          ^^^^ constant.numeric.integer.go
+ |              ^ punctuation.brace.square.go
+ |               ^ keyword.operator..go
+ |                ^^^^^^^ support.type.primitive.go
+-> var arr [3][5]int
+ | ^^^ storage.type.var.go
+ |     ^^^ variable.other.go
+ |          ^ constant.numeric.integer.go
+ |             ^ constant.numeric.integer.go
+ |               ^^^ support.type.primitive.go
+-> var arr [2][2][2]float64
+ | ^^^ storage.type.var.go
+ |     ^^^ variable.other.go
+ |          ^ constant.numeric.integer.go
+ |             ^ constant.numeric.integer.go
+ |                ^ constant.numeric.integer.go
+ |                  ^^^^^^^ support.type.primitive.go
+-> var arr [2]([2]([2]float64))
+ | ^^^ storage.type.var.go
+ |     ^^^ variable.other.go
+ |          ^ constant.numeric.integer.go
+ |              ^ constant.numeric.integer.go
+ |                  ^ constant.numeric.integer.go
+ |                    ^^^^^^^ support.type.primitive.go
+-> 
+-> make([]int, 50, 100)
+ | ^^^^ entity.name.function.go
+ |        ^^^ support.type.primitive.go
+ |           ^ punctuation.separator.comma.go
+ |             ^^ constant.numeric.integer.go
+ |               ^ punctuation.separator.comma.go
+ |                 ^^^ constant.numeric.integer.go
+-> new([100]int)[0:50]
+ | ^^^ entity.name.function.go
+ |      ^^^ constant.numeric.integer.go
+ |          ^^^ support.type.primitive.go
+ |               ^ constant.numeric.integer.go
+ |                ^ punctuation.separator.key-value.go
+ |                 ^^ constant.numeric.integer.go
+-> 
+-> var s [2*N] struct { x, y int32 }
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |        ^ constant.numeric.integer.go
+ |         ^ keyword.operator.arithmetic.*.go
+ |          ^ variable.other.go
+ |             ^^^^^^ storage.type.struct.go
+ |                    ^ punctuation.definition.block.begin.go
+ |                      ^ variable.field.go
+ |                       ^ punctuation.separator.comma.go
+ |                         ^ variable.field.go
+ |                           ^^^^^ support.type.primitive.go
+ |                                 ^ punctuation.definition.block.end.go
+-> 
+-> struct {}
+ | ^^^^^^ storage.type.struct.go
+ |        ^ punctuation.definition.block.begin.go
+ |         ^ punctuation.definition.block.end.go
+-> 
+-> struct {
+ | ^^^^^^ storage.type.struct.go
+ |        ^ punctuation.definition.block.begin.go
+->     x, y int
+ |     ^ variable.field.go
+ |      ^ punctuation.separator.comma.go
+ |        ^ variable.field.go
+ |          ^^^ support.type.primitive.go
+->     u float32
+ |     ^ variable.field.go
+ |       ^^^^^^^ support.type.primitive.go
+->     _ float32
+ |     ^ variable.field.go
+ |       ^^^^^^^ support.type.primitive.go
+->     A *[]int
+ |     ^ variable.field.go
+ |       ^ keyword.operator.pointer.go
+ |        ^ punctuation.brace.square.go
+ |         ^ punctuation.brace.square.go
+ |          ^^^ support.type.primitive.go
+->     F func()
+ |     ^ variable.field.go
+ |       ^^^^ support.type.primitive.go
+-> }
+ | ^ punctuation.definition.block.end.go
+-> 
+-> struct {
+ | ^^^^^^ storage.type.struct.go
+ |        ^ punctuation.definition.block.begin.go
+->     x, y float64 ""  // an empty tag string is like an absent tag
+ |     ^ variable.field.go
+ |      ^ punctuation.separator.comma.go
+ |        ^ variable.field.go
+ |          ^^^^^^^ support.type.primitive.go
+ |                  ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |                   ^ punctuation.definition.string.end.go  string.interpreted.go
+ |                      ^^ punctuation.definition.comment.line.go  comment.line.go
+ |                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+->     name string  "any string is permitted as a tag"
+ |     ^^^^ variable.field.go
+ |          ^^^^^^ support.type.primitive.go
+ |                  ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.interpreted.go
+ |                                                   ^ punctuation.definition.string.end.go  string.interpreted.go
+->     _    [4]byte "ceci n'est pas un champ de structure"
+ |     ^ variable.field.go
+ |          ^ punctuation.brace.square.go
+ |           ^ constant.numeric.integer.go
+ |            ^ punctuation.brace.square.go
+ |             ^^^^ support.type.primitive.go
+ |                  ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ string.interpreted.go
+ |                                                       ^ punctuation.definition.string.end.go  string.interpreted.go
+-> }
+ | ^ punctuation.definition.block.end.go
+-> 
+-> struct {
+ | ^^^^^^ storage.type.struct.go
+ |        ^ punctuation.definition.block.begin.go
+->     microsec  uint64 \`protobuf:"1"\`
+ |     ^^^^^^^^ variable.field.go
+ |               ^^^^^^ support.type.primitive.go
+ |                      ^ punctuation.definition.string.begin.go  string.raw.go
+ |                       ^^^^^^^^^^^^ string.raw.go
+ |                                   ^ punctuation.definition.string.end.go  string.raw.go
+->     serverIP6 uint64 \`protobuf:"2"\`
+ |     ^^^^^^^^^ variable.field.go
+ |               ^^^^^^ support.type.primitive.go
+ |                      ^ punctuation.definition.string.begin.go  string.raw.go
+ |                       ^^^^^^^^^^^^ string.raw.go
+ |                                   ^ punctuation.definition.string.end.go  string.raw.go
+-> }
+ | ^ punctuation.definition.block.end.go
+-> 
+-> var foo *Point
+ | ^^^ storage.type.var.go
+ |     ^^^ variable.other.go
+ |         ^ keyword.operator..go
+ |          ^^^^^ entity.name.type.go
+-> var foo *[4]int
+ | ^^^ storage.type.var.go
+ |     ^^^ variable.other.go
+ |         ^ keyword.operator.arithmetic.*.go
+ |           ^ constant.numeric.integer.go
+ |             ^^^ support.type.primitive.go
+-> 
+-> var f func()
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^ support.type.primitive.go
+-> var f func(x int) int
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^ support.type.primitive.go
+ |            ^ variable.other.go
+ |              ^^^ support.type.primitive.go
+ |                   ^^^ support.type.primitive.go
+-> var f func(a, _ int, z float32) bool
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^ support.type.primitive.go
+ |            ^ variable.other.go
+ |             ^ punctuation.separator.comma.go
+ |               ^ variable.other.go
+ |                 ^^^ support.type.primitive.go
+ |                    ^ punctuation.separator.comma.go
+ |                      ^ variable.other.go
+ |                        ^^^^^^^ support.type.primitive.go
+ |                                 ^^^^ support.type.primitive.go
+-> var f func(a, b int, z float32) (bool)
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^ support.type.primitive.go
+ |            ^ variable.other.go
+ |             ^ punctuation.separator.comma.go
+ |               ^ variable.other.go
+ |                 ^^^ support.type.primitive.go
+ |                    ^ punctuation.separator.comma.go
+ |                      ^ variable.other.go
+ |                        ^^^^^^^ support.type.primitive.go
+ |                                  ^^^^ support.type.primitive.go
+-> var f func(prefix string, values ...int)
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^ support.type.primitive.go
+ |            ^^^^^^ variable.other.go
+ |                   ^^^^^^ support.type.primitive.go
+ |                         ^ punctuation.separator.comma.go
+ |                           ^^^^^^ variable.other.go
+ |                                  ^^^ keyword.operator.variadic.go
+ |                                     ^^^ support.type.primitive.go
+-> var f func(a, b int, z float64, opt ...interface{}) (success bool)
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^ support.type.primitive.go
+ |            ^ variable.other.go
+ |             ^ punctuation.separator.comma.go
+ |               ^ variable.other.go
+ |                 ^^^ support.type.primitive.go
+ |                    ^ punctuation.separator.comma.go
+ |                      ^ variable.other.go
+ |                        ^^^^^^^ support.type.primitive.go
+ |                               ^ punctuation.separator.comma.go
+ |                                 ^^^ variable.other.go
+ |                                     ^^^ keyword.operator.variadic.go
+ |                                        ^^^^^^^^^ storage.type.interface.go
+ |                                                      ^^^^^^^ variable.other.go
+ |                                                              ^^^^ support.type.primitive.go
+-> var f func(int, int, float64) (float64, *[]int)
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^ support.type.primitive.go
+ |            ^^^ support.type.primitive.go
+ |               ^ punctuation.separator.comma.go
+ |                 ^^^ support.type.primitive.go
+ |                    ^ punctuation.separator.comma.go
+ |                      ^^^^^^^ support.type.primitive.go
+ |                                ^^^^^^^ support.type.primitive.go
+ |                                       ^ punctuation.separator.comma.go
+ |                                         ^ keyword.operator.arithmetic.*.go
+ |                                            ^^^ support.type.primitive.go
+-> var f func(n int) func(p *T)
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^^ support.type.primitive.go
+ |            ^ variable.other.go
+ |              ^^^ support.type.primitive.go
+ |                   ^^^^ storage.type.func.go
+ |                       ^ punctuation.definition.parameters.begin.go
+ |                        ^ variable.other.go
+ |                          ^ keyword.operator..go
+ |                           ^ entity.name.type.go
+ |                            ^ punctuation.definition.parameters.end.go
+-> 
+-> interface {
+ | ^^^^^^^^^ storage.type.interface.go
+ |           ^ punctuation.definition.block.begin.go
+->     Read([]byte) (int, error)
+ |     ^^^^ entity.name.function.go
+ |          ^ punctuation.brace.square.go
+ |           ^ punctuation.brace.square.go
+ |            ^^^^ support.type.primitive.go
+ |                   ^^^ support.type.primitive.go
+ |                      ^ punctuation.separator.comma.go
+ |                        ^^^^^ support.type.primitive.go
+->     Write([]byte) (int, error)
+ |     ^^^^^ entity.name.function.go
+ |           ^ punctuation.brace.square.go
+ |            ^ punctuation.brace.square.go
+ |             ^^^^ support.type.primitive.go
+ |                    ^^^ support.type.primitive.go
+ |                       ^ punctuation.separator.comma.go
+ |                         ^^^^^ support.type.primitive.go
+->     Close() error
+ |     ^^^^^ entity.name.function.go
+ |             ^^^^^ support.type.primitive.go
+-> }
+ | ^ punctuation.definition.block.end.go
+-> 
+-> type Locker interface {
+ | ^^^^ storage.type.interface.go
+ |      ^^^^^^ entity.name.type.interface.go
+ |             ^^^^^^^^^ storage.type.interface.go
+ |                       ^ punctuation.definition.block.begin.go
+->     Lock()
+ |     ^^^^ entity.name.function.go
+->     Unlock()
+ |     ^^^^^^ entity.name.function.go
+-> }
+ | ^ punctuation.definition.block.end.go
+-> 
+-> type Reader interface {
+ | ^^^^ storage.type.interface.go
+ |      ^^^^^^ entity.name.type.interface.go
+ |             ^^^^^^^^^ storage.type.interface.go
+ |                       ^ punctuation.definition.block.begin.go
+->     Read(p []byte) (n int, err error)
+ |     ^^^^ entity.name.function.go
+ |          ^ entity.name.type.go
+ |            ^ punctuation.brace.square.go
+ |             ^ punctuation.brace.square.go
+ |              ^^^^ support.type.primitive.go
+ |                     ^ entity.name.type.go
+ |                       ^^^ support.type.primitive.go
+ |                          ^ punctuation.separator.comma.go
+ |                            ^^^ entity.name.type.go
+ |                                ^^^^^ support.type.primitive.go
+->     Close() error
+ |     ^^^^^ entity.name.function.go
+ |             ^^^^^ support.type.primitive.go
+-> }
+ | ^ punctuation.definition.block.end.go
+-> 
+-> type Writer interface {
+ | ^^^^ storage.type.interface.go
+ |      ^^^^^^ entity.name.type.interface.go
+ |             ^^^^^^^^^ storage.type.interface.go
+ |                       ^ punctuation.definition.block.begin.go
+->     Write(p []byte) (n int, err error)
+ |     ^^^^^ entity.name.function.go
+ |           ^ entity.name.type.go
+ |             ^ punctuation.brace.square.go
+ |              ^ punctuation.brace.square.go
+ |               ^^^^ support.type.primitive.go
+ |                      ^ entity.name.type.go
+ |                        ^^^ support.type.primitive.go
+ |                           ^ punctuation.separator.comma.go
+ |                             ^^^ entity.name.type.go
+ |                                 ^^^^^ support.type.primitive.go
+->     Close() error
+ |     ^^^^^ entity.name.function.go
+ |             ^^^^^ support.type.primitive.go
+-> }
+ | ^ punctuation.definition.block.end.go
+-> 
+-> // ReadWriter's methods are Read, Write, and Close.
+ | ^^ punctuation.definition.comment.line.go  comment.line.go
+ |   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+-> type ReadWriter interface {
+ | ^^^^ storage.type.interface.go
+ |      ^^^^^^^^^^ entity.name.type.interface.go
+ |                 ^^^^^^^^^ storage.type.interface.go
+ |                           ^ punctuation.definition.block.begin.go
+->     Reader  // includes methods of Reader in ReadWriter's method set
+ |     ^^^^^^ entity.name.type.go
+ |             ^^ punctuation.definition.comment.line.go  comment.line.go
+ |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+->     Writer  // includes methods of Writer in ReadWriter's method set
+ |     ^^^^^^ entity.name.type.go
+ |             ^^ punctuation.definition.comment.line.go  comment.line.go
+ |               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+-> }
+ | ^ punctuation.definition.block.end.go
+-> 
+-> var m map[string]int
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^ entity.name.type.go
+ |           ^^^^^^ support.type.primitive.go
+ |                  ^^^ support.type.primitive.go
+-> var m map[*T]struct{ x, y float64 }
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^ entity.name.type.go
+ |           ^ keyword.operator.arithmetic.*.go
+ |            ^ variable.other.go
+ |              ^^^^^^ storage.type.struct.go
+ |                    ^ punctuation.definition.block.begin.go
+ |                      ^ variable.field.go
+ |                       ^ punctuation.separator.comma.go
+ |                         ^ variable.field.go
+ |                           ^^^^^^^ support.type.primitive.go
+ |                                   ^ punctuation.definition.block.end.go
+-> var m map[string]interface{}
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^^ entity.name.type.go
+ |           ^^^^^^ support.type.primitive.go
+ |                  ^^^^^^^^^ storage.type.interface.go
+ |                           ^ punctuation.definition.block.begin.go
+ |                            ^ punctuation.definition.block.end.go
+-> 
+-> make(map[string]int)
+ | ^^^^ entity.name.function.go
+ |      ^^^ storage.type.map.go
+ |          ^^^^^^ support.type.primitive.go
+ |                 ^^^ support.type.primitive.go
+-> make(map[string]int, 100)
+ | ^^^^ entity.name.function.go
+ |      ^^^ storage.type.map.go
+ |          ^^^^^^ support.type.primitive.go
+ |                 ^^^ support.type.primitive.go
+ |                    ^ punctuation.separator.comma.go
+ |                      ^^^ constant.numeric.integer.go
+-> 
+-> var ch chan T          // can be used to send and receive values of type T
+ | ^^^ storage.type.var.go
+ |     ^^ variable.other.go
+ |        ^^^^ storage.type.chan.go
+ |             ^ entity.name.type.go
+ |                        ^^ punctuation.definition.comment.line.go  comment.line.go
+ |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+-> var ch chan<- float64  // can only be used to send float64s
+ | ^^^ storage.type.var.go
+ |     ^^ variable.other.go
+ |        ^^^^ storage.type.chan.go
+ |            ^^ keyword.operator.arrow.go
+ |               ^^^^^^^ support.type.primitive.go
+ |                        ^^ punctuation.definition.comment.line.go  comment.line.go
+ |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+-> var ch <-chan int      // can only be used to receive ints
+ | ^^^ storage.type.var.go
+ |     ^^ variable.other.go
+ |        ^^ keyword.operator.arrow.go
+ |          ^^^^ storage.type.chan.go
+ |               ^^^ support.type.primitive.go
+ |                        ^^ punctuation.definition.comment.line.go  comment.line.go
+ |                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+-> 
+-> type (
+ | ^^^^ storage.type.type.go
+->     A0 = []string
+ |     ^^ variable.other.go
+ |        ^ keyword.operator.assignment.go
+ |            ^^^^^^ support.type.primitive.go
+->     A1 = A0
+ |     ^^ variable.other.go
+ |        ^ keyword.operator.assignment.go
+ |          ^^ variable.other.go
+->     A2 = struct{ a, b int }
+ |     ^^ variable.other.go
+ |        ^ keyword.operator.assignment.go
+ |          ^^^^^^ entity.name.type.struct.go
+ |                ^ punctuation.definition.struct.begin.go
+ |                  ^ variable.other.go
+ |                   ^ punctuation.separator.comma.go
+ |                     ^ variable.other.go
+ |                       ^^^ support.type.primitive.go
+ |                           ^ punctuation.definition.struct.end.go
+->     A3 = int
+ |     ^^ variable.other.go
+ |        ^ keyword.operator.assignment.go
+ |          ^^^ support.type.primitive.go
+->     A4 = func(A3, float64) *A0
+ |     ^^ entity.name.function.go
+ |        ^ keyword.operator.assignment.go
+ |          ^^^^ storage.type.func.go
+ |              ^ punctuation.definition.parameters.begin.go
+ |               ^^ variable.other.go
+ |                 ^ punctuation.separator.comma.go
+ |                   ^^^^^^^ support.type.primitive.go
+ |                          ^ punctuation.definition.parameters.end.go
+ |                            ^ keyword.operator.pointer.go
+ |                             ^^ entity.name.type.go
+->     A5 = func(x int, _ float64) *[]string
+ |     ^^ entity.name.function.go
+ |        ^ keyword.operator.assignment.go
+ |          ^^^^ storage.type.func.go
+ |              ^ punctuation.definition.parameters.begin.go
+ |               ^ variable.other.go
+ |                 ^^^ support.type.primitive.go
+ |                    ^ punctuation.separator.comma.go
+ |                      ^ variable.other.go
+ |                        ^^^^^^^ support.type.primitive.go
+ |                               ^ punctuation.definition.parameters.end.go
+ |                                 ^ keyword.operator.pointer.go
+ |                                  ^ punctuation.brace.square.go
+ |                                   ^ punctuation.brace.square.go
+ |                                    ^^^^^^ support.type.primitive.go
+-> )
+-> 
+-> type (
+ | ^^^^ storage.type.type.go
+->     B0 A0
+ |     ^^ variable.other.go
+ |        ^^ entity.name.type.go
+->     B1 []string
+ |     ^^ variable.other.go
+ |        ^ punctuation.brace.square.go
+ |         ^ punctuation.brace.square.go
+ |          ^^^^^^ support.type.primitive.go
+->     B2 struct{ a, b int }
+ |     ^^ variable.other.go
+ |        ^^^^^^ storage.type.struct.go
+ |                ^ variable.other.go
+ |                 ^ punctuation.separator.comma.go
+ |                   ^ variable.other.go
+ |                     ^^^ support.type.primitive.go
+->     B3 struct{ a, c int }
+ |     ^^ variable.other.go
+ |        ^^^^^^ storage.type.struct.go
+ |                ^ variable.other.go
+ |                 ^ punctuation.separator.comma.go
+ |                   ^ variable.other.go
+ |                     ^^^ support.type.primitive.go
+->     B4 func(int, float64) *B0
+ |     ^^ variable.other.go
+ |        ^^^^ support.type.primitive.go
+ |             ^^^ support.type.primitive.go
+ |                ^ punctuation.separator.comma.go
+ |                  ^^^^^^^ support.type.primitive.go
+ |                           ^ keyword.operator.arithmetic.*.go
+ |                            ^^ variable.other.go
+->     B5 func(x int, y float64) *A1
+ |     ^^ variable.other.go
+ |        ^^^^ support.type.primitive.go
+ |             ^ variable.other.go
+ |               ^^^ support.type.primitive.go
+ |                  ^ punctuation.separator.comma.go
+ |                    ^ variable.other.go
+ |                      ^^^^^^^ support.type.primitive.go
+ |                               ^ keyword.operator.arithmetic.*.go
+ |                                ^^ variable.other.go
+-> )
+-> 
+-> type C0 = B0
+ | ^^^^ storage.type.alias.go
+ |      ^^ entity.name.type.alias.go
+ |           ^^ entity.name.type.go
+-> 
+`;

@@ -1,3 +1,4 @@
+import { namedTypePattern, primTypePattern } from '../patterns';
 import { TMGrammarScope } from '../types';
 
 export const typeDeclaration: TMGrammarScope = {
@@ -22,9 +23,12 @@ export const typeDeclaration: TMGrammarScope = {
 					beginCaptures: {
 						1: { name: 'variable.field.go' },
 					},
-					end: /(?=\/\/|[\r\n,;])/,
+					end: /(?=\/\/|[\r\n,;}])/,
 					name: 'meta.field.declaration.go',
-					patterns: [{ include: '#types' }],
+					patterns: [
+						{ include: '#types' },
+						{ include: '#stringLiteral' },
+					],
 				},
 				{
 					match: /,/,
@@ -99,7 +103,7 @@ export const typeModifiers: TMGrammarScope = {
 };
 
 export const primType: TMGrammarScope = {
-	match: /\b((?:(?:u?int|float|complex)(?:\d{1,3}|ptr))|byte|int|string|bool|error)\b/,
+	match: primTypePattern,
 	captures: {
 		1: { name: 'support.type.primitive.go' },
 	},
@@ -108,7 +112,7 @@ export const primType: TMGrammarScope = {
 export const namedType: TMGrammarScope = {
 	patterns: [
 		{
-			match: /(?:([_a-zA-Z][_a-zA-Z0-9]*)(\.))?([_a-zA-Z][_a-zA-Z0-9]*)/,
+			match: namedTypePattern,
 			captures: {
 				1: { name: 'entity.name.type.module.go' },
 				2: { name: 'punctuation.accessor.go' },

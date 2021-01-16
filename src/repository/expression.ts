@@ -1,10 +1,14 @@
 import { TMGrammarScope } from '../types';
 import { regex } from '../utility';
+import {
+	ident,
+	namedTypePattern as namedType,
+	primTypePattern as primType,
+} from '../patterns';
 
 export const structExpr: TMGrammarScope = {
 	patterns: [
 		{
-			// FIXME: Won't match if there's a space before the opening brace
 			begin: /(:?=)?\s*([&*])?(?:(\[)([0-9]*)(\]))?(?:([_a-zA-Z][_a-zA-Z0-9]*)(\.))?([_a-zA-Z][_a-zA-Z0-9]*)(\{)/,
 			beginCaptures: {
 				1: { name: 'keyword.operator.assignment.go' },
@@ -22,42 +26,33 @@ export const structExpr: TMGrammarScope = {
 				0: { name: 'punctuation.definition.struct.end.go' },
 			},
 			contentName: 'meta.struct.body.go',
-			patterns: [{ include: '#structInitBody' }],
-		},
-	],
-};
-
-export const structInitBody: TMGrammarScope = {
-	patterns: [
-		{
-			begin: /([_a-zA-Z][_a-zA-Z0-9]*)(:)/,
-			beginCaptures: {
-				1: { name: 'variable.field.go' },
-				2: { name: 'punctuation.separator.key-value.go' },
-			},
-			end: /(?=[,\r\n}])/,
 			patterns: [
+				{ include: '#comments' },
+				{
+					match: regex`/(${ident})(:)/`,
+					captures: {
+						1: { name: 'variable.field.go' },
+						2: { name: 'punctuation.separator.key-value.go' },
+					},
+				},
+				{ include: '#funcDeclaration' },
 				{ include: '#keywords' },
 				{ include: '#constants' },
 				{ include: '#primType' },
 				{ include: '#funcName' },
 				{ include: '#punctuation' },
 				{ include: '#operators' },
+				{ include: '#structExpr' },
 				{ include: '#identifier' },
 				{ include: '#literals' },
 			],
-			name: 'meta.struct.field-init.go',
 		},
-		{ include: '#punctuation' },
 	],
 };
 
-const ident = /[_a-zA-Z][_a-zA-Z0-9]*/;
 const slice = /(\[)([0-9]*)(\])/;
-const primType = /\b((?:(?:u?int|float|complex)(?:\d{1,3}|ptr))|byte|int|string|bool|error)\b/;
-const namedType = regex`/(?:(${ident})(\\.))?(${ident})/`;
 const chan = /(<-)?\s*(chan)\s*(<-)?/;
-const optionals = regex`/(?:${chan}\\s+)?(\\.\\.\\.)?(?:${slice})?([&*]*)/`;
+const optionals = regex`/(?:${chan}\s+)?(\.\.\.)?(?:${slice})?([&*]*)/`;
 
 const identCaptures = {
 	1: { name: 'variable.other.go' },
@@ -74,21 +69,21 @@ const identCaptures = {
 export const identifier: TMGrammarScope = {
 	patterns: [
 		{
-			match: regex`/(${ident})\\s+${optionals}${primType}/`,
+			match: regex`/(${ident})\s+${optionals}${primType}/`,
 			captures: {
 				...identCaptures,
 				10: { name: 'support.type.primitive.go' },
 			},
 		},
 		{
-			match: regex`/(${ident})\\s+${optionals}(struct|interface)\\s*(?=\{)/`,
+			match: regex`/(${ident})\s+${optionals}(struct|interface)\s*(?=\{)/`,
 			captures: {
 				...identCaptures,
 				10: { name: 'storage.type.$10.go' },
 			},
 		},
 		{
-			match: regex`/(${ident})\\s+${optionals}${namedType}/`,
+			match: regex`/(${ident})\s+${optionals}${namedType}/`,
 			captures: {
 				...identCaptures,
 				10: { name: 'entity.name.type.module.go' },
@@ -97,7 +92,7 @@ export const identifier: TMGrammarScope = {
 			},
 		},
 		{
-			match: regex`/(?<=\\.)${ident}/`,
+			match: regex`/(?<=\.)${ident}/`,
 			name: 'variable.field.go',
 		},
 		{

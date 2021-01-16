@@ -45,7 +45,7 @@ beforeAll(async () => {
 
 expect.addSnapshotSerializer({
 	serialize(val: GoCode): string {
-		let tokens = getVSCodeTokens(val);
+		let tokens = getVSCodeTokens(val.replace(/\t/g, '    '));
 		let result: string[] = tokens.reduce((accum, line) => {
 			accum.push('-> ' + line.src);
 			if (line.src.trim().length) {

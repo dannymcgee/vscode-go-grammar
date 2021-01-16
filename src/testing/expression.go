@@ -12,4 +12,8 @@ foo, bar := lorem.Ipsum{
 	a: buf,
 	b: foo,
 	c: bar,
+	d: func(foo, bar string) bool {
+		// Lorem ipsum dolor sit amet
+	},
+	e: 12345,
 }

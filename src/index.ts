@@ -19,7 +19,6 @@ import {
 	stdLib,
 	stringLiteral,
 	structExpr,
-	structInitBody,
 	typeDeclaration,
 	typeModifiers,
 	types,
@@ -28,7 +27,6 @@ import {
 const grammar: TMGrammar = {
 	name: 'go',
 	scopeName: 'source.go',
-	// prettier-ignore
 	patterns: [
 		{ include: '#comments' },
 		{ include: '#packageDeclaration' },
@@ -63,7 +61,6 @@ const grammar: TMGrammar = {
 		stdLib,
 		stringLiteral,
 		structExpr,
-		structInitBody,
 		typeDeclaration,
 		typeModifiers,
 		types,
