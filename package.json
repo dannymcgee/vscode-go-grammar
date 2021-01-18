@@ -18,21 +18,8 @@
 		"url": "https://github.com/dannymcgee/vscode-go-grammar/issues"
 	},
 	"contributes": {
-		"languages": [
-			{
-				"id": "go",
-				"extensions": [
-					".go"
-				],
-				"aliases": [
-					"Go"
-				],
-				"configuration": "./language-configuration.json"
-			}
-		],
 		"grammars": [
 			{
-				"language": "go",
 				"scopeName": "source.go",
 				"path": "./dist/go.tmLanguage.json"
 			}
