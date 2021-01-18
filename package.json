@@ -1,18 +1,21 @@
 {
-	"name": "go-grammar",
-	"description": "VSCode TextMate grammar for Go",
-	"displayName": "vscode-go-grammar",
+	"name": "vscode-go-grammar",
+	"description": "A detailed TextMate grammar for Go",
+	"displayName": "Go Grammar",
 	"version": "1.0.0",
-	"main": "index.js",
 	"author": "Danny McGee <dannymcgee@gmail.com>",
 	"publisher": "dannymcgee",
 	"license": "MIT",
+	"icon": "icon.png",
 	"engines": {
 		"vscode": "^1.22.0"
 	},
 	"repository": {
 		"types": "git",
-		"url": ""
+		"url": "https://github.com/dannymcgee/vscode-go-grammar.git"
+	},
+	"bugs": {
+		"url": "https://github.com/dannymcgee/vscode-go-grammar/issues"
 	},
 	"contributes": {
 		"languages": [
@@ -40,9 +43,6 @@
 		"test": "jest",
 		"package": "yarn build && vsce package"
 	},
-	"activationEvents": [
-		"onLanguage:go"
-	],
 	"devDependencies": {
 		"@types/fs-extra": "^9.0.4",
 		"@types/jest": "^26.0.20",

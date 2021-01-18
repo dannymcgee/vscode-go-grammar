@@ -1,0 +1,10 @@
+.gitignore
+.vscode/**
+*.vsix
+jest.config.js
+node_modules
+.prettierrc.js
+scripts/**
+tsconfig.*
+src/**
+yarn.lock
