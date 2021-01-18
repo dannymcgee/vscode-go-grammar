@@ -52,6 +52,17 @@ export const identifier: TMGrammarScope = {
 			},
 		},
 		{
+			begin: regex`/(${ident})\s+(?=func)/`,
+			beginCaptures: {
+				1: { name: 'variable.other.go' },
+			},
+			end: /(?=[;\n\r])/,
+			patterns: [
+				{ include: '#comments' },
+				{ include: '#funcDeclaration' },
+			],
+		},
+		{
 			match: regex`/(${ident})\s+${optionals}${namedType}/`,
 			captures: {
 				...identCaptures,

@@ -168,7 +168,9 @@ exports[`types should work 1`] = `
  |          ^^^ support.type.primitive.go
 ->     F func()
  |     ^ variable.field.go
- |       ^^^^ support.type.primitive.go
+ |       ^^^^ storage.type.func.go
+ |           ^ punctuation.definition.parameters.begin.go
+ |            ^ punctuation.definition.parameters.end.go
 -> }
  | ^ punctuation.definition.block.end.go
 -> 
@@ -235,18 +237,23 @@ exports[`types should work 1`] = `
 -> var f func()
  | ^^^ storage.type.var.go
  |     ^ variable.other.go
- |       ^^^^ support.type.primitive.go
+ |       ^^^^ storage.type.func.go
+ |           ^ punctuation.definition.parameters.begin.go
+ |            ^ punctuation.definition.parameters.end.go
 -> var f func(x int) int
  | ^^^ storage.type.var.go
  |     ^ variable.other.go
- |       ^^^^ support.type.primitive.go
+ |       ^^^^ storage.type.func.go
+ |           ^ punctuation.definition.parameters.begin.go
  |            ^ variable.other.go
  |              ^^^ support.type.primitive.go
+ |                 ^ punctuation.definition.parameters.end.go
  |                   ^^^ support.type.primitive.go
 -> var f func(a, _ int, z float32) bool
  | ^^^ storage.type.var.go
  |     ^ variable.other.go
- |       ^^^^ support.type.primitive.go
+ |       ^^^^ storage.type.func.go
+ |           ^ punctuation.definition.parameters.begin.go
  |            ^ variable.other.go
  |             ^ punctuation.separator.comma.go
  |               ^ variable.other.go
@@ -254,11 +261,13 @@ exports[`types should work 1`] = `
  |                    ^ punctuation.separator.comma.go
  |                      ^ variable.other.go
  |                        ^^^^^^^ support.type.primitive.go
+ |                               ^ punctuation.definition.parameters.end.go
  |                                 ^^^^ support.type.primitive.go
 -> var f func(a, b int, z float32) (bool)
  | ^^^ storage.type.var.go
  |     ^ variable.other.go
- |       ^^^^ support.type.primitive.go
+ |       ^^^^ storage.type.func.go
+ |           ^ punctuation.definition.parameters.begin.go
  |            ^ variable.other.go
  |             ^ punctuation.separator.comma.go
  |               ^ variable.other.go
@@ -266,21 +275,27 @@ exports[`types should work 1`] = `
  |                    ^ punctuation.separator.comma.go
  |                      ^ variable.other.go
  |                        ^^^^^^^ support.type.primitive.go
+ |                               ^ punctuation.definition.parameters.end.go
+ |                                 ^ punctuation.definition.parameters.begin.go
  |                                  ^^^^ support.type.primitive.go
+ |                                      ^ punctuation.definition.parameters.end.go
 -> var f func(prefix string, values ...int)
  | ^^^ storage.type.var.go
  |     ^ variable.other.go
- |       ^^^^ support.type.primitive.go
+ |       ^^^^ storage.type.func.go
+ |           ^ punctuation.definition.parameters.begin.go
  |            ^^^^^^ variable.other.go
  |                   ^^^^^^ support.type.primitive.go
  |                         ^ punctuation.separator.comma.go
  |                           ^^^^^^ variable.other.go
  |                                  ^^^ keyword.operator.variadic.go
  |                                     ^^^ support.type.primitive.go
+ |                                        ^ punctuation.definition.parameters.end.go
 -> var f func(a, b int, z float64, opt ...interface{}) (success bool)
  | ^^^ storage.type.var.go
  |     ^ variable.other.go
- |       ^^^^ support.type.primitive.go
+ |       ^^^^ storage.type.func.go
+ |           ^ punctuation.definition.parameters.begin.go
  |            ^ variable.other.go
  |             ^ punctuation.separator.comma.go
  |               ^ variable.other.go
@@ -292,27 +307,38 @@ exports[`types should work 1`] = `
  |                                 ^^^ variable.other.go
  |                                     ^^^ keyword.operator.variadic.go
  |                                        ^^^^^^^^^ storage.type.interface.go
+ |                                                   ^ punctuation.definition.parameters.end.go
+ |                                                     ^ punctuation.definition.parameters.begin.go
  |                                                      ^^^^^^^ variable.other.go
  |                                                              ^^^^ support.type.primitive.go
+ |                                                                  ^ punctuation.definition.parameters.end.go
 -> var f func(int, int, float64) (float64, *[]int)
  | ^^^ storage.type.var.go
  |     ^ variable.other.go
- |       ^^^^ support.type.primitive.go
+ |       ^^^^ storage.type.func.go
+ |           ^ punctuation.definition.parameters.begin.go
  |            ^^^ support.type.primitive.go
  |               ^ punctuation.separator.comma.go
  |                 ^^^ support.type.primitive.go
  |                    ^ punctuation.separator.comma.go
  |                      ^^^^^^^ support.type.primitive.go
+ |                             ^ punctuation.definition.parameters.end.go
+ |                               ^ punctuation.definition.parameters.begin.go
  |                                ^^^^^^^ support.type.primitive.go
  |                                       ^ punctuation.separator.comma.go
- |                                         ^ keyword.operator.arithmetic.*.go
+ |                                         ^ keyword.operator.pointer.go
+ |                                          ^ punctuation.brace.square.go
+ |                                           ^ punctuation.brace.square.go
  |                                            ^^^ support.type.primitive.go
+ |                                               ^ punctuation.definition.parameters.end.go
 -> var f func(n int) func(p *T)
  | ^^^ storage.type.var.go
  |     ^ variable.other.go
- |       ^^^^ support.type.primitive.go
+ |       ^^^^ storage.type.func.go
+ |           ^ punctuation.definition.parameters.begin.go
  |            ^ variable.other.go
  |              ^^^ support.type.primitive.go
+ |                 ^ punctuation.definition.parameters.end.go
  |                   ^^^^ storage.type.func.go
  |                       ^ punctuation.definition.parameters.begin.go
  |                        ^ variable.other.go
@@ -325,22 +351,32 @@ exports[`types should work 1`] = `
  |           ^ punctuation.definition.block.begin.go
 ->     Read([]byte) (int, error)
  |     ^^^^ entity.name.function.go
+ |         ^ punctuation.definition.parameters.begin.go
  |          ^ punctuation.brace.square.go
  |           ^ punctuation.brace.square.go
  |            ^^^^ support.type.primitive.go
+ |                ^ punctuation.definition.parameters.end.go
+ |                  ^ punctuation.definition.parameters.begin.go
  |                   ^^^ support.type.primitive.go
  |                      ^ punctuation.separator.comma.go
  |                        ^^^^^ support.type.primitive.go
+ |                             ^ punctuation.definition.parameters.end.go
 ->     Write([]byte) (int, error)
  |     ^^^^^ entity.name.function.go
+ |          ^ punctuation.definition.parameters.begin.go
  |           ^ punctuation.brace.square.go
  |            ^ punctuation.brace.square.go
  |             ^^^^ support.type.primitive.go
+ |                 ^ punctuation.definition.parameters.end.go
+ |                   ^ punctuation.definition.parameters.begin.go
  |                    ^^^ support.type.primitive.go
  |                       ^ punctuation.separator.comma.go
  |                         ^^^^^ support.type.primitive.go
+ |                              ^ punctuation.definition.parameters.end.go
 ->     Close() error
  |     ^^^^^ entity.name.function.go
+ |          ^ punctuation.definition.parameters.begin.go
+ |           ^ punctuation.definition.parameters.end.go
  |             ^^^^^ support.type.primitive.go
 -> }
  | ^ punctuation.definition.block.end.go
@@ -352,8 +388,12 @@ exports[`types should work 1`] = `
  |                       ^ punctuation.definition.block.begin.go
 ->     Lock()
  |     ^^^^ entity.name.function.go
+ |         ^ punctuation.definition.parameters.begin.go
+ |          ^ punctuation.definition.parameters.end.go
 ->     Unlock()
  |     ^^^^^^ entity.name.function.go
+ |           ^ punctuation.definition.parameters.begin.go
+ |            ^ punctuation.definition.parameters.end.go
 -> }
  | ^ punctuation.definition.block.end.go
 -> 
@@ -364,17 +404,23 @@ exports[`types should work 1`] = `
  |                       ^ punctuation.definition.block.begin.go
 ->     Read(p []byte) (n int, err error)
  |     ^^^^ entity.name.function.go
- |          ^ entity.name.type.go
+ |         ^ punctuation.definition.parameters.begin.go
+ |          ^ variable.other.go
  |            ^ punctuation.brace.square.go
  |             ^ punctuation.brace.square.go
  |              ^^^^ support.type.primitive.go
- |                     ^ entity.name.type.go
+ |                  ^ punctuation.definition.parameters.end.go
+ |                    ^ punctuation.definition.parameters.begin.go
+ |                     ^ variable.other.go
  |                       ^^^ support.type.primitive.go
  |                          ^ punctuation.separator.comma.go
- |                            ^^^ entity.name.type.go
+ |                            ^^^ variable.other.go
  |                                ^^^^^ support.type.primitive.go
+ |                                     ^ punctuation.definition.parameters.end.go
 ->     Close() error
  |     ^^^^^ entity.name.function.go
+ |          ^ punctuation.definition.parameters.begin.go
+ |           ^ punctuation.definition.parameters.end.go
  |             ^^^^^ support.type.primitive.go
 -> }
  | ^ punctuation.definition.block.end.go
@@ -386,17 +432,23 @@ exports[`types should work 1`] = `
  |                       ^ punctuation.definition.block.begin.go
 ->     Write(p []byte) (n int, err error)
  |     ^^^^^ entity.name.function.go
- |           ^ entity.name.type.go
+ |          ^ punctuation.definition.parameters.begin.go
+ |           ^ variable.other.go
  |             ^ punctuation.brace.square.go
  |              ^ punctuation.brace.square.go
  |               ^^^^ support.type.primitive.go
- |                      ^ entity.name.type.go
+ |                   ^ punctuation.definition.parameters.end.go
+ |                     ^ punctuation.definition.parameters.begin.go
+ |                      ^ variable.other.go
  |                        ^^^ support.type.primitive.go
  |                           ^ punctuation.separator.comma.go
- |                             ^^^ entity.name.type.go
+ |                             ^^^ variable.other.go
  |                                 ^^^^^ support.type.primitive.go
+ |                                      ^ punctuation.definition.parameters.end.go
 ->     Close() error
  |     ^^^^^ entity.name.function.go
+ |          ^ punctuation.definition.parameters.begin.go
+ |           ^ punctuation.definition.parameters.end.go
  |             ^^^^^ support.type.primitive.go
 -> }
  | ^ punctuation.definition.block.end.go
@@ -563,22 +615,26 @@ exports[`types should work 1`] = `
  |                     ^^^ support.type.primitive.go
 ->     B4 func(int, float64) *B0
  |     ^^ variable.other.go
- |        ^^^^ support.type.primitive.go
+ |        ^^^^ storage.type.func.go
+ |            ^ punctuation.definition.parameters.begin.go
  |             ^^^ support.type.primitive.go
  |                ^ punctuation.separator.comma.go
  |                  ^^^^^^^ support.type.primitive.go
- |                           ^ keyword.operator.arithmetic.*.go
- |                            ^^ variable.other.go
+ |                         ^ punctuation.definition.parameters.end.go
+ |                           ^ keyword.operator.pointer.go
+ |                            ^^ entity.name.type.go
 ->     B5 func(x int, y float64) *A1
  |     ^^ variable.other.go
- |        ^^^^ support.type.primitive.go
+ |        ^^^^ storage.type.func.go
+ |            ^ punctuation.definition.parameters.begin.go
  |             ^ variable.other.go
  |               ^^^ support.type.primitive.go
  |                  ^ punctuation.separator.comma.go
  |                    ^ variable.other.go
  |                      ^^^^^^^ support.type.primitive.go
- |                               ^ keyword.operator.arithmetic.*.go
- |                                ^^ variable.other.go
+ |                             ^ punctuation.definition.parameters.end.go
+ |                               ^ keyword.operator.pointer.go
+ |                                ^^ entity.name.type.go
 -> )
 -> 
 -> type C0 = B0

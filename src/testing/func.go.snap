@@ -188,4 +188,38 @@ exports[`func should work 1`] = `
  |                                      ^^ punctuation.definition.comment.line.go  comment.line.go
  |                                        ^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
 -> 
+-> func (s *Server) computeSemanticTokens(ctx context.Context, td protocol.TextDocumentIdentifier, rng *protocol.Range) (*protocol.SemanticTokens, error) {}
+ | ^^^^ storage.type.func.go
+ |      ^ punctuation.definition.parameters.begin.go
+ |       ^ variable.other.go
+ |         ^ keyword.operator..go
+ |          ^^^^^^ entity.name.type.go
+ |                ^ punctuation.definition.parameters.end.go
+ |                  ^^^^^^^^^^^^^^^^^^^^^ entity.name.function.go
+ |                                       ^ punctuation.definition.parameters.begin.go
+ |                                        ^^^ variable.other.go
+ |                                            ^^^^^^^ entity.name.type.module.go
+ |                                                   ^ punctuation.accessor.go
+ |                                                    ^^^^^^^ entity.name.type.go
+ |                                                           ^ punctuation.separator.comma.go
+ |                                                             ^^ variable.other.go
+ |                                                                ^^^^^^^^ entity.name.type.module.go
+ |                                                                        ^ punctuation.accessor.go
+ |                                                                         ^^^^^^^^^^^^^^^^^^^^^^ entity.name.type.go
+ |                                                                                               ^ punctuation.separator.comma.go
+ |                                                                                                 ^^^ variable.other.go
+ |                                                                                                     ^ keyword.operator..go
+ |                                                                                                      ^^^^^^^^ entity.name.type.module.go
+ |                                                                                                              ^ punctuation.accessor.go
+ |                                                                                                               ^^^^^ entity.name.type.go
+ |                                                                                                                    ^ punctuation.definition.parameters.end.go
+ |                                                                                                                      ^ punctuation.definition.parameters.begin.go
+ |                                                                                                                       ^ keyword.operator.pointer.go
+ |                                                                                                                        ^^^^^^^^ variable.other.go
+ |                                                                                                                                 ^^^^^^^^^^^^^^ variable.field.go
+ |                                                                                                                                               ^ punctuation.separator.comma.go
+ |                                                                                                                                                 ^^^^^ support.type.primitive.go
+ |                                                                                                                                                      ^ punctuation.definition.parameters.end.go
+ |                                                                                                                                                        ^ punctuation.definition.block.begin.go
+-> 
 `;

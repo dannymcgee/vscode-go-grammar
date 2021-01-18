@@ -26,6 +26,7 @@ export const typeDeclaration: TMGrammarScope = {
 					end: /(?=\/\/|[\r\n,;}])/,
 					name: 'meta.field.declaration.go',
 					patterns: [
+						{ include: '#funcDeclaration' },
 						{ include: '#types' },
 						{ include: '#stringLiteral' },
 					],
@@ -51,7 +52,9 @@ export const typeDeclaration: TMGrammarScope = {
 			name: 'meta.interface.go',
 			patterns: [
 				{ include: '#comments' },
+				{ include: '#funcDeclaration' },
 				{ include: '#funcName' },
+				{ include: '#parameters' },
 				{ include: '#types' },
 				{
 					match: /\.\.\./,

@@ -13,6 +13,7 @@ export const funcDeclaration: TMGrammarScope = {
 			},
 			name: 'meta.function.signature.go',
 			patterns: [
+				{ include: '#funcDeclaration' },
 				{ include: '#funcName' },
 				{ include: '#parameters' },
 				{ include: '#types' },
@@ -50,8 +51,10 @@ export const parameters: TMGrammarScope = {
 	patterns: [
 		{ include: '#comments' },
 		{ include: '#keywords' },
+		{ include: '#typeModifiers' },
 		{ include: '#primType' },
 		{ include: '#identifier' },
+		{ include: '#namedType' },
 		{
 			match: /,/,
 			name: 'punctuation.separator.comma.go',
