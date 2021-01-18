@@ -2,7 +2,7 @@
 	"name": "vscode-go-grammar",
 	"description": "A detailed TextMate grammar for Go",
 	"displayName": "Go Grammar",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"author": "Danny McGee <dannymcgee@gmail.com>",
 	"publisher": "dannymcgee",
 	"license": "MIT",
@@ -28,7 +28,8 @@
 	"scripts": {
 		"build": "ts-node scripts/build.ts",
 		"test": "jest",
-		"package": "yarn build && vsce package"
+		"package": "yarn build && vsce package",
+		"publish": "vsce publish --githubBranch main"
 	},
 	"devDependencies": {
 		"@types/fs-extra": "^9.0.4",
