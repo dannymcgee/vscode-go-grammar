@@ -13,48 +13,60 @@ exports[`keywords should work 1`] = `
  |    ^ variable.other.go
  |      ^ keyword.operator.comparison.>.go
  |        ^^^ variable.other.go
+ |            ^ punctuation.brace.curly.go
 ->     x = max
  |     ^ variable.other.go
  |       ^ keyword.operator.assignment.go
  |         ^^^ variable.other.go
 -> }
+ | ^ punctuation.brace.curly.go
 -> 
 -> if x := f(); x < y {
  | ^^ keyword.control.if.go
  |    ^ variable.other.go
- |      ^ punctuation.separator.key-value.go
- |       ^ keyword.operator.assignment.go
+ |      ^^ keyword.operator.assignment.go
  |         ^ entity.name.function.go
+ |          ^ punctuation.brace.round.go
+ |           ^ punctuation.brace.round.go
  |            ^ punctuation.terminator.go
  |              ^ variable.other.go
  |                ^ keyword.operator.comparison.<.go
  |                  ^ variable.other.go
+ |                    ^ punctuation.brace.curly.go
 ->     return x
  |     ^^^^^^ keyword.control.return.go
  |            ^ variable.other.go
 -> } else if x > z {
+ | ^ punctuation.brace.curly.go
  |   ^^^^ keyword.control.else.go
  |        ^^ keyword.control.if.go
  |           ^ variable.other.go
  |             ^ keyword.operator.comparison.>.go
  |               ^ variable.other.go
+ |                 ^ punctuation.brace.curly.go
 ->     return z
  |     ^^^^^^ keyword.control.return.go
  |            ^ variable.other.go
 -> } else {
+ | ^ punctuation.brace.curly.go
  |   ^^^^ keyword.control.else.go
+ |        ^ punctuation.brace.curly.go
 ->     return y
  |     ^^^^^^ keyword.control.return.go
  |            ^ variable.other.go
 -> }
+ | ^ punctuation.brace.curly.go
 -> 
 -> switch tag {
  | ^^^^^^ keyword.control.switch.go
  |        ^^^ variable.other.go
+ |            ^ punctuation.brace.curly.go
 -> default: s3()
  | ^^^^^^^ keyword.control.default.go
  |        ^ punctuation.separator.key-value.go
  |          ^^ entity.name.function.go
+ |            ^ punctuation.brace.round.go
+ |             ^ punctuation.brace.round.go
 -> case 0, 1, 2, 3: s1()
  | ^^^^ keyword.control.case.go
  |      ^ constant.numeric.integer.go
@@ -66,6 +78,8 @@ exports[`keywords should work 1`] = `
  |               ^ constant.numeric.integer.go
  |                ^ punctuation.separator.key-value.go
  |                  ^^ entity.name.function.go
+ |                    ^ punctuation.brace.round.go
+ |                     ^ punctuation.brace.round.go
 -> case 4, 5, 6, 7: s2()
  | ^^^^ keyword.control.case.go
  |      ^ constant.numeric.integer.go
@@ -77,15 +91,20 @@ exports[`keywords should work 1`] = `
  |               ^ constant.numeric.integer.go
  |                ^ punctuation.separator.key-value.go
  |                  ^^ entity.name.function.go
+ |                    ^ punctuation.brace.round.go
+ |                     ^ punctuation.brace.round.go
 -> }
+ | ^ punctuation.brace.curly.go
 -> 
 -> switch x := f(); {
  | ^^^^^^ keyword.control.switch.go
  |        ^ variable.other.go
- |          ^ punctuation.separator.key-value.go
- |           ^ keyword.operator.assignment.go
+ |          ^^ keyword.operator.assignment.go
  |             ^ entity.name.function.go
+ |              ^ punctuation.brace.round.go
+ |               ^ punctuation.brace.round.go
  |                ^ punctuation.terminator.go
+ |                  ^ punctuation.brace.curly.go
 -> case x < 0: return -x
  | ^^^^ keyword.control.case.go
  |      ^ variable.other.go
@@ -101,9 +120,11 @@ exports[`keywords should work 1`] = `
  |          ^^^^^^ keyword.control.return.go
  |                 ^ variable.other.go
 -> }
+ | ^ punctuation.brace.curly.go
 -> 
 -> switch {
  | ^^^^^^ keyword.control.switch.go
+ |        ^ punctuation.brace.curly.go
 -> case x < y: f1()
  | ^^^^ keyword.control.case.go
  |      ^ variable.other.go
@@ -111,6 +132,8 @@ exports[`keywords should work 1`] = `
  |          ^ variable.field.go
  |           ^ punctuation.separator.key-value.go
  |             ^^ entity.name.function.go
+ |               ^ punctuation.brace.round.go
+ |                ^ punctuation.brace.round.go
 -> case x < z: f2()
  | ^^^^ keyword.control.case.go
  |      ^ variable.other.go
@@ -118,6 +141,8 @@ exports[`keywords should work 1`] = `
  |          ^ variable.field.go
  |           ^ punctuation.separator.key-value.go
  |             ^^ entity.name.function.go
+ |               ^ punctuation.brace.round.go
+ |                ^ punctuation.brace.round.go
 -> case x == 4: f3()
  | ^^^^ keyword.control.case.go
  |      ^ variable.other.go
@@ -125,24 +150,28 @@ exports[`keywords should work 1`] = `
  |           ^ constant.numeric.integer.go
  |            ^ punctuation.separator.key-value.go
  |              ^^ entity.name.function.go
+ |                ^ punctuation.brace.round.go
+ |                 ^ punctuation.brace.round.go
 -> }
+ | ^ punctuation.brace.curly.go
 -> 
 -> for a < b {
  | ^^^ keyword.control.for.go
  |     ^ variable.other.go
  |       ^ keyword.operator.comparison.<.go
  |         ^ variable.other.go
+ |           ^ punctuation.brace.curly.go
 ->     a *= 2
  |     ^ variable.other.go
  |       ^^ keyword.operator.arithmetic.*=.go
  |          ^ constant.numeric.integer.go
 -> }
+ | ^ punctuation.brace.curly.go
 -> 
 -> for i := 0; i < 10; i++ {}
  | ^^^ keyword.control.for.go
  |     ^ variable.other.go
- |       ^ punctuation.separator.key-value.go
- |        ^ keyword.operator.assignment.go
+ |       ^^ keyword.operator.assignment.go
  |          ^ constant.numeric.integer.go
  |           ^ punctuation.terminator.go
  |             ^ variable.other.go
@@ -151,18 +180,21 @@ exports[`keywords should work 1`] = `
  |                   ^ punctuation.terminator.go
  |                     ^ variable.other.go
  |                      ^^ keyword.operator.arithmetic.++.go
+ |                         ^ punctuation.brace.curly.go
+ |                          ^ punctuation.brace.curly.go
 -> 
 -> for i, _ := range testdata.a {}
  | ^^^ keyword.control.for.go
  |     ^ variable.other.go
  |      ^ punctuation.separator.comma.go
  |        ^ variable.other.go
- |          ^ punctuation.separator.key-value.go
- |           ^ keyword.operator.assignment.go
+ |          ^^ keyword.operator.assignment.go
  |             ^^^^^ keyword.operator.expression.range.go
  |                   ^^^^^^^^ variable.other.go
  |                           ^ punctuation.accessor.go
  |                            ^ variable.field.go
+ |                              ^ punctuation.brace.curly.go
+ |                               ^ punctuation.brace.curly.go
 -> 
 -> var a [10]string
  | ^^^ storage.type.var.go
@@ -176,10 +208,11 @@ exports[`keywords should work 1`] = `
  |     ^ variable.other.go
  |      ^ punctuation.separator.comma.go
  |        ^ variable.other.go
- |          ^ punctuation.separator.key-value.go
- |           ^ keyword.operator.assignment.go
+ |          ^^ keyword.operator.assignment.go
  |             ^^^^^ keyword.operator.expression.range.go
  |                   ^ variable.other.go
+ |                     ^ punctuation.brace.curly.go
+ |                      ^ punctuation.brace.curly.go
 -> 
 -> var key string
  | ^^^ storage.type.var.go
@@ -189,19 +222,24 @@ exports[`keywords should work 1`] = `
  | ^^^ storage.type.var.go
  |     ^^^ variable.other.go
  |         ^^^^^^^^^ storage.type.interface.go
+ |                  ^ punctuation.brace.curly.go
+ |                   ^ punctuation.brace.curly.go
 -> 
 -> m := map[string]int{"foo":0}
  | ^ variable.other.go
- |   ^ punctuation.separator.key-value.go
- |    ^ keyword.operator.assignment.go
+ |   ^^ keyword.operator.assignment.go
  |      ^^^ storage.type.map.go
+ |         ^ punctuation.brace.square.go
  |          ^^^^^^ support.type.primitive.go
+ |                ^ punctuation.brace.square.go
  |                 ^^^ support.type.primitive.go
+ |                    ^ punctuation.brace.curly.go
  |                     ^ punctuation.definition.string.begin.go  string.interpreted.go
  |                      ^^^ string.interpreted.go
  |                         ^ punctuation.definition.string.end.go  string.interpreted.go
  |                          ^ punctuation.separator.key-value.go
  |                           ^ constant.numeric.integer.go
+ |                            ^ punctuation.brace.curly.go
 -> for key, val = range m {
  | ^^^ keyword.control.for.go
  |     ^^^ variable.other.go
@@ -210,12 +248,16 @@ exports[`keywords should work 1`] = `
  |              ^ keyword.operator.assignment.go
  |                ^^^^^ keyword.operator.expression.range.go
  |                      ^ variable.other.go
+ |                        ^ punctuation.brace.curly.go
 ->     h(key, val)
  |     ^ entity.name.function.go
+ |      ^ punctuation.brace.round.go
  |       ^^^ variable.other.go
  |          ^ punctuation.separator.comma.go
  |            ^^^ variable.other.go
+ |               ^ punctuation.brace.round.go
 -> }
+ | ^ punctuation.brace.curly.go
 -> 
 -> var ch chan Work = producer()
  | ^^^ storage.type.var.go
@@ -224,17 +266,22 @@ exports[`keywords should work 1`] = `
  |             ^^^^ entity.name.type.go
  |                  ^ keyword.operator.assignment.go
  |                    ^^^^^^^^ entity.name.function.go
+ |                            ^ punctuation.brace.round.go
+ |                             ^ punctuation.brace.round.go
 -> for w := range ch {
  | ^^^ keyword.control.for.go
  |     ^ variable.other.go
- |       ^ punctuation.separator.key-value.go
- |        ^ keyword.operator.assignment.go
+ |       ^^ keyword.operator.assignment.go
  |          ^^^^^ keyword.operator.expression.range.go
  |                ^^ variable.other.go
+ |                   ^ punctuation.brace.curly.go
 ->     doWork(w)
  |     ^^^^^^ entity.name.function.go
+ |           ^ punctuation.brace.round.go
  |            ^ variable.other.go
+ |             ^ punctuation.brace.round.go
 -> }
+ | ^ punctuation.brace.curly.go
 -> 
 -> // empty a channel
  | ^^ punctuation.definition.comment.line.go  comment.line.go
@@ -243,27 +290,38 @@ exports[`keywords should work 1`] = `
  | ^^^ keyword.control.for.go
  |     ^^^^^ keyword.operator.expression.range.go
  |           ^^ variable.other.go
+ |              ^ punctuation.brace.curly.go
+ |               ^ punctuation.brace.curly.go
 -> 
 -> go Server()
  | ^^ keyword.control.go.go
  |    ^^^^^^ entity.name.function.go
--> go func(ch chan<- bool) { for { sleep(10); ch <- true }} (c)
+ |          ^ punctuation.brace.round.go
+ |           ^ punctuation.brace.round.go
+-> go func(ch chan <- bool) { for { sleep(10); ch <- true }} (c)
  | ^^ keyword.control.go.go
  |    ^^^^ storage.type.func.go
  |        ^ punctuation.definition.parameters.begin.go
  |         ^^ variable.other.go
  |            ^^^^ storage.type.chan.go
- |                ^^ keyword.operator.arrow.go
- |                   ^^^^ support.type.primitive.go
- |                       ^ punctuation.definition.parameters.end.go
- |                         ^ punctuation.definition.block.begin.go
- |                           ^^^ keyword.control.for.go
- |                                 ^^^^^ entity.name.function.go
- |                                       ^^ constant.numeric.integer.go
- |                                          ^ punctuation.terminator.go
- |                                            ^^ variable.other.go
- |                                               ^^ keyword.operator.arrow.go
- |                                                  ^^^^ constant.language.boolean.go
- |                                                           ^ variable.other.go
+ |                 ^^ keyword.operator.arrow.go
+ |                    ^^^^ support.type.primitive.go
+ |                        ^ punctuation.definition.parameters.end.go
+ |                          ^ punctuation.definition.block.begin.go
+ |                            ^^^ keyword.control.for.go
+ |                                ^ punctuation.brace.curly.go
+ |                                  ^^^^^ entity.name.function.go
+ |                                       ^ punctuation.brace.round.go
+ |                                        ^^ constant.numeric.integer.go
+ |                                          ^ punctuation.brace.round.go
+ |                                           ^ punctuation.terminator.go
+ |                                             ^^ variable.other.go
+ |                                                ^^ keyword.operator.arrow.go
+ |                                                   ^^^^ constant.language.boolean.go
+ |                                                        ^ punctuation.brace.curly.go
+ |                                                         ^ punctuation.brace.curly.go
+ |                                                           ^ punctuation.brace.round.go
+ |                                                            ^ variable.other.go
+ |                                                             ^ punctuation.brace.round.go
 -> 
 `;

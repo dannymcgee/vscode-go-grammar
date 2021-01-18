@@ -8,6 +8,7 @@ exports[`func should work 1`] = `
  |           ^ punctuation.definition.parameters.begin.go
  |            ^ punctuation.definition.parameters.end.go
  |              ^ punctuation.definition.block.begin.go
+ |               ^ punctuation.brace.curly.go
 -> 
 -> func lorem(x int) int {}
  | ^^^^ storage.type.func.go
@@ -18,6 +19,7 @@ exports[`func should work 1`] = `
  |                 ^ punctuation.definition.parameters.end.go
  |                   ^^^ support.type.primitive.go
  |                       ^ punctuation.definition.block.begin.go
+ |                        ^ punctuation.brace.curly.go
 -> 
 -> func lorem(a, b int, z float32) bool {}
  | ^^^^ storage.type.func.go
@@ -33,6 +35,7 @@ exports[`func should work 1`] = `
  |                               ^ punctuation.definition.parameters.end.go
  |                                 ^^^^ support.type.primitive.go
  |                                      ^ punctuation.definition.block.begin.go
+ |                                       ^ punctuation.brace.curly.go
 -> 
 -> func lorem(a, b string) (string, error) {}
  | ^^^^ storage.type.func.go
@@ -49,6 +52,7 @@ exports[`func should work 1`] = `
  |                                  ^^^^^ support.type.primitive.go
  |                                       ^ punctuation.definition.parameters.end.go
  |                                         ^ punctuation.definition.block.begin.go
+ |                                          ^ punctuation.brace.curly.go
 -> 
 -> func lorem(foo string, bar int, baz ...*lorem.ipsum) Dolor {}
  | ^^^^ storage.type.func.go
@@ -69,6 +73,7 @@ exports[`func should work 1`] = `
  |                                                    ^ punctuation.definition.parameters.end.go
  |                                                      ^^^^^ entity.name.type.go
  |                                                            ^ punctuation.definition.block.begin.go
+ |                                                             ^ punctuation.brace.curly.go
 -> 
 -> func lorem(foo string, bar int, baz ...*lorem.ipsum) (x bool, err error) {}
  | ^^^^ storage.type.func.go
@@ -95,6 +100,7 @@ exports[`func should work 1`] = `
  |                                                                   ^^^^^ support.type.primitive.go
  |                                                                        ^ punctuation.definition.parameters.end.go
  |                                                                          ^ punctuation.definition.block.begin.go
+ |                                                                           ^ punctuation.brace.curly.go
 -> 
 -> func min(x int, y int) int {}
  | ^^^^ storage.type.func.go
@@ -108,6 +114,7 @@ exports[`func should work 1`] = `
  |                      ^ punctuation.definition.parameters.end.go
  |                        ^^^ support.type.primitive.go
  |                            ^ punctuation.definition.block.begin.go
+ |                             ^ punctuation.brace.curly.go
 -> 
 -> func (p *Point) Length() float64 {}
  | ^^^^ storage.type.func.go
@@ -121,6 +128,7 @@ exports[`func should work 1`] = `
  |                        ^ punctuation.definition.parameters.end.go
  |                          ^^^^^^^ support.type.primitive.go
  |                                  ^ punctuation.definition.block.begin.go
+ |                                   ^ punctuation.brace.curly.go
 -> 
 -> func (p *Point) Scale(factor float64) {}
  | ^^^^ storage.type.func.go
@@ -135,6 +143,7 @@ exports[`func should work 1`] = `
  |                              ^^^^^^^ support.type.primitive.go
  |                                     ^ punctuation.definition.parameters.end.go
  |                                       ^ punctuation.definition.block.begin.go
+ |                                        ^ punctuation.brace.curly.go
 -> 
 -> func(a, b int, z float64) bool {}
  | ^^^^ storage.type.func.go
@@ -149,6 +158,7 @@ exports[`func should work 1`] = `
  |                         ^ punctuation.definition.parameters.end.go
  |                           ^^^^ support.type.primitive.go
  |                                ^ punctuation.definition.block.begin.go
+ |                                 ^ punctuation.brace.curly.go
 -> 
 -> f := func(x, y int) int {}
  | ^ entity.name.function.go
@@ -162,6 +172,7 @@ exports[`func should work 1`] = `
  |                   ^ punctuation.definition.parameters.end.go
  |                     ^^^ support.type.primitive.go
  |                         ^ punctuation.definition.block.begin.go
+ |                          ^ punctuation.brace.curly.go
 -> 
 -> func(ch chan int) { ch <- ACK }(replyChan)
  | ^^^^ storage.type.func.go
@@ -174,7 +185,10 @@ exports[`func should work 1`] = `
  |                     ^^ variable.other.go
  |                        ^^ keyword.operator.arrow.go
  |                           ^^^ variable.other.go
+ |                               ^ punctuation.brace.curly.go
+ |                                ^ punctuation.brace.round.go
  |                                 ^^^^^^^^^ variable.other.go
+ |                                          ^ punctuation.brace.round.go
 -> 
 -> func flushICache(begin, end uintptr) // implemented externally
  | ^^^^ storage.type.func.go
@@ -221,5 +235,6 @@ exports[`func should work 1`] = `
  |                                                                                                                                                 ^^^^^ support.type.primitive.go
  |                                                                                                                                                      ^ punctuation.definition.parameters.end.go
  |                                                                                                                                                        ^ punctuation.definition.block.begin.go
+ |                                                                                                                                                         ^ punctuation.brace.curly.go
 -> 
 `;

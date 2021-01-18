@@ -39,8 +39,10 @@ exports[`expression should work 1`] = `
  |         ^^ variable.other.go
  |            ^ keyword.operator.assignment.go
  |              ^^^^^^^^^^^ entity.name.function.go
+ |                         ^ punctuation.brace.round.go
  |                          ^ keyword.operator.arithmetic.-.go
  |                           ^ constant.numeric.integer.go
+ |                            ^ punctuation.brace.round.go
 -> var _, found = entries[name]  // map lookup; only interested in "found"
  | ^^^ storage.type.var.go
  |     ^ variable.other.go
@@ -48,7 +50,9 @@ exports[`expression should work 1`] = `
  |        ^^^^^ variable.other.go
  |              ^ keyword.operator.assignment.go
  |                ^^^^^^^ variable.other.go
+ |                       ^ punctuation.brace.square.go
  |                        ^^^^ variable.other.go
+ |                            ^ punctuation.brace.square.go
  |                               ^^ punctuation.definition.comment.line.go  comment.line.go
  |                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
 -> 
@@ -59,6 +63,7 @@ exports[`expression should work 1`] = `
  |           ^^^^^ entity.name.type.module.go
  |                ^ punctuation.accessor.go
  |                 ^^^^^ entity.name.type.struct.go
+ |                      ^ punctuation.brace.curly.go
  |                       ^ variable.field.go
  |                        ^ punctuation.separator.key-value.go
  |                          ^^^ variable.other.go
@@ -70,16 +75,17 @@ exports[`expression should work 1`] = `
  |                                       ^ variable.field.go
  |                                        ^ punctuation.separator.key-value.go
  |                                          ^^^ variable.other.go
+ |                                             ^ punctuation.brace.curly.go
 -> 
 -> foo, bar := lorem.Ipsum{
  | ^^^ variable.other.go
  |    ^ punctuation.separator.comma.go
  |      ^^^ variable.other.go
- |          ^ punctuation.separator.key-value.go
- |           ^ keyword.operator.assignment.go
+ |          ^^ keyword.operator.assignment.go
  |             ^^^^^ entity.name.type.module.go
  |                  ^ punctuation.accessor.go
  |                   ^^^^^ entity.name.type.struct.go
+ |                        ^ punctuation.brace.curly.go
 ->     a: buf,
  |     ^ variable.field.go
  |      ^ punctuation.separator.key-value.go
@@ -111,6 +117,7 @@ exports[`expression should work 1`] = `
  |         ^^ punctuation.definition.comment.line.go  comment.line.go
  |           ^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
 ->     },
+ |     ^ punctuation.brace.curly.go
  |      ^ punctuation.separator.comma.go
 ->     more: 12345,
  |     ^^^^ variable.field.go
@@ -138,5 +145,6 @@ exports[`expression should work 1`] = `
  |          ^^^ string.interpreted.go
  |             ^ punctuation.definition.string.end.go  string.interpreted.go
 -> }
+ | ^ punctuation.brace.curly.go
 -> 
 `;

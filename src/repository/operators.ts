@@ -40,8 +40,16 @@ export const operators: TMGrammarScope = {
 export const punctuation: TMGrammarScope = {
 	patterns: [
 		{
-			match: /[()\[\]{}]/,
-			name: 'meta.brace.go',
+			match: /[()]/,
+			name: 'punctuation.brace.round.go',
+		},
+		{
+			match: /[\[\]]/,
+			name: 'punctuation.brace.square.go',
+		},
+		{
+			match: /[{}]/,
+			name: 'punctuation.brace.curly.go',
 		},
 		{
 			match: /,/,

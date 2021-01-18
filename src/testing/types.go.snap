@@ -94,45 +94,77 @@ exports[`types should work 1`] = `
 -> var arr [3][5]int
  | ^^^ storage.type.var.go
  |     ^^^ variable.other.go
+ |         ^ punctuation.brace.square.go
  |          ^ constant.numeric.integer.go
+ |           ^ punctuation.brace.square.go
+ |            ^ punctuation.brace.square.go
  |             ^ constant.numeric.integer.go
+ |              ^ punctuation.brace.square.go
  |               ^^^ support.type.primitive.go
 -> var arr [2][2][2]float64
  | ^^^ storage.type.var.go
  |     ^^^ variable.other.go
+ |         ^ punctuation.brace.square.go
  |          ^ constant.numeric.integer.go
+ |           ^ punctuation.brace.square.go
+ |            ^ punctuation.brace.square.go
  |             ^ constant.numeric.integer.go
+ |              ^ punctuation.brace.square.go
+ |               ^ punctuation.brace.square.go
  |                ^ constant.numeric.integer.go
+ |                 ^ punctuation.brace.square.go
  |                  ^^^^^^^ support.type.primitive.go
 -> var arr [2]([2]([2]float64))
  | ^^^ storage.type.var.go
  |     ^^^ variable.other.go
+ |         ^ punctuation.brace.square.go
  |          ^ constant.numeric.integer.go
+ |           ^ punctuation.brace.square.go
+ |            ^ punctuation.brace.round.go
+ |             ^ punctuation.brace.square.go
  |              ^ constant.numeric.integer.go
+ |               ^ punctuation.brace.square.go
+ |                ^ punctuation.brace.round.go
+ |                 ^ punctuation.brace.square.go
  |                  ^ constant.numeric.integer.go
+ |                   ^ punctuation.brace.square.go
  |                    ^^^^^^^ support.type.primitive.go
+ |                           ^ punctuation.brace.round.go
+ |                            ^ punctuation.brace.round.go
 -> 
 -> make([]int, 50, 100)
  | ^^^^ entity.name.function.go
+ |     ^ punctuation.brace.round.go
+ |      ^ punctuation.brace.square.go
+ |       ^ punctuation.brace.square.go
  |        ^^^ support.type.primitive.go
  |           ^ punctuation.separator.comma.go
  |             ^^ constant.numeric.integer.go
  |               ^ punctuation.separator.comma.go
  |                 ^^^ constant.numeric.integer.go
+ |                    ^ punctuation.brace.round.go
 -> new([100]int)[0:50]
  | ^^^ entity.name.function.go
+ |    ^ punctuation.brace.round.go
+ |     ^ punctuation.brace.square.go
  |      ^^^ constant.numeric.integer.go
+ |         ^ punctuation.brace.square.go
  |          ^^^ support.type.primitive.go
+ |             ^ punctuation.brace.round.go
+ |              ^ punctuation.brace.square.go
  |               ^ constant.numeric.integer.go
  |                ^ punctuation.separator.key-value.go
  |                 ^^ constant.numeric.integer.go
+ |                   ^ punctuation.brace.square.go
 -> 
 -> var s [2*N] struct { x, y int32 }
  | ^^^ storage.type.var.go
  |     ^ variable.other.go
+ |       ^ punctuation.brace.square.go
  |        ^ constant.numeric.integer.go
  |         ^ keyword.operator.arithmetic.*.go
  |          ^ variable.other.go
+ |           ^ punctuation.brace.square.go
  |             ^^^^^^ storage.type.struct.go
  |                    ^ punctuation.definition.block.begin.go
  |                      ^ variable.field.go
@@ -231,7 +263,9 @@ exports[`types should work 1`] = `
  | ^^^ storage.type.var.go
  |     ^^^ variable.other.go
  |         ^ keyword.operator.arithmetic.*.go
+ |          ^ punctuation.brace.square.go
  |           ^ constant.numeric.integer.go
+ |            ^ punctuation.brace.square.go
  |             ^^^ support.type.primitive.go
 -> 
 -> var f func()
@@ -476,14 +510,18 @@ exports[`types should work 1`] = `
  | ^^^ storage.type.var.go
  |     ^ variable.other.go
  |       ^^^ entity.name.type.go
+ |          ^ punctuation.brace.square.go
  |           ^^^^^^ support.type.primitive.go
+ |                 ^ punctuation.brace.square.go
  |                  ^^^ support.type.primitive.go
 -> var m map[*T]struct{ x, y float64 }
  | ^^^ storage.type.var.go
  |     ^ variable.other.go
  |       ^^^ entity.name.type.go
+ |          ^ punctuation.brace.square.go
  |           ^ keyword.operator.arithmetic.*.go
  |            ^ variable.other.go
+ |             ^ punctuation.brace.square.go
  |              ^^^^^^ storage.type.struct.go
  |                    ^ punctuation.definition.block.begin.go
  |                      ^ variable.field.go
@@ -495,23 +533,33 @@ exports[`types should work 1`] = `
  | ^^^ storage.type.var.go
  |     ^ variable.other.go
  |       ^^^ entity.name.type.go
+ |          ^ punctuation.brace.square.go
  |           ^^^^^^ support.type.primitive.go
+ |                 ^ punctuation.brace.square.go
  |                  ^^^^^^^^^ storage.type.interface.go
  |                           ^ punctuation.definition.block.begin.go
  |                            ^ punctuation.definition.block.end.go
 -> 
 -> make(map[string]int)
  | ^^^^ entity.name.function.go
+ |     ^ punctuation.brace.round.go
  |      ^^^ storage.type.map.go
+ |         ^ punctuation.brace.square.go
  |          ^^^^^^ support.type.primitive.go
+ |                ^ punctuation.brace.square.go
  |                 ^^^ support.type.primitive.go
+ |                    ^ punctuation.brace.round.go
 -> make(map[string]int, 100)
  | ^^^^ entity.name.function.go
+ |     ^ punctuation.brace.round.go
  |      ^^^ storage.type.map.go
+ |         ^ punctuation.brace.square.go
  |          ^^^^^^ support.type.primitive.go
+ |                ^ punctuation.brace.square.go
  |                 ^^^ support.type.primitive.go
  |                    ^ punctuation.separator.comma.go
  |                      ^^^ constant.numeric.integer.go
+ |                         ^ punctuation.brace.round.go
 -> 
 -> var ch chan T          // can be used to send and receive values of type T
  | ^^^ storage.type.var.go
@@ -539,9 +587,12 @@ exports[`types should work 1`] = `
 -> 
 -> type (
  | ^^^^ storage.type.type.go
+ |      ^ punctuation.brace.round.go
 ->     A0 = []string
  |     ^^ variable.other.go
  |        ^ keyword.operator.assignment.go
+ |          ^ punctuation.brace.square.go
+ |           ^ punctuation.brace.square.go
  |            ^^^^^^ support.type.primitive.go
 ->     A1 = A0
  |     ^^ variable.other.go
@@ -588,9 +639,11 @@ exports[`types should work 1`] = `
  |                                   ^ punctuation.brace.square.go
  |                                    ^^^^^^ support.type.primitive.go
 -> )
+ | ^ punctuation.brace.round.go
 -> 
 -> type (
  | ^^^^ storage.type.type.go
+ |      ^ punctuation.brace.round.go
 ->     B0 A0
  |     ^^ variable.other.go
  |        ^^ entity.name.type.go
@@ -602,17 +655,21 @@ exports[`types should work 1`] = `
 ->     B2 struct{ a, b int }
  |     ^^ variable.other.go
  |        ^^^^^^ storage.type.struct.go
+ |              ^ punctuation.brace.curly.go
  |                ^ variable.other.go
  |                 ^ punctuation.separator.comma.go
  |                   ^ variable.other.go
  |                     ^^^ support.type.primitive.go
+ |                         ^ punctuation.brace.curly.go
 ->     B3 struct{ a, c int }
  |     ^^ variable.other.go
  |        ^^^^^^ storage.type.struct.go
+ |              ^ punctuation.brace.curly.go
  |                ^ variable.other.go
  |                 ^ punctuation.separator.comma.go
  |                   ^ variable.other.go
  |                     ^^^ support.type.primitive.go
+ |                         ^ punctuation.brace.curly.go
 ->     B4 func(int, float64) *B0
  |     ^^ variable.other.go
  |        ^^^^ storage.type.func.go
@@ -636,6 +693,7 @@ exports[`types should work 1`] = `
  |                               ^ keyword.operator.pointer.go
  |                                ^^ entity.name.type.go
 -> )
+ | ^ punctuation.brace.round.go
 -> 
 -> type C0 = B0
  | ^^^^ storage.type.alias.go

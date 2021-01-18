@@ -57,4 +57,4 @@ for w := range ch {
 for range ch {}
 
 go Server()
-go func(ch chan<- bool) { for { sleep(10); ch <- true }} (c)
+go func(ch chan <- bool) { for { sleep(10); ch <- true }} (c)
