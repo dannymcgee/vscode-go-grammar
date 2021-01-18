@@ -14,6 +14,12 @@ export const constants: TMGrammarScope = {
 				1: { name: 'constant.language.null.go' },
 			},
 		},
+		{
+			match: /\b(iota)\b/,
+			captures: {
+				1: { name: 'constant.language.iota.go' },
+			},
+		},
 	],
 };
 
