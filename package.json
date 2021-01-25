@@ -2,7 +2,7 @@
 	"name": "vscode-go-grammar",
 	"description": "A detailed TextMate grammar for Go",
 	"displayName": "Go Grammar",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"author": "Danny McGee <dannymcgee@gmail.com>",
 	"publisher": "dannymcgee",
 	"license": "MIT",
