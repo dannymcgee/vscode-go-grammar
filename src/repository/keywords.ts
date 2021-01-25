@@ -17,7 +17,11 @@ export const keywords: TMGrammarScope = {
 		{
 			match: /\b(range)\b/,
 			captures: {
-				1: { name: 'keyword.operator.expression.$1.go' },
+				1: {
+					name:
+						'keyword.operator.expression.range.go ' +
+						'storage.type.range.go',
+				},
 			},
 		},
 	],

@@ -189,7 +189,7 @@ exports[`keywords should work 1`] = `
  |      ^ punctuation.separator.comma.go
  |        ^ variable.other.go
  |          ^^ keyword.operator.assignment.go
- |             ^^^^^ keyword.operator.expression.range.go
+ |             ^^^^^ storage.type.range.go  keyword.operator.expression.range.go
  |                   ^^^^^^^^ variable.other.go
  |                           ^ punctuation.accessor.go
  |                            ^ variable.field.go
@@ -209,7 +209,7 @@ exports[`keywords should work 1`] = `
  |      ^ punctuation.separator.comma.go
  |        ^ variable.other.go
  |          ^^ keyword.operator.assignment.go
- |             ^^^^^ keyword.operator.expression.range.go
+ |             ^^^^^ storage.type.range.go  keyword.operator.expression.range.go
  |                   ^ variable.other.go
  |                     ^ punctuation.brace.curly.go
  |                      ^ punctuation.brace.curly.go
@@ -246,7 +246,7 @@ exports[`keywords should work 1`] = `
  |        ^ punctuation.separator.comma.go
  |          ^^^ variable.other.go
  |              ^ keyword.operator.assignment.go
- |                ^^^^^ keyword.operator.expression.range.go
+ |                ^^^^^ storage.type.range.go  keyword.operator.expression.range.go
  |                      ^ variable.other.go
  |                        ^ punctuation.brace.curly.go
 ->     h(key, val)
@@ -272,7 +272,7 @@ exports[`keywords should work 1`] = `
  | ^^^ keyword.control.for.go
  |     ^ variable.other.go
  |       ^^ keyword.operator.assignment.go
- |          ^^^^^ keyword.operator.expression.range.go
+ |          ^^^^^ storage.type.range.go  keyword.operator.expression.range.go
  |                ^^ variable.other.go
  |                   ^ punctuation.brace.curly.go
 ->     doWork(w)
@@ -288,7 +288,7 @@ exports[`keywords should work 1`] = `
  |   ^^^^^^^^^^^^^^^^ comment.line.go
 -> for range ch {}
  | ^^^ keyword.control.for.go
- |     ^^^^^ keyword.operator.expression.range.go
+ |     ^^^^^ storage.type.range.go  keyword.operator.expression.range.go
  |           ^^ variable.other.go
  |              ^ punctuation.brace.curly.go
  |               ^ punctuation.brace.curly.go
