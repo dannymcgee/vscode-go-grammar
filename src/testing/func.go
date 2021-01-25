@@ -25,3 +25,5 @@ func(ch chan int) { ch <- ACK }(replyChan)
 func flushICache(begin, end uintptr) // implemented externally
 
 func (s *Server) computeSemanticTokens(ctx context.Context, td protocol.TextDocumentIdentifier, rng *protocol.Range) (*protocol.SemanticTokens, error) {}
+
+foo := functions.Bar()

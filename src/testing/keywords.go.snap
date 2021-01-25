@@ -324,4 +324,190 @@ exports[`keywords should work 1`] = `
  |                                                            ^ variable.other.go
  |                                                             ^ punctuation.brace.round.go
 -> 
+-> // Select statement
+ | ^^ punctuation.definition.comment.line.go  comment.line.go
+ |   ^^^^^^^^^^^^^^^^^ comment.line.go
+-> var a []int
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^ punctuation.brace.square.go
+ |        ^ punctuation.brace.square.go
+ |         ^^^ support.type.primitive.go
+-> var c, c1, c2, c3, c4 chan int
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |      ^ punctuation.separator.comma.go
+ |        ^^ variable.other.go
+ |          ^ punctuation.separator.comma.go
+ |            ^^ variable.other.go
+ |              ^ punctuation.separator.comma.go
+ |                ^^ variable.other.go
+ |                  ^ punctuation.separator.comma.go
+ |                    ^^ variable.other.go
+ |                       ^^^^ storage.type.chan.go
+ |                            ^^^ support.type.primitive.go
+-> var i1, i2 int
+ | ^^^ storage.type.var.go
+ |     ^^ variable.other.go
+ |       ^ punctuation.separator.comma.go
+ |         ^^ variable.other.go
+ |            ^^^ support.type.primitive.go
+-> select {
+ | ^^^^^^ keyword.control.select.go
+ |        ^ punctuation.brace.curly.go
+-> case i1 = <-c1:
+ | ^^^^ keyword.control.case.go
+ |      ^^ variable.other.go
+ |         ^ keyword.operator.assignment.go
+ |           ^^ keyword.operator.arrow.go
+ |             ^^ variable.field.go
+ |               ^ punctuation.separator.key-value.go
+->     print("received ", i1, " from c1\\n")
+ |     ^^^^^ entity.name.function.go
+ |          ^ punctuation.brace.round.go
+ |           ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |            ^^^^^^^^^ string.interpreted.go
+ |                     ^ punctuation.definition.string.end.go  string.interpreted.go
+ |                      ^ punctuation.separator.comma.go
+ |                        ^^ variable.other.go
+ |                          ^ punctuation.separator.comma.go
+ |                            ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |                             ^^^^^^^^ string.interpreted.go
+ |                                     ^^ constant.character.escape.go  string.interpreted.go
+ |                                       ^ punctuation.definition.string.end.go  string.interpreted.go
+ |                                        ^ punctuation.brace.round.go
+-> case c2 <- i2:
+ | ^^^^ keyword.control.case.go
+ |      ^^ variable.other.go
+ |         ^^ keyword.operator.arrow.go
+ |            ^^ variable.field.go
+ |              ^ punctuation.separator.key-value.go
+->     print("sent ", i2, " to c2\\n")
+ |     ^^^^^ entity.name.function.go
+ |          ^ punctuation.brace.round.go
+ |           ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |            ^^^^^ string.interpreted.go
+ |                 ^ punctuation.definition.string.end.go  string.interpreted.go
+ |                  ^ punctuation.separator.comma.go
+ |                    ^^ variable.other.go
+ |                      ^ punctuation.separator.comma.go
+ |                        ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |                         ^^^^^^ string.interpreted.go
+ |                               ^^ constant.character.escape.go  string.interpreted.go
+ |                                 ^ punctuation.definition.string.end.go  string.interpreted.go
+ |                                  ^ punctuation.brace.round.go
+-> case i3, ok := (<-c3):  // same as: i3, ok := <-c3
+ | ^^^^ keyword.control.case.go
+ |      ^^ variable.other.go
+ |        ^ punctuation.separator.comma.go
+ |          ^^ variable.other.go
+ |             ^^ keyword.operator.assignment.go
+ |                ^ punctuation.brace.round.go
+ |                 ^^ keyword.operator.arrow.go
+ |                   ^^ variable.other.go
+ |                     ^ punctuation.brace.round.go
+ |                      ^ punctuation.separator.key-value.go
+ |                         ^^ punctuation.definition.comment.line.go  comment.line.go
+ |                           ^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+->     if ok {
+ |     ^^ keyword.control.if.go
+ |        ^^ variable.other.go
+ |           ^ punctuation.brace.curly.go
+->         print("received ", i3, " from c3\\n")
+ |         ^^^^^ entity.name.function.go
+ |              ^ punctuation.brace.round.go
+ |               ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |                ^^^^^^^^^ string.interpreted.go
+ |                         ^ punctuation.definition.string.end.go  string.interpreted.go
+ |                          ^ punctuation.separator.comma.go
+ |                            ^^ variable.other.go
+ |                              ^ punctuation.separator.comma.go
+ |                                ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |                                 ^^^^^^^^ string.interpreted.go
+ |                                         ^^ constant.character.escape.go  string.interpreted.go
+ |                                           ^ punctuation.definition.string.end.go  string.interpreted.go
+ |                                            ^ punctuation.brace.round.go
+->     } else {
+ |     ^ punctuation.brace.curly.go
+ |       ^^^^ keyword.control.else.go
+ |            ^ punctuation.brace.curly.go
+->         print("c3 is closed\\n")
+ |         ^^^^^ entity.name.function.go
+ |              ^ punctuation.brace.round.go
+ |               ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |                ^^^^^^^^^^^^ string.interpreted.go
+ |                            ^^ constant.character.escape.go  string.interpreted.go
+ |                              ^ punctuation.definition.string.end.go  string.interpreted.go
+ |                               ^ punctuation.brace.round.go
+->     }
+ |     ^ punctuation.brace.curly.go
+-> case a[f()] = <-c4:
+ | ^^^^ keyword.control.case.go
+ |      ^ variable.other.go
+ |       ^ punctuation.brace.square.go
+ |        ^ entity.name.function.go
+ |         ^ punctuation.brace.round.go
+ |          ^ punctuation.brace.round.go
+ |           ^ punctuation.brace.square.go
+ |             ^ keyword.operator.assignment.go
+ |               ^^ keyword.operator.arrow.go
+ |                 ^^ variable.field.go
+ |                   ^ punctuation.separator.key-value.go
+->     // same as:
+ |     ^^ punctuation.definition.comment.line.go  comment.line.go
+ |       ^^^^^^^^^ comment.line.go
+->     // case t := <-c4
+ |     ^^ punctuation.definition.comment.line.go  comment.line.go
+ |       ^^^^^^^^^^^^^^^ comment.line.go
+->     //    a[f()] = t
+ |     ^^ punctuation.definition.comment.line.go  comment.line.go
+ |       ^^^^^^^^^^^^^^ comment.line.go
+-> default:
+ | ^^^^^^^ keyword.control.default.go
+ |        ^ punctuation.separator.key-value.go
+->     print("no communication\\n")
+ |     ^^^^^ entity.name.function.go
+ |          ^ punctuation.brace.round.go
+ |           ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |            ^^^^^^^^^^^^^^^^ string.interpreted.go
+ |                            ^^ constant.character.escape.go  string.interpreted.go
+ |                              ^ punctuation.definition.string.end.go  string.interpreted.go
+ |                               ^ punctuation.brace.round.go
+-> }
+ | ^ punctuation.brace.curly.go
+-> 
+-> for {  // send random sequence of bits to c
+ | ^^^ keyword.control.for.go
+ |     ^ punctuation.brace.curly.go
+ |        ^^ punctuation.definition.comment.line.go  comment.line.go
+ |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+->     select {
+ |     ^^^^^^ keyword.control.select.go
+ |            ^ punctuation.brace.curly.go
+->     case c <- 0:  // note: no statement, no fallthrough, no folding of cases
+ |     ^^^^ keyword.control.case.go
+ |          ^ variable.other.go
+ |            ^^ keyword.operator.arrow.go
+ |               ^ constant.numeric.integer.go
+ |                ^ punctuation.separator.key-value.go
+ |                   ^^ punctuation.definition.comment.line.go  comment.line.go
+ |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+->     case c <- 1:
+ |     ^^^^ keyword.control.case.go
+ |          ^ variable.other.go
+ |            ^^ keyword.operator.arrow.go
+ |               ^ constant.numeric.integer.go
+ |                ^ punctuation.separator.key-value.go
+->     }
+ |     ^ punctuation.brace.curly.go
+-> }
+ | ^ punctuation.brace.curly.go
+-> 
+-> select {}  // block forever
+ | ^^^^^^ keyword.control.select.go
+ |        ^ punctuation.brace.curly.go
+ |         ^ punctuation.brace.curly.go
+ |            ^^ punctuation.definition.comment.line.go  comment.line.go
+ |              ^^^^^^^^^^^^^^ comment.line.go
+-> 
 `;

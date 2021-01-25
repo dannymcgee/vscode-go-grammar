@@ -237,4 +237,13 @@ exports[`func should work 1`] = `
  |                                                                                                                                                        ^ punctuation.definition.block.begin.go
  |                                                                                                                                                         ^ punctuation.brace.curly.go
 -> 
+-> foo := functions.Bar()
+ | ^^^ variable.other.go
+ |     ^^ keyword.operator.assignment.go
+ |        ^^^^^^^^^ variable.other.go
+ |                 ^ punctuation.accessor.go
+ |                  ^^^ entity.name.function.go
+ |                     ^ punctuation.brace.round.go
+ |                      ^ punctuation.brace.round.go
+-> 
 `;

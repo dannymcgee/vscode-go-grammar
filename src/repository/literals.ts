@@ -118,7 +118,7 @@ export const escapes: TMGrammarScope = {
 export const interpolation: TMGrammarScope = {
 	patterns: [
 		{
-			match: /%([.+0-9]*)([vTtbcdoOqxXUbeEfFgGsqp])/,
+			match: /%([.+#0-9]*)([vTtbcdoOqxXUbeEfFgGsqp])/,
 			captures: {
 				1: { name: 'constant.numeric.template-quantifier.go' },
 				2: { name: 'variable.other.go' },
@@ -126,7 +126,7 @@ export const interpolation: TMGrammarScope = {
 			name: 'meta.interpolation.go',
 		},
 		{
-			match: /%(\[)([0-9]+)(\])([vTtbcdoOqxXUbeEfFgGsqp])/,
+			match: /%(\[)([#0-9]+)(\])([vTtbcdoOqxXUbeEfFgGsqp])/,
 			captures: {
 				1: { name: 'punctuation.bracket.go' },
 				2: { name: 'constant.numeric.template-quantifier.go' },

@@ -3,7 +3,7 @@ import { TMGrammarScope } from '../types';
 export const funcDeclaration: TMGrammarScope = {
 	patterns: [
 		{
-			begin: /\b(func)\s*/,
+			begin: /\b(func)\b/,
 			beginCaptures: {
 				1: { name: 'storage.type.func.go' },
 			},

@@ -3,7 +3,7 @@ import { TMGrammarScope } from '../types';
 export const keywords: TMGrammarScope = {
 	patterns: [
 		{
-			match: /\b(break|case|continue|default|defer|else|fallthrough|for|go|goto|if|import|return|switch)\b/,
+			match: /\b(break|case|continue|default|defer|else|fallthrough|for|go|goto|if|import|return|switch|select)\b/,
 			captures: {
 				1: { name: 'keyword.control.$1.go' },
 			},
@@ -15,7 +15,7 @@ export const keywords: TMGrammarScope = {
 			},
 		},
 		{
-			match: /\b(range|select)\b/,
+			match: /\b(range)\b/,
 			captures: {
 				1: { name: 'keyword.operator.expression.$1.go' },
 			},
