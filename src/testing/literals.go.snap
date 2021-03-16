@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`literals should work 1`] = `
+
+-> var x := "Foo"
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^ keyword.operator.assignment.go
+ |          ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |           ^^^ string.interpreted.go
+ |              ^ punctuation.definition.string.end.go  string.interpreted.go
+-> var x := "Foo \\"Bar\\" \\\\"
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^ keyword.operator.assignment.go
+ |          ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |           ^^^^ string.interpreted.go
+ |               ^^ constant.character.escape.go  string.interpreted.go
+ |                 ^^^ string.interpreted.go
+ |                    ^^ constant.character.escape.go  string.interpreted.go
+ |                      ^ string.interpreted.go
+ |                       ^^ string.interpreted.go
+ |                         ^ punctuation.definition.string.end.go  string.interpreted.go
+-> 
+-> var x := 'x'
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^ keyword.operator.assignment.go
+ |          ^ punctuation.definition.string.begin.go  string.rune.go
+ |           ^ string.rune.go
+ |            ^ punctuation.definition.string.end.go  string.rune.go
+-> var x := '\\\\'
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^ keyword.operator.assignment.go
+ |          ^ punctuation.definition.string.begin.go  string.rune.go
+ |           ^^ constant.character.escape.go  string.rune.go
+ |             ^ punctuation.definition.string.end.go  string.rune.go
+-> var x := '\\''
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^ keyword.operator.assignment.go
+ |          ^ punctuation.definition.string.begin.go  string.rune.go
+ |           ^^ constant.character.escape.go  string.rune.go
+ |             ^ punctuation.definition.string.end.go  string.rune.go
+-> var x := '\\a'
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^ keyword.operator.assignment.go
+ |          ^ punctuation.definition.string.begin.go  string.rune.go
+ |           ^^ constant.character.escape.go  string.rune.go
+ |             ^ punctuation.definition.string.end.go  string.rune.go
+-> var x := '\\b'
+ | ^^^ storage.type.var.go
+ |     ^ variable.other.go
+ |       ^^ keyword.operator.assignment.go
+ |          ^ punctuation.definition.string.begin.go  string.rune.go
+ |           ^^ constant.character.escape.go  string.rune.go
+ |             ^ punctuation.definition.string.end.go  string.rune.go
+-> 
+`;

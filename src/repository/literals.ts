@@ -96,7 +96,7 @@ export const stringLiteral: TMGrammarScope = {
 			beginCaptures: {
 				0: { name: 'punctuation.definition.string.begin.go' },
 			},
-			end: /(?<!\\)'/,
+			end: /(?<![\\])'|(?<=[\\]{2})'/,
 			endCaptures: {
 				0: { name: 'punctuation.definition.string.end.go' },
 			},
