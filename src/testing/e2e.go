@@ -75,3 +75,6 @@ func (x X) String() string {
 
 	return Sprintf("<%s>", x)
 }
+
+parentErr := errors.New("something went wrong")
+childErr := fmt.Errorf("from parent: %w", parentErr)

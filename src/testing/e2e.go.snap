@@ -1,0 +1,535 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`e2e should work 1`] = `
+
+-> package foo
+ | ^^^^^^^ storage.type.module.go
+ |         ^^^ entity.name.type.module.go
+-> 
+-> import (
+ | ^^^^^^ keyword.control.import.go
+ |        ^ punctuation.brace.round.go
+->     "foo"
+ |     ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |      ^^^ string.interpreted.go
+ |         ^ punctuation.definition.string.end.go  string.interpreted.go
+->     "bar"
+ |     ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |      ^^^ string.interpreted.go
+ |         ^ punctuation.definition.string.end.go  string.interpreted.go
+->     "baz"
+ |     ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |      ^^^ string.interpreted.go
+ |         ^ punctuation.definition.string.end.go  string.interpreted.go
+->     "lorem/ipsum"
+ |     ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |      ^^^^^^^^^^^ string.interpreted.go
+ |                 ^ punctuation.definition.string.end.go  string.interpreted.go
+-> )
+ | ^ punctuation.brace.round.go
+-> import "foo"
+ | ^^^^^^ keyword.control.import.go
+ |        ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |         ^^^ string.interpreted.go
+ |            ^ punctuation.definition.string.end.go  string.interpreted.go
+-> import "lorem/ipsum"
+ | ^^^^^^ keyword.control.import.go
+ |        ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |         ^^^^^^^^^^^ string.interpreted.go
+ |                    ^ punctuation.definition.string.end.go  string.interpreted.go
+-> 
+-> func lorem() {}
+ | ^^^^ storage.type.func.go
+ |      ^^^^^ entity.name.function.go
+ |           ^ punctuation.definition.parameters.begin.go
+ |            ^ punctuation.definition.parameters.end.go
+ |              ^ punctuation.definition.block.begin.go
+ |               ^ punctuation.brace.curly.go
+-> func lorem(x int) int {}
+ | ^^^^ storage.type.func.go
+ |      ^^^^^ entity.name.function.go
+ |           ^ punctuation.definition.parameters.begin.go
+ |            ^ variable.other.go
+ |              ^^^ support.type.primitive.go
+ |                 ^ punctuation.definition.parameters.end.go
+ |                   ^^^ support.type.primitive.go
+ |                       ^ punctuation.definition.block.begin.go
+ |                        ^ punctuation.brace.curly.go
+-> func lorem(a, b int, z float32) bool {}
+ | ^^^^ storage.type.func.go
+ |      ^^^^^ entity.name.function.go
+ |           ^ punctuation.definition.parameters.begin.go
+ |            ^ variable.other.go
+ |             ^ punctuation.separator.comma.go
+ |               ^ variable.other.go
+ |                 ^^^ support.type.primitive.go
+ |                    ^ punctuation.separator.comma.go
+ |                      ^ variable.other.go
+ |                        ^^^^^^^ support.type.primitive.go
+ |                               ^ punctuation.definition.parameters.end.go
+ |                                 ^^^^ support.type.primitive.go
+ |                                      ^ punctuation.definition.block.begin.go
+ |                                       ^ punctuation.brace.curly.go
+-> func lorem(a, b string) (string, error) {}
+ | ^^^^ storage.type.func.go
+ |      ^^^^^ entity.name.function.go
+ |           ^ punctuation.definition.parameters.begin.go
+ |            ^ variable.other.go
+ |             ^ punctuation.separator.comma.go
+ |               ^ variable.other.go
+ |                 ^^^^^^ support.type.primitive.go
+ |                       ^ punctuation.definition.parameters.end.go
+ |                         ^ punctuation.definition.parameters.begin.go
+ |                          ^^^^^^ support.type.primitive.go
+ |                                ^ punctuation.separator.comma.go
+ |                                  ^^^^^ support.type.primitive.go
+ |                                       ^ punctuation.definition.parameters.end.go
+ |                                         ^ punctuation.definition.block.begin.go
+ |                                          ^ punctuation.brace.curly.go
+-> func lorem(foo string, bar int, baz ...*lorem.ipsum) Dolor {}
+ | ^^^^ storage.type.func.go
+ |      ^^^^^ entity.name.function.go
+ |           ^ punctuation.definition.parameters.begin.go
+ |            ^^^ variable.other.go
+ |                ^^^^^^ support.type.primitive.go
+ |                      ^ punctuation.separator.comma.go
+ |                        ^^^ variable.other.go
+ |                            ^^^ support.type.primitive.go
+ |                               ^ punctuation.separator.comma.go
+ |                                 ^^^ variable.other.go
+ |                                     ^^^ keyword.operator.variadic.go
+ |                                        ^ keyword.operator..go
+ |                                         ^^^^^ entity.name.type.module.go
+ |                                              ^ punctuation.accessor.go
+ |                                               ^^^^^ entity.name.type.go
+ |                                                    ^ punctuation.definition.parameters.end.go
+ |                                                      ^^^^^ entity.name.type.go
+ |                                                            ^ punctuation.definition.block.begin.go
+ |                                                             ^ punctuation.brace.curly.go
+-> func lorem(foo string, bar int, baz ...*lorem.ipsum) (x bool, err error) {}
+ | ^^^^ storage.type.func.go
+ |      ^^^^^ entity.name.function.go
+ |           ^ punctuation.definition.parameters.begin.go
+ |            ^^^ variable.other.go
+ |                ^^^^^^ support.type.primitive.go
+ |                      ^ punctuation.separator.comma.go
+ |                        ^^^ variable.other.go
+ |                            ^^^ support.type.primitive.go
+ |                               ^ punctuation.separator.comma.go
+ |                                 ^^^ variable.other.go
+ |                                     ^^^ keyword.operator.variadic.go
+ |                                        ^ keyword.operator..go
+ |                                         ^^^^^ entity.name.type.module.go
+ |                                              ^ punctuation.accessor.go
+ |                                               ^^^^^ entity.name.type.go
+ |                                                    ^ punctuation.definition.parameters.end.go
+ |                                                      ^ punctuation.definition.parameters.begin.go
+ |                                                       ^ variable.other.go
+ |                                                         ^^^^ support.type.primitive.go
+ |                                                             ^ punctuation.separator.comma.go
+ |                                                               ^^^ variable.other.go
+ |                                                                   ^^^^^ support.type.primitive.go
+ |                                                                        ^ punctuation.definition.parameters.end.go
+ |                                                                          ^ punctuation.definition.block.begin.go
+ |                                                                           ^ punctuation.brace.curly.go
+-> 
+-> type LoremIpsum struct {
+ | ^^^^ storage.type.type.go
+ |      ^^^^^^^^^^ entity.name.type.struct.go
+ |                 ^^^^^^ storage.type.struct.go
+ |                        ^ punctuation.definition.block.begin.go
+->     foo        string
+ |     ^^^ variable.field.go
+ |                ^^^^^^ support.type.primitive.go
+->     bar        int // foo bar baz
+ |     ^^^ variable.field.go
+ |                ^^^ support.type.primitive.go
+ |                    ^^ punctuation.definition.comment.line.go  comment.line.go
+ |                      ^^^^^^^^^^^^ comment.line.go
+->     baz        lorem.Ipsum
+ |     ^^^ variable.field.go
+ |                ^^^^^ entity.name.type.module.go
+ |                     ^ punctuation.accessor.go
+ |                      ^^^^^ entity.name.type.go
+->     foobar     bool
+ |     ^^^^^^ variable.field.go
+ |                ^^^^ support.type.primitive.go
+->     dolor, sit []Amet
+ |     ^^^^^ variable.field.go
+ |          ^ punctuation.separator.comma.go
+ |            ^^^ variable.field.go
+ |                ^ punctuation.brace.square.go
+ |                 ^ punctuation.brace.square.go
+ |                  ^^^^ entity.name.type.go
+-> }
+ | ^ punctuation.definition.block.end.go
+-> 
+-> func (li &LoremIpsum) Dolor(a, b int, c string) bool {}
+ | ^^^^ storage.type.func.go
+ |      ^ punctuation.definition.parameters.begin.go
+ |       ^^ variable.other.go
+ |          ^ keyword.operator..go
+ |           ^^^^^^^^^^ entity.name.type.go
+ |                     ^ punctuation.definition.parameters.end.go
+ |                       ^^^^^ entity.name.function.go
+ |                            ^ punctuation.definition.parameters.begin.go
+ |                             ^ variable.other.go
+ |                              ^ punctuation.separator.comma.go
+ |                                ^ variable.other.go
+ |                                  ^^^ support.type.primitive.go
+ |                                     ^ punctuation.separator.comma.go
+ |                                       ^ variable.other.go
+ |                                         ^^^^^^ support.type.primitive.go
+ |                                               ^ punctuation.definition.parameters.end.go
+ |                                                 ^^^^ support.type.primitive.go
+ |                                                      ^ punctuation.definition.block.begin.go
+ |                                                       ^ punctuation.brace.curly.go
+-> 
+-> struct {
+ | ^^^^^^ storage.type.struct.go
+ |        ^ punctuation.definition.block.begin.go
+->     foo    string
+ |     ^^^ variable.field.go
+ |            ^^^^^^ support.type.primitive.go
+->     bar    int
+ |     ^^^ variable.field.go
+ |            ^^^ support.type.primitive.go
+->     baz    lorem.Ipsum
+ |     ^^^ variable.field.go
+ |            ^^^^^ entity.name.type.module.go
+ |                 ^ punctuation.accessor.go
+ |                  ^^^^^ entity.name.type.go
+->     foobar bool // foo bar baz
+ |     ^^^^^^ variable.field.go
+ |            ^^^^ support.type.primitive.go
+ |                 ^^ punctuation.definition.comment.line.go  comment.line.go
+ |                   ^^^^^^^^^^^^ comment.line.go
+-> }
+ | ^ punctuation.definition.block.end.go
+-> 
+-> type LoremIpsum interface {
+ | ^^^^ storage.type.interface.go
+ |      ^^^^^^^^^^ entity.name.type.interface.go
+ |                 ^^^^^^^^^ storage.type.interface.go
+ |                           ^ punctuation.definition.block.begin.go
+->     Read([]byte) (int, error)
+ |     ^^^^ entity.name.function.go
+ |         ^ punctuation.definition.parameters.begin.go
+ |          ^ punctuation.brace.square.go
+ |           ^ punctuation.brace.square.go
+ |            ^^^^ support.type.primitive.go
+ |                ^ punctuation.definition.parameters.end.go
+ |                  ^ punctuation.definition.parameters.begin.go
+ |                   ^^^ support.type.primitive.go
+ |                      ^ punctuation.separator.comma.go
+ |                        ^^^^^ support.type.primitive.go
+ |                             ^ punctuation.definition.parameters.end.go
+->     Write([]byte) (int, error)
+ |     ^^^^^ entity.name.function.go
+ |          ^ punctuation.definition.parameters.begin.go
+ |           ^ punctuation.brace.square.go
+ |            ^ punctuation.brace.square.go
+ |             ^^^^ support.type.primitive.go
+ |                 ^ punctuation.definition.parameters.end.go
+ |                   ^ punctuation.definition.parameters.begin.go
+ |                    ^^^ support.type.primitive.go
+ |                       ^ punctuation.separator.comma.go
+ |                         ^^^^^ support.type.primitive.go
+ |                              ^ punctuation.definition.parameters.end.go
+->     Close() error
+ |     ^^^^^ entity.name.function.go
+ |          ^ punctuation.definition.parameters.begin.go
+ |           ^ punctuation.definition.parameters.end.go
+ |             ^^^^^ support.type.primitive.go
+->     Lorem(string, int, ...*lorem.ipsum) (bool, error)
+ |     ^^^^^ entity.name.function.go
+ |          ^ punctuation.definition.parameters.begin.go
+ |           ^^^^^^ support.type.primitive.go
+ |                 ^ punctuation.separator.comma.go
+ |                   ^^^ support.type.primitive.go
+ |                      ^ punctuation.separator.comma.go
+ |                           ^ keyword.operator.pointer.go
+ |                            ^^^^^ variable.other.go
+ |                                  ^^^^^ variable.field.go
+ |                                       ^ punctuation.definition.parameters.end.go
+ |                                         ^ punctuation.definition.parameters.begin.go
+ |                                          ^^^^ support.type.primitive.go
+ |                                              ^ punctuation.separator.comma.go
+ |                                                ^^^^^ support.type.primitive.go
+ |                                                     ^ punctuation.definition.parameters.end.go
+-> }
+ | ^ punctuation.definition.block.end.go
+-> 
+-> interface {
+ | ^^^^^^^^^ storage.type.interface.go
+ |           ^ punctuation.definition.block.begin.go
+->     Read([]byte) (int, error)
+ |     ^^^^ entity.name.function.go
+ |         ^ punctuation.definition.parameters.begin.go
+ |          ^ punctuation.brace.square.go
+ |           ^ punctuation.brace.square.go
+ |            ^^^^ support.type.primitive.go
+ |                ^ punctuation.definition.parameters.end.go
+ |                  ^ punctuation.definition.parameters.begin.go
+ |                   ^^^ support.type.primitive.go
+ |                      ^ punctuation.separator.comma.go
+ |                        ^^^^^ support.type.primitive.go
+ |                             ^ punctuation.definition.parameters.end.go
+->     Write([]byte) (int, error)
+ |     ^^^^^ entity.name.function.go
+ |          ^ punctuation.definition.parameters.begin.go
+ |           ^ punctuation.brace.square.go
+ |            ^ punctuation.brace.square.go
+ |             ^^^^ support.type.primitive.go
+ |                 ^ punctuation.definition.parameters.end.go
+ |                   ^ punctuation.definition.parameters.begin.go
+ |                    ^^^ support.type.primitive.go
+ |                       ^ punctuation.separator.comma.go
+ |                         ^^^^^ support.type.primitive.go
+ |                              ^ punctuation.definition.parameters.end.go
+->     Close() error
+ |     ^^^^^ entity.name.function.go
+ |          ^ punctuation.definition.parameters.begin.go
+ |           ^ punctuation.definition.parameters.end.go
+ |             ^^^^^ support.type.primitive.go
+->     Lorem(string, int, ...*lorem.ipsum) (bool, error)
+ |     ^^^^^ entity.name.function.go
+ |          ^ punctuation.definition.parameters.begin.go
+ |           ^^^^^^ support.type.primitive.go
+ |                 ^ punctuation.separator.comma.go
+ |                   ^^^ support.type.primitive.go
+ |                      ^ punctuation.separator.comma.go
+ |                           ^ keyword.operator.pointer.go
+ |                            ^^^^^ variable.other.go
+ |                                  ^^^^^ variable.field.go
+ |                                       ^ punctuation.definition.parameters.end.go
+ |                                         ^ punctuation.definition.parameters.begin.go
+ |                                          ^^^^ support.type.primitive.go
+ |                                              ^ punctuation.separator.comma.go
+ |                                                ^^^^^ support.type.primitive.go
+ |                                                     ^ punctuation.definition.parameters.end.go
+-> }
+ | ^ punctuation.definition.block.end.go
+-> 
+-> func main() {
+ | ^^^^ storage.type.func.go
+ |      ^^^^ entity.name.function.go
+ |          ^ punctuation.definition.parameters.begin.go
+ |           ^ punctuation.definition.parameters.end.go
+ |             ^ punctuation.definition.block.begin.go
+->     var buf bytes.Buffer
+ |     ^^^ storage.type.var.go
+ |         ^^^ variable.other.go
+ |             ^^^^^ entity.name.type.module.go
+ |                  ^ punctuation.accessor.go
+ |                   ^^^^^^ entity.name.type.go
+->     var foo, bar *lorem.ipsum
+ |     ^^^ storage.type.var.go
+ |         ^^^ variable.other.go
+ |            ^ punctuation.separator.comma.go
+ |              ^^^ variable.other.go
+ |                  ^ keyword.operator..go
+ |                   ^^^^^ entity.name.type.module.go
+ |                        ^ punctuation.accessor.go
+ |                         ^^^^^ entity.name.type.go
+->     var a, b, c, d lorem.Ipsum
+ |     ^^^ storage.type.var.go
+ |         ^ variable.other.go
+ |          ^ punctuation.separator.comma.go
+ |            ^ variable.other.go
+ |             ^ punctuation.separator.comma.go
+ |               ^ variable.other.go
+ |                ^ punctuation.separator.comma.go
+ |                  ^ variable.other.go
+ |                    ^^^^^ entity.name.type.module.go
+ |                         ^ punctuation.accessor.go
+ |                          ^^^^^ entity.name.type.go
+-> 
+->     var i int
+ |     ^^^ storage.type.var.go
+ |         ^ variable.other.go
+ |           ^^^ support.type.primitive.go
+->     var U, V, W float64
+ |     ^^^ storage.type.var.go
+ |         ^ variable.other.go
+ |          ^ punctuation.separator.comma.go
+ |            ^ variable.other.go
+ |             ^ punctuation.separator.comma.go
+ |               ^ variable.other.go
+ |                 ^^^^^^^ support.type.primitive.go
+->     var k = 0
+ |     ^^^ storage.type.var.go
+ |         ^ variable.other.go
+ |           ^ keyword.operator.assignment.go
+ |             ^ constant.numeric.integer.go
+->     var x, y float32 = -1, -2
+ |     ^^^ storage.type.var.go
+ |         ^ variable.other.go
+ |          ^ punctuation.separator.comma.go
+ |            ^ variable.other.go
+ |              ^^^^^^^ support.type.primitive.go
+ |                      ^ keyword.operator.assignment.go
+ |                        ^ keyword.operator.arithmetic.-.go
+ |                         ^ constant.numeric.integer.go
+ |                          ^ punctuation.separator.comma.go
+ |                            ^ keyword.operator.arithmetic.-.go
+ |                             ^ constant.numeric.integer.go
+-> 
+->     var re, im = complexSqrt(-1)
+ |     ^^^ storage.type.var.go
+ |         ^^ variable.other.go
+ |           ^ punctuation.separator.comma.go
+ |             ^^ variable.other.go
+ |                ^ keyword.operator.assignment.go
+ |                  ^^^^^^^^^^^ entity.name.function.go
+ |                             ^ punctuation.brace.round.go
+ |                              ^ keyword.operator.arithmetic.-.go
+ |                               ^ constant.numeric.integer.go
+ |                                ^ punctuation.brace.round.go
+->     var _, found = entries[name]  // map lookup; only interested in "found"
+ |     ^^^ storage.type.var.go
+ |         ^ variable.other.go
+ |          ^ punctuation.separator.comma.go
+ |            ^^^^^ variable.other.go
+ |                  ^ keyword.operator.assignment.go
+ |                    ^^^^^^^ variable.other.go
+ |                           ^ punctuation.brace.square.go
+ |                            ^^^^ variable.other.go
+ |                                ^ punctuation.brace.square.go
+ |                                   ^^ punctuation.definition.comment.line.go  comment.line.go
+ |                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ comment.line.go
+->     var baz = lorem.Ipsum{a: buf, b: foo, c: bar}
+ |     ^^^ storage.type.var.go
+ |         ^^^ variable.other.go
+ |             ^ keyword.operator.assignment.go
+ |               ^^^^^ entity.name.type.module.go
+ |                    ^ punctuation.accessor.go
+ |                     ^^^^^ entity.name.type.struct.go
+ |                          ^ punctuation.brace.curly.go
+ |                           ^ variable.field.go
+ |                            ^ punctuation.separator.key-value.go
+ |                              ^^^ variable.other.go
+ |                                 ^ punctuation.separator.comma.go
+ |                                   ^ variable.field.go
+ |                                    ^ punctuation.separator.key-value.go
+ |                                      ^^^ variable.other.go
+ |                                         ^ punctuation.separator.comma.go
+ |                                           ^ variable.field.go
+ |                                            ^ punctuation.separator.key-value.go
+ |                                              ^^^ variable.other.go
+ |                                                 ^ punctuation.brace.curly.go
+-> 
+-> 
+->     foo, bar := lorem.Ipsum{
+ |     ^^^ variable.other.go
+ |        ^ punctuation.separator.comma.go
+ |          ^^^ variable.other.go
+ |              ^^ keyword.operator.assignment.go
+ |                 ^^^^^ entity.name.type.module.go
+ |                      ^ punctuation.accessor.go
+ |                       ^^^^^ entity.name.type.struct.go
+ |                            ^ punctuation.brace.curly.go
+->         a: buf,
+ |         ^ variable.field.go
+ |          ^ punctuation.separator.key-value.go
+ |            ^^^ variable.other.go
+ |               ^ punctuation.separator.comma.go
+->         b: foo,
+ |         ^ variable.field.go
+ |          ^ punctuation.separator.key-value.go
+ |            ^^^ variable.other.go
+ |               ^ punctuation.separator.comma.go
+->         c: bar,
+ |         ^ variable.field.go
+ |          ^ punctuation.separator.key-value.go
+ |            ^^^ variable.other.go
+ |               ^ punctuation.separator.comma.go
+->     }
+ |     ^ punctuation.brace.curly.go
+-> }
+ | ^ punctuation.brace.curly.go
+-> 
+-> type X string
+ | ^^^^ storage.type.alias.go
+ |      ^ entity.name.type.alias.go
+ |        ^^^^^^ support.type.primitive.go
+-> func (x X) String() string {
+ | ^^^^ storage.type.func.go
+ |      ^ punctuation.definition.parameters.begin.go
+ |       ^ variable.other.go
+ |         ^ entity.name.type.go
+ |          ^ punctuation.definition.parameters.end.go
+ |            ^^^^^^ entity.name.function.go
+ |                  ^ punctuation.definition.parameters.begin.go
+ |                   ^ punctuation.definition.parameters.end.go
+ |                     ^^^^^^ support.type.primitive.go
+ |                            ^ punctuation.definition.block.begin.go
+->     fmt.Sprintf("%[2]d %[1]d\\n", 11, 22)
+ |     ^^^ variable.other.go
+ |        ^ punctuation.accessor.go
+ |         ^^^^^^^ entity.name.function.go
+ |                ^ punctuation.brace.round.go
+ |                 ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |                  ^ string.interpreted.go
+ |                   ^ punctuation.bracket.go  string.interpreted.go
+ |                    ^ constant.numeric.template-quantifier.go  string.interpreted.go
+ |                     ^ punctuation.bracket.go  string.interpreted.go
+ |                      ^ variable.other.go  string.interpreted.go
+ |                       ^ string.interpreted.go
+ |                        ^ string.interpreted.go
+ |                         ^ punctuation.bracket.go  string.interpreted.go
+ |                          ^ constant.numeric.template-quantifier.go  string.interpreted.go
+ |                           ^ punctuation.bracket.go  string.interpreted.go
+ |                            ^ variable.other.go  string.interpreted.go
+ |                             ^^ constant.character.escape.go  string.interpreted.go
+ |                               ^ punctuation.definition.string.end.go  string.interpreted.go
+ |                                ^ punctuation.separator.comma.go
+ |                                  ^^ constant.numeric.integer.go
+ |                                    ^ punctuation.separator.comma.go
+ |                                      ^^ constant.numeric.integer.go
+ |                                        ^ punctuation.brace.round.go
+-> 
+->     return Sprintf("<%s>", x)
+ |     ^^^^^^ keyword.control.return.go
+ |            ^^^^^^^ entity.name.function.go
+ |                   ^ punctuation.brace.round.go
+ |                    ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |                     ^ string.interpreted.go
+ |                      ^ string.interpreted.go
+ |                       ^ variable.other.go  string.interpreted.go
+ |                        ^ string.interpreted.go
+ |                         ^ punctuation.definition.string.end.go  string.interpreted.go
+ |                          ^ punctuation.separator.comma.go
+ |                            ^ variable.other.go
+ |                             ^ punctuation.brace.round.go
+-> }
+ | ^ punctuation.brace.curly.go
+-> 
+-> parentErr := errors.New("something went wrong")
+ | ^^^^^^^^^ variable.other.go
+ |           ^^ keyword.operator.assignment.go
+ |              ^^^^^^ variable.other.go
+ |                    ^ punctuation.accessor.go
+ |                     ^^^ entity.name.function.go
+ |                        ^ punctuation.brace.round.go
+ |                         ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |                          ^^^^^^^^^^^^^^^^^^^^ string.interpreted.go
+ |                                              ^ punctuation.definition.string.end.go  string.interpreted.go
+ |                                               ^ punctuation.brace.round.go
+-> childErr := fmt.Errorf("from parent: %w", parentErr)
+ | ^^^^^^^^ variable.other.go
+ |          ^^ keyword.operator.assignment.go
+ |             ^^^ variable.other.go
+ |                ^ punctuation.accessor.go
+ |                 ^^^^^^ entity.name.function.go
+ |                       ^ punctuation.brace.round.go
+ |                        ^ punctuation.definition.string.begin.go  string.interpreted.go
+ |                         ^^^^^^^^^^^^^ string.interpreted.go
+ |                                      ^ string.interpreted.go
+ |                                       ^ variable.other.go  string.interpreted.go
+ |                                        ^ punctuation.definition.string.end.go  string.interpreted.go
+ |                                         ^ punctuation.separator.comma.go
+ |                                           ^^^^^^^^^ variable.other.go
+ |                                                    ^ punctuation.brace.round.go
+-> 
+`;
